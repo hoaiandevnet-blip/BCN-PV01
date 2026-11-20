@@ -1,0 +1,63 @@
+/* The shared backdrop stays visible while the application restores its session. */
+.bcn-app-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 11000;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: var(--ui-text);
+}
+
+.bcn-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  text-align: center;
+}
+
+.bcn-loading-content img {
+  width: 96px;
+  height: 108px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px var(--ui-gold-soft));
+}
+
+.bcn-loading-title {
+  margin: 28px 0 16px;
+  color: var(--ui-text);
+  font-size: 26px;
+  font-weight: 650;
+  letter-spacing: .04em;
+}
+
+.bcn-loading-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--ui-secondary);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.bcn-loading-spinner {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--ui-gold-line);
+  border-top-color: var(--ui-gold);
+  border-radius: 50%;
+  animation: bcn-loading-spin .9s linear infinite;
+}
+
+@keyframes bcn-loading-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bcn-loading-spinner {
+    animation: none;
+  }
+}

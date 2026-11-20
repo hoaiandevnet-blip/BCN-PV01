@@ -1,0 +1,115 @@
+/* Keep the first report and its action reachable on a short laptop viewport. */
+@media (max-width: 1440px), (max-height: 820px) {
+  #home .bcn-dashboard,
+  #home #dashData {
+    gap: 14px;
+  }
+
+  #home .dash-controls {
+    padding: 10px 14px;
+    gap: 12px;
+    border-radius: 10px;
+  }
+
+  #home .dash-controls label,
+  #home .dash-period {
+    gap: 5px;
+  }
+
+  #home .dash-panel-head {
+    padding: 14px 16px 12px;
+  }
+
+  #home .dash-panel-head h2 {
+    font-size: 18px;
+    margin-top: 3px;
+  }
+
+  #home .unit-work-values {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  #home .unit-work-values article {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    grid-template-areas: "icon label label" "value value unit";
+    gap: 8px;
+    padding: 12px;
+  }
+
+  #home .unit-work-values .unit-work-icon {
+    width: 28px;
+    height: 28px;
+    min-height: 0;
+  }
+
+  #home .unit-work-values .unit-work-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  #home .unit-work-values .unit-work-label {
+    min-height: 36px;
+  }
+
+  #home .unit-work-values article strong {
+    margin: 0;
+    min-width: 0;
+    font-size: 27px;
+  }
+
+  #home .unit-work-values [data-work-field="administrative_fines"] strong {
+    font-size: 23px;
+  }
+
+  #home .unit-work-values small {
+    align-self: end;
+    padding-bottom: 3px;
+    max-width: 64px;
+  }
+
+  #home .dash-footnote {
+    padding: 12px 16px 14px;
+    font-size: 11px;
+  }
+
+  #home .unit-kpi {
+    min-height: 160px;
+    padding: 14px 16px;
+  }
+
+  #home .unit-kpi .dash-kpi-value {
+    margin: 10px 0;
+    font-size: 32px;
+    font-weight: 850;
+  }
+
+
+}
+
+@media (min-width: 1180px) and (max-width: 1440px),
+  (min-width: 1180px) and (max-height: 820px) {
+  #home .dash-controls label,
+  #home .dash-period {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #home .dash-controls input {
+    width: 146px;
+    height: 38px;
+    padding: 8px 10px;
+  }
+
+  #home .dash-refresh {
+    align-self: center;
+  }
+}
+
+@media (max-width: 760px) {
+  #home .dash-refresh {
+    flex-wrap: wrap;
+  }
+}

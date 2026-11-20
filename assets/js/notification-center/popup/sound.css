@@ -1,0 +1,81 @@
+#settings .notification-sound-heading,
+#settings .notification-sound-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#settings .notification-sound-heading {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+#settings .notification-sound-heading strong {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+#settings .notification-sound button {
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+#settings .notification-sound label {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#settings .notification-sound input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  height: 24px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  accent-color: var(--primary);
+}
+
+#settings .notification-sound output {
+  min-width: 36px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#settings .notification-sound .notification-sound-feedback {
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+#settings .notification-sound-feedback[hidden] {
+  display: none;
+}
+
+#settings .notification-sound .notification-sound-note {
+  margin-top: 14px;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  #settings .notification-sound-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  #settings .notification-sound-controls button {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}

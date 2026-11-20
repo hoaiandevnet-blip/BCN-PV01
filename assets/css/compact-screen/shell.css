@@ -1,0 +1,114 @@
+/* Reclaim space on laptops without scaling down the whole application. */
+@layer bcn-glass {
+  @media (max-width: 1440px), (max-height: 820px) {
+    .bcn-standalone #appShell #sidebar .bcn-brand {
+      display: grid !important;
+      grid-template-columns: 44px minmax(0, 1fr);
+      column-gap: 10px !important;
+      row-gap: 3px !important;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 8px !important;
+      padding: 12px 4px !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .bcn-brand img {
+      grid-row: 1 / span 2;
+      width: 44px !important;
+      height: 50px !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .bcn-brand b {
+      align-self: end;
+      margin: 0;
+      font-size: 17px !important;
+      letter-spacing: 0 !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .bcn-brand small {
+      align-self: start;
+      margin: 0 !important;
+      font-size: 9px !important;
+      letter-spacing: .015em;
+    }
+
+    .bcn-standalone #appShell #sidebar .nav {
+      padding: 4px 0 8px !important;
+      gap: 4px !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .nav-submenu {
+      gap: 10px !important;
+      margin-bottom: 4px !important;
+      padding: 4px 0 !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .bcn-nav-section-title {
+      margin-bottom: 3px;
+    }
+
+    .bcn-standalone #appShell #sidebar .bcn-sidebar-foot {
+      padding: 8px 6px !important;
+      font-size: 12px !important;
+    }
+
+    .bcn-standalone #sidebar .bcn-support-label {
+      font-size: 10px !important;
+      letter-spacing: .04em;
+    }
+
+    .bcn-standalone #sidebar .bcn-support-person {
+      display: flex !important;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0 5px !important;
+      margin: 5px 0 2px !important;
+      line-height: 1.5 !important;
+      font-size: 11px !important;
+    }
+
+    .bcn-standalone #sidebar .bcn-support-person strong {
+      font-size: 12px !important;
+    }
+
+    .bcn-standalone #sidebar .bcn-sidebar-version {
+      margin-top: 5px !important;
+      padding-top: 5px !important;
+    }
+
+    .bcn-standalone #appShell .main > .page {
+      padding: 0 0 20px !important;
+    }
+
+
+  }
+
+  @media (min-width: 761px) and (max-width: 1440px),
+    (min-width: 761px) and (max-height: 820px) {
+    body.bcn-standalone {
+      --bcn-sidebar-width: 252px !important;
+    }
+
+    .bcn-standalone #appShell #sidebar {
+      padding-right: 10px !important;
+      padding-left: 10px !important;
+    }
+
+    .bcn-standalone #appShell #sidebar .nav-item {
+      min-height: 40px !important;
+      padding: 6px 10px !important;
+      gap: 8px !important;
+    }
+
+    .bcn-standalone #appShell > .main {
+      padding-right: 18px !important;
+      padding-left: 18px !important;
+    }
+
+    .bcn-standalone #appShell .bcn-topbar {
+      min-height: 56px !important;
+      margin: 0 -18px 14px !important;
+      padding: 0 18px !important;
+    }
+  }
+}

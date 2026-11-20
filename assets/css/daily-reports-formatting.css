@@ -1,0 +1,126 @@
+#dailyReports #bcnDocumentFormatting {
+  padding: 10px 12px;
+  border: 1px solid #ead8be;
+  border-radius: 10px;
+  background: #fffbf5;
+  flex-shrink: 0;
+}
+
+#dailyReports .bcn-format-heading,
+#dailyReports .bcn-format-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#dailyReports .bcn-format-heading {
+  margin-bottom: 8px;
+  color: #684625;
+  font-size: 13px;
+}
+
+#dailyReports .bcn-format-heading button {
+  padding: 4px 8px;
+  min-height: 28px;
+  font-size: 11px;
+}
+
+#dailyReports .bcn-format-controls {
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+#dailyReports .bcn-format-controls label {
+  flex: 1 1 180px;
+  min-width: 0;
+  margin: 0;
+  display: grid;
+  gap: 5px;
+  font-size: 11px;
+  color: #71624f;
+}
+
+#dailyReports #bcnFormatPart {
+  min-width: 0;
+  width: 100%;
+  height: 38px;
+  margin: 0;
+  padding: 6px 9px;
+}
+
+#dailyReports .bcn-format-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+#dailyReports .bcn-format-buttons button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 38px;
+  padding: 6px 9px;
+  font-size: 11px;
+  border-color: #e4d2b8;
+  background: #fff;
+}
+
+#dailyReports .bcn-format-buttons svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+#dailyReports .bcn-format-buttons button[aria-pressed="true"] {
+  color: #754312;
+  border-color: #b5782c;
+  background: #f7e7ce;
+  box-shadow: inset 0 0 0 1px #b5782c;
+}
+
+#dailyReports #bcnDocumentFormatting p,
+#dailyReports .bcn-format-feedback {
+  display: block;
+  margin: 7px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #71624f;
+}
+
+#dailyReports .bcn-format-feedback:empty {
+  display: none;
+}
+
+#dailyReports #bcnPaperStack [data-format-part] {
+  cursor: pointer;
+}
+
+#dailyReports #bcnPaperStack [data-format-part]:hover,
+#dailyReports #bcnPaperStack [data-format-part]:focus-visible,
+#dailyReports #bcnPaperStack .bcn-format-selected {
+  outline: 1px dashed #b5782c;
+  outline-offset: 3px;
+  background: #fff9ed;
+}
+
+@media (max-width: 600px) {
+  #dailyReports .bcn-format-buttons {
+    width: 100%;
+  }
+
+  #dailyReports .bcn-format-buttons button {
+    flex: 1;
+  }
+}
+
+@media print {
+  #dailyReports #bcnDocumentFormatting {
+    display: none;
+  }
+
+  #dailyReports #bcnPaperStack [data-format-part] {
+    background: transparent !important;
+    outline: none !important;
+  }
+}

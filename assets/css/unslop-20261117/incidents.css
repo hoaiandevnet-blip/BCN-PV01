@@ -1,0 +1,313 @@
+/* Case summaries: compact records, labelled addresses and the existing glass material. */
+@layer bcn-unslop {
+  #dailyReports #bcnSubmittedReportCard {
+    padding: 20px !important;
+    background: var(--glass-panel) !important;
+    box-shadow: var(--glass-shadow) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+  }
+
+  #dailyReports .bcn-incident-summary-card {
+    --incident-blue: #8ebeff;
+    --incident-amber: var(--ui-gold);
+    background: var(--glass-panel) !important;
+    border: 1px solid var(--glass-edge) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+    border-radius: 12px !important;
+    box-shadow: inset 0 1px 0 #ffffff12, 0 4px 16px #00000012 !important;
+  }
+
+  body.theme-light #dailyReports .bcn-incident-summary-card {
+    --incident-blue: #28639e;
+  }
+
+  #dailyReports .bcn-incident-card-header {
+    gap: 16px !important;
+    padding: 16px 20px !important;
+    background: linear-gradient(110deg,
+      color-mix(in srgb, var(--incident-accent, var(--ui-gold)) 8%, transparent), transparent 80%);
+  }
+
+  #dailyReports .bcn-incident-summary-badges {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #dailyReports .bcn-incident-number {
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+  }
+
+  #dailyReports .bcn-incident-summary-title {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+  }
+
+  #dailyReports .bcn-incident-stage {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 8px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    font-size: 12px !important;
+  }
+
+  #dailyReports .bcn-incident-stage svg {
+    align-self: center;
+    width: 14px;
+    height: 14px;
+    flex-basis: 14px;
+    color: var(--ui-muted) !important;
+  }
+
+  #dailyReports .bcn-incident-facts {
+    gap: 8px !important;
+    margin: 0 20px !important;
+    padding: 0 0 16px !important;
+    border: 0 !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.5fr) !important;
+  }
+
+  #dailyReports .bcn-incident-facts > div {
+    padding: 12px !important;
+    border: 1px solid var(--ui-line) !important;
+    border-radius: 8px;
+    background: var(--glass-inset);
+  }
+
+  #dailyReports .bcn-incident-facts > [data-incident-fact='subjects'] {
+    border-color: color-mix(in srgb, var(--incident-blue) 24%, transparent) !important;
+    background: color-mix(in srgb, var(--incident-blue) 7%, transparent);
+  }
+
+  #dailyReports .bcn-incident-facts > [data-incident-fact='damage'] {
+    border-color: var(--ui-gold-line) !important;
+    background: color-mix(in srgb, var(--incident-amber) 7%, transparent);
+  }
+
+  #dailyReports .bcn-incident-facts dt {
+    margin: 0 0 4px !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  #dailyReports .bcn-incident-facts dd {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+  }
+
+  #dailyReports [data-incident-fact='subjects'] dd {
+    color: var(--incident-blue) !important;
+  }
+
+  #dailyReports [data-incident-fact='damage'] dd {
+    color: var(--incident-amber) !important;
+  }
+
+  #dailyReports .bcn-incident-card-body {
+    grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr) !important;
+    align-items: start;
+    gap: 16px !important;
+    padding: 0 20px 16px !important;
+  }
+
+  #dailyReports .bcn-incident-summary-card h5 {
+    margin: 0 0 12px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    gap: 8px !important;
+  }
+
+  #dailyReports .bcn-incident-subjects {
+    gap: 8px !important;
+  }
+
+  #dailyReports .bcn-incident-subject {
+    grid-template-columns: 28px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 12px;
+    border: 1px solid var(--ui-line);
+    border-radius: 8px;
+    background: var(--glass-inset);
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  #dailyReports .bcn-incident-person-number {
+    min-height: 28px !important;
+    border-radius: 6px !important;
+    border-color: color-mix(in srgb, var(--incident-blue) 25%, transparent) !important;
+    color: var(--incident-blue) !important;
+    background: color-mix(in srgb, var(--incident-blue) 8%, transparent);
+  }
+
+  #dailyReports .bcn-incident-person-content {
+    min-width: 0;
+  }
+
+  #dailyReports .bcn-incident-person-name strong {
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    color: var(--ui-text) !important;
+  }
+
+  #dailyReports .bcn-incident-person-meta {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 4px;
+    color: var(--ui-secondary) !important;
+    font-size: 11px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports .bcn-incident-person-meta > span + span {
+    padding-left: 12px;
+    border-left: 1px solid var(--ui-line-strong);
+  }
+
+  #dailyReports .bcn-incident-person-locations {
+    display: grid;
+    gap: 6px;
+    margin: 10px 0 0;
+    padding-top: 8px;
+    border-top: 1px solid var(--ui-line);
+  }
+
+  #dailyReports .bcn-incident-person-address {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 4px 12px;
+    margin: 0 !important;
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  #dailyReports .bcn-incident-person-address dt {
+    color: var(--ui-muted) !important;
+    font-size: 11px;
+    font-weight: 400;
+  }
+
+  #dailyReports .bcn-incident-person-address dd {
+    margin: 0;
+    color: var(--ui-secondary) !important;
+  }
+
+  #dailyReports .bcn-incident-evidence {
+    padding: 12px !important;
+    border: 1px solid var(--ui-gold-line) !important;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--incident-amber) 5%, transparent);
+  }
+
+  #dailyReports .bcn-incident-evidence h5 {
+    color: var(--ui-gold) !important;
+    padding-bottom: 8px;
+    margin-bottom: 8px !important;
+    border-bottom: 1px solid var(--ui-gold-line);
+  }
+
+  #dailyReports .bcn-incident-evidence p {
+    font-size: 12px !important;
+    line-height: 1.7 !important;
+  }
+
+  #dailyReports .bcn-incident-card-footer {
+    padding: 8px 20px !important;
+    background: var(--glass-inset) !important;
+    border-top-color: var(--ui-line) !important;
+  }
+
+  #dailyReports .bcn-incident-view {
+    min-height: 36px !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+  }
+
+  #dailyReports .bcn-incident-view:focus-visible {
+    outline: 2px solid var(--ui-gold);
+    outline-offset: 3px;
+  }
+
+  #dailyReports .bcn-reader-section .bcn-incident-facts {
+    padding-top: 16px !important;
+  }
+
+  @media (max-width: 1000px) {
+    #dailyReports .bcn-incident-card-body {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #dailyReports #bcnSubmittedReportCard {
+      padding: 12px !important;
+    }
+
+    #dailyReports .bcn-incident-card-header {
+      padding: 12px !important;
+      gap: 12px !important;
+    }
+
+    #dailyReports .bcn-incident-summary-title {
+      font-size: 14px !important;
+    }
+
+    #dailyReports .bcn-incident-facts {
+      margin: 0 12px !important;
+      padding-bottom: 12px !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    #dailyReports .bcn-incident-facts > div {
+      padding: 8px !important;
+    }
+
+    #dailyReports .bcn-incident-facts dd {
+      font-size: 16px !important;
+    }
+
+    #dailyReports .bcn-incident-facts [data-incident-fact='damage'] {
+      grid-column: 1 / -1;
+    }
+
+    #dailyReports .bcn-incident-card-body {
+      padding: 0 12px 12px !important;
+      gap: 12px !important;
+    }
+
+    #dailyReports .bcn-incident-subject {
+      grid-template-columns: 24px minmax(0, 1fr) !important;
+      padding: 8px;
+      gap: 8px !important;
+    }
+
+    #dailyReports .bcn-incident-person-number {
+      min-height: 24px !important;
+    }
+
+    #dailyReports .bcn-incident-person-meta {
+      display: grid;
+      gap: 2px;
+    }
+
+    #dailyReports .bcn-incident-person-meta > span + span {
+      padding-left: 0;
+      border: 0;
+    }
+
+    #dailyReports .bcn-incident-person-address {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2px;
+    }
+
+    #dailyReports .bcn-incident-card-footer {
+      padding: 8px 12px !important;
+    }
+  }
+}

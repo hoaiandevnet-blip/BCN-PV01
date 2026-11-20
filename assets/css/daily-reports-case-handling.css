@@ -1,0 +1,183 @@
+/* Group saved handling facts without changing the report's contents. */
+@layer bcn-unslop {
+  #dailyReports #bcnDetailHandling {
+    --handling-red: var(--ui-error);
+    --handling-red-surface: color-mix(in srgb, var(--ui-error) 10%, var(--ui-surface));
+    padding-inline: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  body.theme-dark #dailyReports #bcnDetailHandling {
+    --handling-red: color-mix(in srgb, var(--ui-error) 85%, white);
+  }
+
+  #dailyReports #bcnDetailHandling :is(dl, dd) {
+    margin: 0 !important;
+  }
+
+  #dailyReports #bcnDetailHandling dt {
+    margin: 0 0 4px !important;
+    color: var(--ui-secondary) !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+
+  #dailyReports #bcnDetailHandling dd {
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-dossier-handling-summary {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) !important;
+    align-items: start !important;
+    gap: 16px !important;
+    padding: 0 0 20px !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-dossier-handling-summary > div {
+    min-width: 0 !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-dossier-handling-summary dd {
+    font-weight: 600 !important;
+    min-height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-status {
+    display: inline-block !important;
+    padding: 4px 12px !important;
+    border-radius: 6px !important;
+    color: var(--ui-secondary) !important;
+    background: var(--ui-raised) !important;
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-status[data-tone="resolved"] {
+    color: var(--ui-ok) !important;
+    background: var(--ui-ok-soft) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-status[data-tone="pending"] {
+    color: var(--ui-warn) !important;
+    background: var(--ui-warn-soft) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-groups {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) !important;
+    align-items: start !important;
+    gap: 16px !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group {
+    min-width: 0 !important;
+    border: 1px solid var(--ui-line-strong) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    background: var(--ui-surface) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group:only-child {
+    grid-column: 1 / -1 !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group h5 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    background: var(--ui-raised) !important;
+    border-bottom: 1px solid var(--ui-line) !important;
+    color: var(--ui-gold) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.65 !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group h5 svg {
+    width: 17px !important;
+    height: 17px !important;
+    flex: 0 0 17px !important;
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-decision-number {
+    display: block;
+    padding: 8px 12px;
+    border-left: 3px solid var(--handling-red);
+    border-radius: 4px;
+    color: var(--handling-red) !important;
+    background: var(--handling-red-surface);
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    line-height: 1.6 !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group dl {
+    padding: 16px !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-group dl > div + div {
+    margin-top: 16px !important;
+    padding-top: 12px !important;
+    border-top: 1px solid var(--ui-line) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-fine {
+    margin-top: 16px !important;
+    padding: 16px !important;
+    border: 1px solid var(--ui-gold-line) !important;
+    border-radius: 8px !important;
+    background: var(--ui-gold-soft) !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-fine > div {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: baseline !important;
+    justify-content: space-between !important;
+    gap: 8px 24px !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-fine dt {
+    margin: 0 !important;
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-fine dd {
+    color: var(--ui-gold) !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    font-variant-numeric: tabular-nums !important;
+  }
+
+  #dailyReports #bcnDetailHandling .bcn-handling-fine dd span {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+  }
+
+  @media (max-width: 720px) {
+    #dailyReports #bcnDetailHandling .bcn-handling-groups {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #dailyReports #bcnDetailHandling .bcn-dossier-handling-summary {
+      grid-template-columns: minmax(0, 1fr) !important;
+      gap: 16px !important;
+    }
+
+  }
+}

@@ -1,0 +1,458 @@
+/* Reporting and case recording guides, confined to the Daily Reports module. */
+#dailyReports.bcn-reference #bcnOverviewPanels {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr));
+  gap: 18px;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) {
+  padding: 22px;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #e9edf3;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-panel-header > div {
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) h3 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-panel-description {
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #e8d5b9;
+  border-radius: 12px;
+  background: #fff6e7;
+  color: #a36920;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-steps {
+  --process-ink: #1d4ed8;
+  --process-tint: #eff6ff;
+  --process-line: #c7dcfa;
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-steps > li {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #e5eaf1;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-steps > li::before {
+  display: none;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  :is([data-process-step="cutoff"], [data-process-tone="amber"]) {
+  --process-ink: #9a5612;
+  --process-tint: #fff8e7;
+  --process-line: #edd8ad;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  :is([data-process-step="review"], [data-process-tone="violet"]) {
+  --process-ink: #6d28d9;
+  --process-tint: #f5f3ff;
+  --process-line: #ddd0fa;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  :is([data-process-step="export"], [data-process-tone="green"]) {
+  --process-ink: #047857;
+  --process-tint: #ecfdf5;
+  --process-line: #bce9d6;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--process-line);
+  border-radius: 10px;
+  background: var(--process-tint);
+  color: var(--process-ink);
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-content {
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-number {
+  color: #6b7b91;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-marker {
+  padding: 3px 8px;
+  border: 1px solid var(--process-line);
+  border-radius: 6px;
+  background: var(--process-tint);
+  color: var(--process-ink);
+  font-size: 10px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) h4 {
+  margin: 7px 0 4px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-content p {
+  margin: 0;
+  color: #6b7b91;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-documents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+#dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-documents span {
+  padding: 4px 8px;
+  border: 1px solid #dce5e1;
+  border-radius: 6px;
+  background: #fff;
+  color: #4b635a;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide) {
+    padding: 16px;
+  }
+
+  #dailyReports.bcn-reference :is(#bcnReportProcess, #bcnCaseRecordingRules, #bcnLegalVersionGuide)
+  .bcn-process-steps > li {
+    gap: 10px;
+    padding: 12px;
+  }
+}
+
+#dailyReports.bcn-reference #bcnUpdatesColumns {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1040px) {
+  #dailyReports.bcn-reference #bcnUpdatesColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+#dailyReports.bcn-reference #bcnUpdatesPanel,
+#dailyReports.bcn-reference #bcnCaseRecordingRules {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-line);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: var(--ui-shadow);
+}
+
+#dailyReports.bcn-reference .bcn-updates-meta-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  background: var(--ui-field);
+  border: 1px solid var(--ui-line);
+  font-size: 13px;
+  color: var(--ui-secondary);
+}
+
+#dailyReports.bcn-reference .bcn-updates-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ui-text);
+}
+
+#dailyReports.bcn-reference .bcn-updates-count svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ui-gold);
+}
+
+#dailyReports.bcn-reference .bcn-updates-date-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: var(--ui-raised);
+  border: 1px solid var(--ui-line);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ui-text);
+}
+
+#dailyReports.bcn-reference .bcn-updates-date-badge svg {
+  width: 14px;
+  height: 14px;
+  color: var(--ui-gold);
+}
+
+#dailyReports.bcn-reference .bcn-update-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: var(--ui-raised);
+  border: 1px solid var(--ui-line);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+#dailyReports.bcn-reference .bcn-update-item:hover {
+  border-color: var(--ui-gold-line);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transform: translateY(-1px);
+}
+
+#dailyReports.bcn-reference .bcn-update-item-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#dailyReports.bcn-reference .bcn-update-code {
+  display: none !important;
+}
+
+#dailyReports.bcn-reference .bcn-event-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.14);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+#dailyReports.bcn-reference .bcn-event-badge svg {
+  width: 12px;
+  height: 12px;
+}
+
+#dailyReports.bcn-reference .bcn-update-item-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ui-text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+#dailyReports.bcn-reference .bcn-update-item-summary {
+  font-size: 13px;
+  color: var(--ui-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+#dailyReports.bcn-reference .bcn-update-item-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--ui-secondary);
+}
+
+#dailyReports.bcn-reference .bcn-meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+#dailyReports.bcn-reference .bcn-meta-tag svg {
+  width: 13px;
+  height: 13px;
+  opacity: 0.85;
+}
+
+#dailyReports.bcn-reference .bcn-update-item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ui-line);
+}
+
+#dailyReports.bcn-reference .bcn-update-item-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#dailyReports.bcn-reference .bcn-update-item-actions svg {
+  width: 14px;
+  height: 14px;
+}
+
+#dailyReports.bcn-reference .bcn-updates-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 36px 20px;
+  border-radius: 12px;
+  background: var(--ui-field);
+  border: 1px dashed var(--ui-line);
+}
+
+#dailyReports.bcn-reference .bcn-updates-empty .bcn-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--ui-raised);
+  border: 1px solid var(--ui-line);
+  color: var(--ui-secondary);
+  margin-bottom: 12px;
+}
+
+#dailyReports.bcn-reference .bcn-updates-empty .bcn-empty-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+#dailyReports.bcn-reference .bcn-updates-empty h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ui-text);
+  margin: 0 0 6px 0;
+}
+
+#dailyReports.bcn-reference .bcn-updates-empty p {
+  font-size: 13px;
+  color: var(--ui-secondary);
+  margin: 0;
+  max-width: 380px;
+}
+
+#dailyReports.bcn-reference :is(#bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-steps > li {
+  border-left: 3px solid var(--process-line);
+}
+
+#dailyReports.bcn-reference :is(#bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-number {
+  color: var(--process-ink);
+  white-space: nowrap;
+}
+
+#dailyReports.bcn-reference :is(#bcnCaseRecordingRules, #bcnLegalVersionGuide) h4 {
+  margin: 0;
+}
+
+#dailyReports.bcn-reference :is(#bcnCaseRecordingRules, #bcnLegalVersionGuide) .bcn-process-content p {
+  margin-top: 6px;
+}
+
+#dailyReports.bcn-reference #bcnLegalVersionGuide .bcn-version-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid #e9edf3;
+}
+#dailyReports.bcn-reference #bcnLegalVersionGuide .bcn-version-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1 1 190px;
+  min-height: 42px;
+}
+#dailyReports.bcn-reference #bcnLegalVersionGuide .bcn-version-actions svg {
+  width: 18px;
+  height: 18px;
+}

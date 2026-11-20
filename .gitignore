@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+.env
+.private/
+outputs/
+assets/map-data/
+assets/map-tiles/standard/

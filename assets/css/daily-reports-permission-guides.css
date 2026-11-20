@@ -1,0 +1,205 @@
+/* Guidance panels only; assignment forms and the system sidebar keep their own styles. */
+#dailyReports.bcn-reference #bcnPermissionGuides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr));
+  align-items: stretch;
+  gap: 18px;
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-card {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-panel-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e9edf3;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-heading {
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides h3 {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-panel-description {
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ead8cd;
+  border-radius: 12px;
+  background: #f8eee8;
+  color: #7c3930;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-card--unlock .bcn-guide-symbol {
+  border-color: #ecd7b6;
+  background: #fff6e7;
+  color: #a36920;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides :is(ul, ol) {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-metrics {
+  display: grid;
+  gap: 12px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-metrics li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e6ebf2;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-metric-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #e8f0fc;
+  color: #35659d;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides [data-metric-group="intake"] .bcn-guide-metric-icon {
+  background: #eeeafb;
+  color: #6e59a5;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides [data-metric-group="investigation"] .bcn-guide-metric-icon {
+  background: #e4f3ee;
+  color: #247863;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides strong {
+  display: block;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.55;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides li p {
+  margin: 5px 0 0;
+  color: #6b7b91;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-steps {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-steps li {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 14px;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-steps li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  bottom: -12px;
+  left: 15px;
+  width: 1px;
+  background: #e7d6bb;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-step-number {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e8d2ad;
+  border-radius: 50%;
+  background: #fff7e9;
+  color: #99601b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-step-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  min-height: 32px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-time-limit {
+  padding: 3px 8px;
+  border: 1px solid #ead6b6;
+  border-radius: 6px;
+  background: #fff8eb;
+  color: #915d22;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-actions {
+  padding-top: 16px;
+  margin-top: 18px;
+  border-top: 1px solid #e9edf3;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-actions button {
+  max-width: 100%;
+  min-height: 42px;
+  gap: 10px;
+}
+
+#dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-actions svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-card {
+    padding: 16px;
+  }
+
+  #dailyReports.bcn-reference #bcnPermissionGuides .bcn-guide-metrics li {
+    padding: 12px;
+    gap: 10px;
+  }
+}

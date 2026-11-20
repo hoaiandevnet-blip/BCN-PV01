@@ -1,0 +1,10 @@
+/* The report submenu inherits all colors, icons and active states from the main sidebar. */
+#mainSidebar #dailyReportNavGroup [hidden] {
+  display: none !important;
+}
+
+@media (min-width: 761px) {
+  body:not(.sidebar-collapsed) #mainSidebar #dailyReportNavGroup.is-open > .nav-submenu {
+    max-height: none;
+  }
+}

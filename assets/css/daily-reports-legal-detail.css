@@ -1,0 +1,198 @@
+/* Apply only while the shared BCN detail dialog displays a legal article. */
+#dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) {
+  position: fixed;
+  inset: 0;
+  margin: auto !important;
+  width: min(740px, calc(100vw - 32px));
+  height: fit-content;
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid #e1d6c7 !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  color: #273348;
+  box-shadow: 0 28px 90px rgba(15, 23, 42, .28) !important;
+}
+
+#dailyReports.bcn-reference #bcnDetail[open]:has(.bcn-law-detail) {
+  display: flex;
+  flex-direction: column;
+}
+
+#dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail)::backdrop {
+  background: rgba(15, 23, 42, .52);
+  backdrop-filter: blur(3px);
+}
+
+#dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) #bcnDetailClose {
+  position: absolute;
+  top: 20px;
+  right: 22px;
+  z-index: 1;
+  min-height: 36px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, .9) !important;
+  color: #75491c !important;
+  border-color: #dcc5a7 !important;
+}
+
+#dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) #bcnDetailBody,
+#dailyReports.bcn-reference .bcn-law-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+}
+
+#dailyReports.bcn-reference .bcn-law-header {
+  flex: 0 0 auto;
+  padding: 24px;
+  border-bottom: 1px solid #eee4d7;
+  background: linear-gradient(120deg, #fff7e9, #fffdf9);
+}
+
+#dailyReports.bcn-reference .bcn-law-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 82px;
+}
+
+#dailyReports.bcn-reference .bcn-law-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #ebd2ac;
+  border-radius: 12px;
+  background: #f9e8cc;
+  color: #935a1a;
+}
+
+#dailyReports.bcn-reference .bcn-law-symbol svg { width: 24px; height: 24px; }
+#dailyReports.bcn-reference .bcn-law-kicker {
+  margin: 0 0 3px;
+  color: #805626;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#dailyReports.bcn-reference #bcnLegalArticle { color: #8b5216; font-size: 15px; font-weight: 850; }
+#dailyReports.bcn-reference #bcnLegalTitle {
+  margin: 16px 0 0;
+  color: #243249;
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 850;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference .bcn-law-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 22px 24px;
+}
+
+#dailyReports.bcn-reference .bcn-law-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid #e5eaf1;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+#dailyReports.bcn-reference .bcn-law-meta-wide { grid-column: 1 / -1; }
+#dailyReports.bcn-reference .bcn-law-meta dt {
+  margin-bottom: 5px;
+  color: #66768e;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+#dailyReports.bcn-reference .bcn-law-meta dd {
+  margin: 0;
+  color: #2b3b51;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference .bcn-law-content { margin-top: 20px; }
+#dailyReports.bcn-reference .bcn-law-content h3 { margin: 0 0 8px; font-size: 14px; }
+#dailyReports.bcn-reference .bcn-law-content p,
+#dailyReports.bcn-reference .bcn-law-content .bcn-legal-text {
+  margin: 0;
+  color: #506078;
+  font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference .bcn-law-content .bcn-legal-text { white-space: pre-wrap; }
+#dailyReports.bcn-reference .bcn-law-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-left: 3px solid #c49347;
+  border-radius: 6px;
+  background: #fff8ec;
+  color: #795525;
+}
+
+#dailyReports.bcn-reference .bcn-law-note svg { flex: 0 0 17px; width: 17px; height: 17px; margin-top: 2px; }
+#dailyReports.bcn-reference .bcn-law-note p { margin: 0; font-size: 12px; line-height: 1.65; }
+#dailyReports.bcn-reference .bcn-law-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 0 0 auto;
+  padding: 16px 24px;
+  border-top: 1px solid #e5eaf1;
+  background: #fafbfd;
+}
+
+#dailyReports.bcn-reference .bcn-law-footer > span { color: #66768e; font-size: 12px; }
+#dailyReports.bcn-reference .bcn-law-source { text-decoration: none; font-size: 13px; }
+#dailyReports.bcn-reference .bcn-law-source svg { width: 17px; height: 17px; }
+
+@media (max-height: 520px) and (min-width: 561px) {
+  #dailyReports.bcn-reference .bcn-law-header { padding: 16px 20px; }
+  #dailyReports.bcn-reference .bcn-law-symbol { flex-basis: 32px; width: 32px; height: 32px; border-radius: 9px; }
+  #dailyReports.bcn-reference .bcn-law-symbol svg { width: 20px; height: 20px; }
+  #dailyReports.bcn-reference #bcnLegalTitle { margin-top: 10px; font-size: 18px; }
+  #dailyReports.bcn-reference .bcn-law-scroll { padding: 16px 20px; }
+  #dailyReports.bcn-reference .bcn-law-footer { padding: 12px 20px; }
+  #dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) #bcnDetailClose { top: 16px; right: 20px; }
+}
+
+@media (max-width: 560px) {
+  #dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    border-radius: 14px !important;
+  }
+
+  #dailyReports.bcn-reference #bcnDetail:has(.bcn-law-detail) #bcnDetailClose { top: 16px; right: 16px; }
+  #dailyReports.bcn-reference .bcn-law-header { padding: 18px; }
+  #dailyReports.bcn-reference #bcnLegalTitle { margin-top: 12px; font-size: 19px; }
+  #dailyReports.bcn-reference .bcn-law-scroll { padding: 18px; }
+  #dailyReports.bcn-reference .bcn-law-meta { grid-template-columns: 1fr; gap: 14px; padding: 14px; }
+  #dailyReports.bcn-reference .bcn-law-footer { flex-direction: column; align-items: stretch; gap: 10px; padding: 14px 18px; }
+  #dailyReports.bcn-reference .bcn-law-source { width: 100%; min-height: 42px; }
+}

@@ -1,0 +1,91 @@
+#home .unit-work-values {
+  --work-blue: #8bbcff;
+  --work-violet: #c4a7fa;
+  --work-cyan: #7edbe6;
+  --work-amber: #f2cf78;
+  --work-orange: #ffb183;
+  --work-green: #78dfaf;
+  gap: 14px;
+}
+body[data-appearance-mode="light"] #home .unit-work-values {
+  --work-blue: #195eaf;
+  --work-violet: #7441b5;
+  --work-cyan: #076a77;
+  --work-amber: #805d07;
+  --work-orange: #a2450b;
+  --work-green: #087148;
+}
+#home .unit-work-values [data-work-field="patrol_rounds"] { --work-tone: var(--work-blue); }
+#home .unit-work-values [data-work-field="patrol_officers"] { --work-tone: var(--work-violet); }
+#home .unit-work-values [data-work-field="patrol_vehicles_checked"] { --work-tone: var(--work-cyan); }
+#home .unit-work-values [data-work-field="administrative_checks"] { --work-tone: var(--work-amber); }
+#home .unit-work-values [data-work-field="administrative_penalty_decisions"] { --work-tone: var(--work-orange); }
+#home .unit-work-values [data-work-field="administrative_fines"] { --work-tone: var(--work-green); }
+#home .unit-work-values article {
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-areas: "icon label" "value value" "unit unit";
+  align-items: center;
+  gap: 10px;
+  padding: 16px 14px;
+  border-color: color-mix(in srgb, var(--work-tone) 30%, var(--ui-line));
+  border-left: 3px solid var(--work-tone);
+  border-radius: 12px;
+}
+#home .unit-work-values .unit-work-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  min-height: 0;
+  border: 1px solid color-mix(in srgb, var(--work-tone) 30%, transparent);
+  border-radius: 9px;
+}
+#home .unit-work-values .unit-work-icon svg { width: 20px; height: 20px; }
+#home .unit-work-values .unit-work-label {
+  grid-area: label;
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+#home .unit-work-values strong {
+  grid-area: value;
+  margin-top: 4px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+  font-variant-numeric: tabular-nums;
+}
+#home .unit-work-values [data-work-field="administrative_fines"] strong {
+  font-size: clamp(24px, 2.25vw, 32px);
+}
+#home .unit-work-values small { grid-area: unit; font-size: 11px; line-height: 1.5; }
+@layer bcn-glass {
+  #home .unit-work-values article {
+    background: linear-gradient(125deg, color-mix(in srgb, var(--work-tone) 10%, transparent), transparent 85%),
+      var(--ui-surface) !important;
+  }
+  #home .unit-work-values .unit-work-icon {
+    background: color-mix(in srgb, var(--work-tone) 13%, transparent) !important;
+  }
+  #home .unit-work-values .unit-work-icon,
+  #home .unit-work-values .unit-work-icon svg,
+  #home .unit-work-values article strong { color: var(--work-tone) !important; }
+  #home .unit-work-values .unit-work-label { color: var(--ui-text) !important; }
+}
+@media (max-width: 600px) {
+  #home .unit-work-values { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  #home .unit-work-values article {
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-areas: "icon label" ". value" ". unit";
+    gap: 6px 12px;
+    padding: 14px;
+  }
+  #home .unit-work-values .unit-work-label { min-height: 34px; }
+  #home .unit-work-values strong { font-size: 30px; margin-top: 6px; }
+  #home .unit-work-values [data-work-field="administrative_fines"] strong { font-size: 26px; }
+}

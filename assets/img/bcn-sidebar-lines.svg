@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 1000" fill="none" preserveAspectRatio="none">
+  <defs>
+    <path id="crown" d="M-82 1C-16 155 156 209 353 57"/>
+    <path id="ribbon" d="M-124 1032C-44 784 260 863 389 547"/>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="white" stop-opacity=".7"/>
+      <stop offset=".4" stop-color="white" stop-opacity=".16"/>
+      <stop offset="1" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <g stroke="white" stroke-width=".8" opacity=".75">
+    <use href="#crown"/>
+    <use href="#crown" transform="translate(0 -16)"/>
+    <use href="#crown" transform="translate(0 -32)"/>
+    <use href="#crown" transform="translate(0 -48)"/>
+    <use href="#crown" transform="translate(0 -64)"/>
+    <use href="#crown" transform="translate(0 -80)"/>
+  </g>
+  <g stroke="url(#fade)" stroke-width=".9">
+    <use href="#ribbon"/>
+    <use href="#ribbon" transform="translate(14 0)"/>
+    <use href="#ribbon" transform="translate(28 0)"/>
+    <use href="#ribbon" transform="translate(42 0)"/>
+    <use href="#ribbon" transform="translate(56 0)"/>
+    <use href="#ribbon" transform="translate(70 0)"/>
+    <use href="#ribbon" transform="translate(84 0)"/>
+    <use href="#ribbon" transform="translate(98 0)"/>
+    <use href="#ribbon" transform="translate(112 0)"/>
+  </g>
+  <g stroke="white" stroke-width=".75" opacity=".4">
+    <path d="M300 224V378L276 402V492M308 207V385L284 409V540"/>
+    <path d="M21 698V747L9 759V847"/>
+    <circle cx="276" cy="498" r="3"/>
+    <circle cx="284" cy="546" r="3"/>
+    <circle cx="21" cy="692" r="3"/>
+  </g>
+</svg>

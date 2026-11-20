@@ -1,0 +1,562 @@
+#home .dash-chart-panel {
+  container: trend-panel / inline-size;
+  min-width: 0;
+  overflow: hidden;
+}
+#home .dash-trend-heading {
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 16px;
+}
+#home .dash-trend-heading-main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+#home .dash-trend-symbol {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--ui-gold-line);
+  flex-shrink: 0;
+}
+#home .dash-trend-symbol svg {
+  width: 21px;
+  height: 21px;
+}
+#home .dash-trend-heading h2 {
+  font-size: 21px;
+  margin-top: 3px;
+  font-weight: 680;
+}
+#home .dash-trend-range {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+#home .dash-trend-range svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+#home .dash-trend-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 19px 22px 0;
+  font-size: 11px;
+}
+#home .dash-trend-legend {
+  display: flex;
+  gap: 10px 18px;
+  flex-wrap: wrap;
+}
+#home .dash-trend-legend > span,
+#home .dash-trend-tooltip div > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+#home .dash-trend-key-bars {
+  display: inline-block;
+  width: 9px;
+  height: 11px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+#home .dash-trend-key-line {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  flex-shrink: 0;
+}
+#home .dash-trend-key-line::after {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: inherit;
+}
+#home .dash-trend-key-current {
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: #f59e0b;
+  box-shadow: 0 0 5px rgba(245, 158, 11, 0.6);
+  flex-shrink: 0;
+}
+#home .dash-trend-key-current::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid #fbbf24;
+  border-right: 2px solid #fbbf24;
+  transform: rotate(45deg);
+}
+#home .dash-trend-current {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+#home .dash-trend-current-arrow {
+  fill: #f59e0b;
+  stroke: #fef08a;
+}
+#home .dash-trend-unit {
+  white-space: nowrap;
+  font-size: 10px;
+}
+#home .dash-trend-plot {
+  position: relative;
+  flex: 1;
+  min-height: 300px;
+  margin: 3px 17px 8px 12px;
+}
+#home .dash-trend-canvas {
+  position: absolute;
+  inset: 0;
+}
+#home .dash-trend-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+}
+#home .dash-trend-svg text {
+  font-family: Inter, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+#home .dash-trend-axis {
+  font-size: 11px;
+  font-weight: 450;
+}
+#home .dash-trend-axis.is-selected {
+  font-weight: 750;
+}
+#home .dash-trend-value {
+  font-size: 13px;
+  font-weight: 650;
+  paint-order: stroke;
+  stroke-width: 4px;
+}
+#home .dash-trend-grid {
+  stroke-width: 1;
+  stroke-dasharray: 2 5;
+}
+#home .dash-trend-grid.is-zero {
+  stroke-dasharray: none;
+}
+#home .dash-trend-band {
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+#home .dash-trend-column.is-selected .dash-trend-band {
+  opacity: .6;
+}
+#home .dash-trend-column.is-active .dash-trend-band {
+  opacity: 1;
+}
+#home .dash-trend-column.is-active .dash-trend-bar {
+  filter: brightness(1.12);
+}
+#home .dash-trend-hit {
+  fill: transparent;
+  cursor: pointer;
+}
+#home [data-trend-point] {
+  outline: none;
+}
+#home [data-trend-point]:focus-visible .dash-trend-hit {
+  stroke: var(--ui-gold);
+  stroke-width: 1;
+  rx: 5px;
+}
+#home .dash-trend-reference {
+  fill: none;
+  stroke-width: 2.25;
+  stroke-dasharray: 5 5;
+  stroke-linecap: round;
+}
+#home .dash-trend-reference-dot {
+  stroke-width: 2;
+}
+#home .dash-trend-zero {
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+#home .dash-trend-tooltip {
+  position: absolute;
+  z-index: 10;
+  width: max-content;
+  max-width: calc(100% - 16px);
+  min-width: min(250px, calc(100% - 16px));
+  padding: 13px 15px 0;
+  border-radius: 14px;
+  pointer-events: none;
+  transition: left 0.12s cubic-bezier(0.16, 1, 0.3, 1), top 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#home .dash-trend-tooltip[hidden] {
+  display: none;
+}
+#home .dash-trend-tooltip:not([hidden]) {
+  animation: dash-tooltip-pop 0.16s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes dash-tooltip-pop {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+#home .dash-trend-tooltip header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+#home .dash-tooltip-date {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #f8fafc;
+}
+#home .dash-tooltip-cal {
+  color: var(--ui-gold, #d6b882);
+  flex-shrink: 0;
+}
+#home .dash-tooltip-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7.5px;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+}
+#home .dash-tooltip-badge.is-ok {
+  background: rgba(111, 207, 159, 0.15);
+  color: #6fcf9f;
+  border: 1px solid rgba(111, 207, 159, 0.32);
+}
+#home .dash-tooltip-badge.is-missing {
+  background: rgba(227, 169, 92, 0.15);
+  color: #e3a95c;
+  border: 1px solid rgba(227, 169, 92, 0.32);
+}
+#home .dash-trend-tooltip > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 5px 6px;
+  margin: 3px -6px;
+  border-radius: 6px;
+}
+#home .dash-trend-tooltip > div > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 500;
+}
+#home .dash-trend-tooltip strong {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: #f8fafc;
+}
+#home .dash-trend-tooltip .dash-trend-key-bars {
+  display: inline-block;
+  width: 10px;
+  height: 13px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #ec6f76 0%, #e3a95c 55%, #d6b882 100%);
+  box-shadow: 0 0 5px rgba(227, 169, 92, 0.4);
+  flex-shrink: 0;
+}
+#home .dash-trend-tooltip .dash-trend-key-line {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: #60a5fa;
+  border-radius: 1px;
+  box-shadow: 0 0 4px rgba(96, 165, 250, 0.5);
+  flex-shrink: 0;
+}
+#home .dash-trend-tooltip .dash-trend-key-line::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: -2.5px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 5px rgba(96, 165, 250, 0.8);
+}
+#home .dash-trend-tooltip footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11.5px;
+  font-weight: 650;
+  padding: 9px 15px;
+  margin: 10px -15px 0;
+  border-radius: 0 0 13px 13px;
+}
+#home .dash-tooltip-trend-icon {
+  flex-shrink: 0;
+}
+#home .dash-trend-insights {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  margin: 0 22px;
+  padding: 16px 0;
+  border-top: 1px solid var(--ui-line);
+}
+#home .dash-trend-insights > div {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+}
+#home .dash-trend-insights svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+#home .dash-trend-insights > div > span {
+  display: grid;
+  gap: 6px;
+  font-size: 11px;
+}
+#home .dash-trend-insights strong {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 16px;
+}
+#home .dash-trend-insights small {
+  font-size: 10px;
+  font-weight: 450;
+}
+#home .dash-trend-notes {
+  border-top: 1px solid var(--ui-line);
+  padding: 0 22px;
+}
+#home .dash-trend-notes summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 13px 0;
+  font-size: 11px;
+  cursor: pointer;
+  list-style: none;
+}
+#home .dash-trend-notes summary::-webkit-details-marker {
+  display: none;
+}
+#home .dash-trend-notes svg {
+  width: 14px;
+  height: 14px;
+}
+#home .dash-trend-notes summary svg:last-child {
+  margin-left: auto;
+}
+#home .dash-trend-notes[open] summary svg:last-child {
+  transform: rotate(180deg);
+}
+#home .dash-trend-notes p {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 0 13px;
+}
+
+@layer bcn-glass {
+  #home .dash-trend-heading {
+    background: linear-gradient(110deg, color-mix(in srgb, var(--ui-gold) 5%, transparent), transparent 70%);
+  }
+  #home .dash-trend-symbol {
+    color: var(--ui-gold) !important;
+    background: var(--ui-gold-soft) !important;
+  }
+  #home .dash-trend-range,
+  #home .dash-trend-toolbar,
+  #home .dash-trend-insights > div > span,
+  #home .dash-trend-notes summary,
+  #home .dash-trend-notes p {
+    color: var(--ui-secondary) !important;
+  }
+  #home .dash-trend-key-bars {
+    background: var(--dash-blue) !important;
+  }
+  #home .dash-trend-key-line {
+    background: repeating-linear-gradient(to right, var(--dash-blue) 0 5px, transparent 5px 9px) !important;
+  }
+  #home .dash-trend-key-line::after {
+    background: var(--dash-blue);
+  }
+  #home .dash-trend-grid {
+    stroke: var(--ui-line);
+  }
+  #home .dash-trend-axis {
+    fill: var(--ui-secondary);
+  }
+  #home .dash-trend-axis.is-selected {
+    fill: var(--ui-text);
+  }
+  #home .dash-trend-value {
+    fill: var(--ui-text);
+    stroke: var(--ui-surface);
+  }
+  #home .dash-trend-band {
+    fill: color-mix(in srgb, var(--ui-text) 5%, transparent);
+  }
+  #home .dash-trend-column {
+    --trend-color: var(--dash-blue);
+  }
+  #home .dash-trend-stop {
+    stop-color: var(--trend-color);
+  }
+  #home .dash-trend-zero {
+    stroke: var(--trend-color);
+  }
+  #home .dash-trend-missing {
+    fill: var(--ui-muted);
+  }
+  #home .dash-trend-reference {
+    stroke: var(--dash-blue);
+  }
+  #home .dash-trend-reference-dot {
+    fill: var(--dash-blue);
+    stroke: var(--ui-surface);
+  }
+  #home .dash-trend-tooltip {
+    background: rgba(24, 26, 31, 0.94) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 20px 44px -10px rgba(0, 0, 0, 0.78),
+      0 0 0 1px rgba(255, 255, 255, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+    color: var(--ui-text, #f8fafc) !important;
+  }
+  #home .dash-trend-tooltip div > span {
+    color: #cbd5e1 !important;
+  }
+  #home .dash-trend-tooltip footer {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #94a3b8 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  #home .dash-trend-tooltip footer[data-direction="up"] {
+    background: rgba(239, 68, 68, 0.13) !important;
+    color: #f87171 !important;
+    border-top: 1px solid rgba(239, 68, 68, 0.28) !important;
+  }
+  #home .dash-trend-tooltip footer[data-direction="down"] {
+    background: rgba(34, 197, 94, 0.13) !important;
+    color: #4ade80 !important;
+    border-top: 1px solid rgba(34, 197, 94, 0.28) !important;
+  }
+  #home .dash-trend-tooltip footer[data-direction="flat"] {
+    background: rgba(245, 158, 11, 0.13) !important;
+    color: #fbbf24 !important;
+    border-top: 1px solid rgba(245, 158, 11, 0.25) !important;
+  }
+  #home .dash-trend-tooltip footer[data-direction="unknown"] {
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #94a3b8 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+  #home .dash-trend-insights svg {
+    color: var(--ui-gold) !important;
+  }
+}
+
+@container trend-panel (max-width: 600px) {
+  #home .dash-trend-heading {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  #home .dash-trend-range {
+    width: 100%;
+    padding-left: 54px;
+  }
+}
+@container trend-panel (max-width: 400px) {
+  #home .dash-trend-heading {
+    padding: 18px 15px;
+  }
+  #home .dash-trend-heading h2 {
+    font-size: 20px;
+  }
+  #home .dash-trend-heading-main {
+    gap: 10px;
+  }
+  #home .dash-trend-range {
+    padding-left: 0;
+    font-size: 10px;
+  }
+  #home .dash-trend-toolbar {
+    margin: 16px 15px 0;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  #home .dash-trend-legend {
+    font-size: 10px;
+    gap: 10px;
+  }
+  #home .dash-trend-unit {
+    display: none;
+  }
+  #home .dash-trend-plot {
+    min-height: 245px;
+    margin: 3px 8px 5px 4px;
+  }
+  #home .dash-trend-value {
+    font-size: 12px;
+  }
+  #home .dash-trend-axis {
+    font-size: 10px;
+  }
+  #home .dash-trend-insights {
+    margin: 0 15px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  #home .dash-trend-notes {
+    padding: 0 15px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #home .dash-trend-band {
+    transition: none;
+  }
+}

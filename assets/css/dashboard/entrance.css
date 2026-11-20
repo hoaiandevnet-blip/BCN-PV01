@@ -1,0 +1,46 @@
+#home [data-count-to] {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keep the final text in the layout and accessibility tree throughout the entrance. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  #home [data-count-frame] {
+    position: relative;
+    -webkit-text-fill-color: transparent;
+  }
+  #home [data-count-frame]::after {
+    content: attr(data-count-frame) / "";
+    position: absolute;
+    inset: 0;
+    -webkit-text-fill-color: currentColor;
+    pointer-events: none;
+  }
+  #home [data-dash-entrance] :is(.dash-progress, .dash-track, .dash-compare-track) > span {
+    transform-origin: left center;
+  }
+  #home [data-dash-entrance] :is(.dash-trend-bar, .dash-trend-reflection) {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+  }
+  #home [data-dash-entrance="ready"] :is(.dash-progress, .dash-track, .dash-compare-track) > span {
+    transform: scaleX(0);
+  }
+  #home [data-dash-entrance="ready"] :is(.dash-trend-bar, .dash-trend-reflection) {
+    transform: scaleY(0);
+  }
+  #home [data-dash-entrance="playing"] :is(.dash-progress, .dash-track, .dash-compare-track) > span {
+    animation: dash-bar-enter-x var(--dash-entry-duration) cubic-bezier(.3333,1,.6667,1) both;
+  }
+  #home [data-dash-entrance="playing"] :is(.dash-trend-bar, .dash-trend-reflection) {
+    animation: dash-bar-enter-y var(--dash-entry-duration) cubic-bezier(.3333,1,.6667,1) both;
+  }
+  @keyframes dash-bar-enter-x {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  @keyframes dash-bar-enter-y {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+  }
+}

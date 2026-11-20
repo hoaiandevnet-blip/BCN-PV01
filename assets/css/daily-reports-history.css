@@ -1,0 +1,563 @@
+/* Modern polished audit history. Every rule is confined to this card. */
+#dailyReports.bcn-reference #bcnAuditCard,
+#dailyReports #bcnAuditCard {
+  padding: 22px 24px;
+  scroll-margin-top: 18px;
+  background: var(--ui-surface) !important;
+  border: 1px solid var(--ui-line) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--ui-shadow) !important;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-header,
+#dailyReports.bcn-reference #bcnAuditCard .bcn-audit-header {
+  display: none !important;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-symbol {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 12px;
+  background: var(--ui-gold-soft);
+  color: var(--ui-gold);
+}
+
+#dailyReports #bcnAuditCard svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-symbol svg {
+  width: 22px;
+  height: 22px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-heading {
+  flex: 1;
+  min-width: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-heading h3 {
+  font-size: 18px;
+  font-weight: 750;
+  letter-spacing: -.02em;
+  color: var(--ui-text);
+  margin: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-heading p {
+  margin: 4px 0 0;
+  color: var(--ui-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditLoad {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--ui-line);
+  border-radius: 8px;
+  background: var(--ui-raised);
+  color: var(--ui-text);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .16s ease;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditLoad:hover {
+  border-color: var(--ui-gold-line);
+  color: var(--ui-gold);
+}
+
+#dailyReports #bcnAuditCard #bcnAuditLoad svg {
+  width: 15px;
+  height: 15px;
+  transition: transform .3s ease;
+}
+
+#dailyReports #bcnAuditCard[aria-busy="true"] #bcnAuditLoad svg {
+  animation: bcn-audit-spin .8s linear infinite;
+}
+
+@keyframes bcn-audit-spin {
+  to { transform: rotate(360deg); }
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.2fr) minmax(150px, .5fr) minmax(150px, .5fr) auto;
+  align-items: end;
+  gap: 14px;
+  padding: 16px 18px;
+  border: 1px solid var(--ui-line);
+  border-radius: 12px;
+  background: var(--ui-field);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--ui-secondary);
+}
+
+#dailyReports #bcnAuditCard input,
+#dailyReports #bcnAuditCard select {
+  box-sizing: border-box;
+  height: 40px;
+  margin: 0;
+  padding: 0 12px;
+  border: 1px solid var(--ui-line);
+  border-radius: 8px;
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  font-size: 12px;
+  font-weight: 500;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+#dailyReports #bcnAuditCard input:focus,
+#dailyReports #bcnAuditCard select:focus {
+  border-color: var(--ui-gold);
+  box-shadow: 0 0 0 2px var(--ui-gold-soft);
+  outline: none;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-search {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-search svg {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--ui-muted);
+  pointer-events: none;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditSearch {
+  padding-left: 38px;
+  width: 100%;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditClear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--ui-line);
+  border-radius: 8px;
+  background: var(--ui-surface);
+  color: var(--ui-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditClear:hover {
+  border-color: var(--ui-line-strong);
+  color: var(--ui-text);
+  background: var(--ui-raised);
+}
+
+#dailyReports #bcnAuditCard #bcnAuditClear svg {
+  width: 14px;
+  height: 14px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 12px;
+  color: var(--ui-muted);
+  font-size: 12px;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditCount {
+  color: var(--ui-text);
+  font-weight: 750;
+  font-size: 13px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-columns,
+#dailyReports #bcnAuditCard .bcn-audit-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) 110px 120px;
+  align-items: center;
+  gap: 18px;
+  padding: 13px 18px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-columns {
+  border: 1px solid var(--ui-line);
+  border-bottom: 0;
+  border-radius: 10px 10px 0 0;
+  background: var(--ui-side);
+  color: var(--ui-secondary);
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditRows {
+  border: 1px solid var(--ui-line);
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  background: var(--ui-surface);
+  overflow: hidden;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row {
+  min-height: 64px;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--ui-line);
+  background: var(--ui-surface);
+  transition: background .15s ease;
+  animation: bcn-audit-enter 160ms ease-out;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row:last-child {
+  border-bottom: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row:hover {
+  background: color-mix(in srgb, var(--ui-hover) 65%, transparent);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-activity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  font-size: 14px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+#dailyReports #bcnAuditCard [data-tone="lookup"] {
+  color: var(--ui-info) !important;
+  background: var(--ui-info-soft) !important;
+  border: 1px solid color-mix(in srgb, var(--ui-info) 30%, transparent) !important;
+}
+
+#dailyReports #bcnAuditCard [data-tone="update"] {
+  color: var(--ui-gold) !important;
+  background: var(--ui-gold-soft) !important;
+  border: 1px solid var(--ui-gold-line) !important;
+}
+
+#dailyReports #bcnAuditCard [data-tone="export"] {
+  color: var(--ui-ok) !important;
+  background: var(--ui-ok-soft) !important;
+  border: 1px solid color-mix(in srgb, var(--ui-ok) 30%, transparent) !important;
+}
+
+#dailyReports #bcnAuditCard [data-tone="permissions"] {
+  color: #c4a7fa !important;
+  background: rgba(196, 167, 250, .12) !important;
+  border: 1px solid rgba(196, 167, 250, .28) !important;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-activity > div,
+#dailyReports #bcnAuditCard .bcn-audit-actor {
+  min-width: 0;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row strong {
+  display: block;
+  color: var(--ui-text);
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row small {
+  display: block;
+  margin-top: 3px;
+  color: var(--ui-secondary);
+  font-size: 11px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-actor small {
+  color: var(--ui-muted);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row time {
+  display: flex;
+  flex-direction: column;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row time strong {
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  color: var(--ui-text);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-row time small {
+  font-variant-numeric: tabular-nums;
+  font-size: 10px;
+  color: var(--ui-secondary);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-result {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 5px;
+  padding: 4px 9px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-result svg {
+  width: 14px;
+  height: 14px;
+}
+
+#dailyReports #bcnAuditCard .is-success {
+  color: var(--ui-ok) !important;
+  background: var(--ui-ok-soft) !important;
+  border: 1px solid color-mix(in srgb, var(--ui-ok) 30%, transparent) !important;
+}
+
+#dailyReports #bcnAuditCard .is-denied {
+  color: var(--ui-error) !important;
+  background: var(--ui-error-soft) !important;
+  border: 1px solid color-mix(in srgb, var(--ui-error) 30%, transparent) !important;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 4px;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-footer label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ui-secondary);
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPageSize {
+  width: 70px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPagination button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid var(--ui-line) !important;
+  border-radius: 7px;
+  background: var(--ui-surface) !important;
+  color: var(--ui-text) !important;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .16s ease;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPagination button:hover:not(:disabled) {
+  border-color: var(--ui-gold-line) !important;
+  color: var(--ui-gold) !important;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPagination button:disabled {
+  opacity: .35;
+  cursor: not-allowed;
+}
+
+#dailyReports #bcnAuditCard #bcnAuditPagination [aria-current="page"] {
+  background: var(--ui-gold-soft) !important;
+  border-color: var(--ui-gold-line) !important;
+  color: var(--ui-gold) !important;
+  font-weight: 750;
+  opacity: 1 !important;
+  box-shadow: 0 0 8px rgba(214, 184, 130, .2);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  color: var(--ui-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-empty {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  padding: 50px 20px;
+  color: var(--ui-muted);
+  text-align: center;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-empty svg {
+  width: 36px;
+  height: 36px;
+  color: var(--ui-muted);
+  opacity: .6;
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-empty strong {
+  font-size: 14px;
+  color: var(--ui-text);
+}
+
+#dailyReports #bcnAuditCard .bcn-audit-empty p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ui-secondary);
+}
+
+#dailyReports #bcnAuditCard[aria-busy="true"] #bcnAuditRows {
+  opacity: .5;
+  pointer-events: none;
+}
+
+@keyframes bcn-audit-enter {
+  from { opacity: .5; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1100px) {
+  #dailyReports #bcnAuditCard .bcn-audit-filters {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-search-label {
+    grid-column: 1 / -1;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-columns,
+  #dailyReports #bcnAuditCard .bcn-audit-row {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) 90px 105px;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  #dailyReports.bcn-reference #bcnAuditCard,
+  #dailyReports #bcnAuditCard {
+    padding: 16px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-heading {
+    flex-basis: calc(100% - 58px);
+  }
+  #dailyReports #bcnAuditCard #bcnAuditLoad {
+    width: 100%;
+    justify-content: center;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-filters {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 12px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-columns {
+    display: none;
+  }
+  #dailyReports #bcnAuditCard #bcnAuditRows {
+    border-radius: 10px;
+    border-top: 1px solid var(--ui-line);
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 14px;
+    padding: 14px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-activity,
+  #dailyReports #bcnAuditCard .bcn-audit-actor {
+    grid-column: 1 / -1;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-actor {
+    padding-left: 48px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-row time {
+    padding-left: 48px;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-result {
+    justify-self: end;
+  }
+  #dailyReports #bcnAuditCard .bcn-audit-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  #dailyReports #bcnAuditCard #bcnAuditPagination {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dailyReports #bcnAuditCard .bcn-audit-row {
+    animation: none;
+  }
+}

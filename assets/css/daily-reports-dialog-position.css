@@ -1,0 +1,8 @@
+/* Shared cards reset margins to zero. Restore viewport centering for every BCN dialog. */
+#dailyReports.bcn-reference dialog.bcn-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto !important;
+  box-sizing: border-box;
+  overscroll-behavior: contain;
+}

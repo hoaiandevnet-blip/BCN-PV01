@@ -1,0 +1,202 @@
+/* Distinct reading groups for the saved case information. */
+@layer bcn-unslop {
+  #dailyReports #bcnDetailInformation .bcn-information-identity {
+    margin-bottom: 20px !important;
+    padding: 4px 0 4px 16px !important;
+    border-left: 3px solid var(--ui-gold) !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-identity .bcn-dossier-title {
+    margin: 4px 0 0 !important;
+  }
+
+  #dailyReports .bcn-information-groups {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) !important;
+    gap: 16px !important;
+  }
+
+  #dailyReports .bcn-information-group {
+    min-width: 0 !important;
+    border: 1px solid var(--ui-line) !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  #dailyReports :is(.bcn-information-classification, .bcn-information-narrative) {
+    grid-column: 1 / -1 !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-group h5 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    border-bottom: 1px solid var(--ui-line) !important;
+    background: var(--ui-raised) !important;
+    color: var(--ui-gold) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-group h5 svg {
+    flex: 0 0 16px !important;
+    color: var(--ui-gold) !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-group .bcn-dossier-facts {
+    padding: 16px !important;
+    gap: 16px 24px !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-group dt {
+    color: var(--ui-secondary) !important;
+    margin-bottom: 4px !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-agencies .bcn-dossier-facts {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #dailyReports .bcn-information-agencies .bcn-dossier-facts > div + div,
+  #dailyReports .bcn-information-group .bcn-dossier-wide {
+    padding-top: 12px !important;
+    border-top: 1px solid var(--ui-line) !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-narrative p {
+    max-width: 100ch !important;
+    margin: 0 !important;
+    padding: 16px !important;
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    line-height: 1.85 !important;
+    white-space: pre-wrap !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-information-classification > h5 svg {
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports #bcnDetailInformation :is(.bcn-classification-domain, .bcn-classification-stage) {
+    min-width: 0;
+    padding: 16px !important;
+    border: 1px solid var(--glass-edge) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+    border-radius: 8px;
+    background: var(--glass-inset) !important;
+    box-shadow: inset 0 1px 0 #ffffff0c;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-facts dt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-facts dt svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-domain .bcn-category {
+    padding: 6px 12px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.6 !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-case-stage {
+    display: inline-block;
+    padding: 6px 12px;
+    border-left: 3px solid var(--ui-info);
+    border-radius: 4px;
+    background: var(--ui-info-soft);
+    color: var(--ui-info) !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.6;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-legal {
+    padding-top: 16px !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-laws {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-law {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr);
+    align-items: baseline;
+    gap: 8px 16px;
+    margin: 0 !important;
+    padding: 12px 16px;
+    border: 1px solid var(--glass-edge);
+    border-left: 3px solid var(--ui-gold);
+    border-radius: 8px;
+    background: var(--glass-inset);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-law strong {
+    color: var(--ui-gold) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.7;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-law span {
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    line-height: 1.7;
+  }
+
+  #dailyReports #bcnDetailInformation .bcn-classification-law-plain {
+    grid-template-columns: minmax(0, 1fr);
+    color: var(--ui-text) !important;
+  }
+
+  @media (max-width: 720px) {
+    #dailyReports .bcn-information-groups {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #dailyReports #bcnDetailInformation :is(.bcn-classification-domain, .bcn-classification-stage) {
+      padding: 12px !important;
+    }
+
+    #dailyReports #bcnDetailInformation .bcn-classification-law {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 12px;
+      gap: 4px;
+    }
+
+    #dailyReports #bcnDetailInformation .bcn-information-group .bcn-dossier-facts {
+      grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    #dailyReports .bcn-information-group .bcn-dossier-facts > div + div {
+      padding-top: 12px !important;
+      border-top: 1px solid var(--ui-line) !important;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+#dailyReports #bcnQuickUnlockDialog {
+  width: min(620px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow-y: auto;
+}
+#dailyReports #bcnQuickUnlockDialog .bcn-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+#dailyReports #bcnQuickUnlockTitle {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+#dailyReports #bcnQuickUnlockDialog .bcn-dialog-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  min-height: 36px;
+  padding: 0;
+}
+#dailyReports #bcnQuickUnlockForm {
+  gap: 16px;
+}
+#dailyReports #bcnQuickUnlockForm > p {
+  margin: 0;
+}
+#dailyReports .bcn-unlock-report-context {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 16px;
+  margin: 0;
+  padding: 16px;
+  border: 1px solid var(--ui-line-strong);
+  border-radius: 8px;
+  background: var(--ui-raised);
+}
+#dailyReports .bcn-unlock-report-context dt,
+#dailyReports .bcn-unlock-context-note {
+  font-size: 12px;
+  color: var(--ui-muted);
+}
+#dailyReports .bcn-unlock-report-context dd {
+  margin: 4px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+#dailyReports [data-unlock-feedback] {
+  color: var(--ui-error);
+}
+@layer bcn-unslop {
+  #dailyReports .bcn-unlock-report-context dd,
+  #dailyReports .bcn-unlock-report-context time {
+    color: var(--ui-text) !important;
+  }
+}
+@media (max-width: 600px) {
+  #dailyReports .bcn-unlock-report-context {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

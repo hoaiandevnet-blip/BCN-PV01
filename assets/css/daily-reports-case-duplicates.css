@@ -1,0 +1,280 @@
+/* Readable duplicate candidates inside the case dialog; retain the system's glass palette. */
+@layer bcn-unslop {
+  #dailyReports .bcn-case-detail .bcn-detail-duplicates {
+    padding: 16px !important;
+  }
+
+  #dailyReports .bcn-detail-duplicate-heading {
+    gap: 12px 16px !important;
+  }
+
+  #dailyReports .bcn-case-detail .bcn-detail-duplicate-heading h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
+    color: var(--ui-gold) !important;
+    font-size: 14px !important;
+    line-height: 1.5;
+  }
+
+  #dailyReports .bcn-detail-duplicate-heading p {
+    margin: 4px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    line-height: 1.6;
+  }
+
+  #dailyReports .bcn-detail-duplicates svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports .bcn-detail-duplicates button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    border-radius: 8px;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.5;
+  }
+
+  #dailyReports .bcn-case-duplicate-count {
+    margin: 16px 0 12px !important;
+    color: var(--ui-secondary) !important;
+    font-size: 13px;
+  }
+
+  #dailyReports .bcn-case-duplicate-count strong {
+    color: var(--ui-gold) !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports .bcn-case-duplicate-list {
+    display: grid;
+    gap: 16px;
+  }
+
+  #dailyReports .bcn-case-duplicate-card {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--glass-edge);
+    border-top-color: var(--glass-edge-lit);
+    border-radius: 8px;
+    background: var(--glass-inset) !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--ui-line);
+    background: var(--glass-control) !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-identity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  #dailyReports .bcn-case-duplicate-card h5 {
+    margin: 0 !important;
+    color: var(--ui-gold) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.6;
+  }
+
+  #dailyReports .bcn-case-duplicate-card h5 time {
+    color: inherit !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports .bcn-case-duplicate-identity p {
+    margin: 4px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports .bcn-case-duplicate-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 24px;
+    padding: 16px;
+  }
+
+  #dailyReports .bcn-case-duplicate-body > section {
+    min-width: 0;
+  }
+
+  #dailyReports .bcn-case-duplicate-card h6,
+  #dailyReports .bcn-case-duplicate-decision > label {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px;
+    margin: 0 0 12px !important;
+    color: var(--ui-gold) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.5;
+  }
+
+  #dailyReports .bcn-case-duplicate-summary p {
+    margin: 0 !important;
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports .bcn-case-duplicate-evidence {
+    padding-left: 16px;
+    border-left: 2px solid var(--ui-warn);
+  }
+
+  #dailyReports .bcn-case-duplicate-evidence ul {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-evidence li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: var(--ui-text) !important;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports .bcn-case-duplicate-evidence li svg {
+    margin-top: 4px;
+  }
+
+  #dailyReports .bcn-case-duplicate-evidence p {
+    margin: 12px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  #dailyReports .bcn-case-duplicate-history {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0 16px !important;
+    padding: 12px 0 !important;
+    border-top: 1px solid var(--ui-line);
+  }
+
+  #dailyReports .bcn-case-duplicate-history dt {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 8px;
+    color: var(--ui-secondary) !important;
+    font-size: 12px;
+  }
+
+  #dailyReports .bcn-case-duplicate-history dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    color: var(--ui-text) !important;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports .bcn-case-duplicate-history dd :is(span, code) {
+    min-width: 0;
+    padding: 2px 8px;
+    border: 1px solid var(--ui-line);
+    border-radius: 4px;
+    background: var(--glass-control);
+    font-size: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports .bcn-case-duplicate-decision {
+    display: block !important;
+    margin: 0 !important;
+    padding: 12px 16px 16px !important;
+    border-top: 1px solid var(--ui-line);
+    background: var(--glass-control) !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-decision > label {
+    margin-bottom: 8px !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-decision > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #dailyReports .bcn-case-duplicate-decision select {
+    width: 100%;
+    min-width: 0;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 8px 32px 8px 12px !important;
+    font-size: 13px !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-decision button {
+    color: var(--ui-gold) !important;
+    border-color: var(--ui-gold-line) !important;
+  }
+
+  #dailyReports .bcn-case-duplicate-empty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    font-size: 13px;
+  }
+
+  @media (max-width: 760px) {
+    #dailyReports .bcn-case-duplicate-body {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+    }
+
+    #dailyReports .bcn-case-duplicate-header {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #dailyReports .bcn-case-duplicate-history,
+    #dailyReports .bcn-case-duplicate-decision > div {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    #dailyReports .bcn-detail-duplicate-heading > button,
+    #dailyReports .bcn-case-duplicate-header > button {
+      width: 100%;
+    }
+  }
+}

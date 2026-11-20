@@ -1,0 +1,280 @@
+.notification-popup-host {
+  position: fixed;
+  z-index: 11900;
+  top: max(80px, calc(env(safe-area-inset-top, 0px) + 80px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  width: min(300px, calc(100% - 24px));
+  pointer-events: none;
+  font-family: inherit;
+}
+
+:fullscreen .notification-popup-host {
+  z-index: 13000;
+}
+
+.notification-popup-card {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) 22px;
+  gap: 8px;
+  box-sizing: border-box;
+  max-height: calc(100dvh - 100px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 8px 10px 8px 10px;
+  border: 1px solid #eadfcf;
+  border-left: 3.5px solid #aa304d;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #25334b;
+  box-shadow: 0 10px 30px rgb(26 39 59 / 14%), 0 2px 6px rgb(26 39 59 / 6%);
+  opacity: 0;
+  transform: translateX(calc(100% + 40px));
+  transition: transform 260ms cubic-bezier(.2, .75, .3, 1), opacity 180ms ease;
+  pointer-events: none;
+}
+
+.notification-popup-card.notification-popup-visible {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.notification-popup-card.notification-popup-exiting {
+  opacity: 0;
+  transform: translateX(calc(100% + 40px));
+  pointer-events: none;
+  transition: transform 260ms cubic-bezier(.2, .75, .3, 1), opacity 180ms ease;
+}
+
+.notification-popup-icon {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 7px;
+  background: #faeaf0;
+  color: #a82e4b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.notification-popup-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.notification-popup-copy {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.notification-popup-kicker {
+  display: block;
+  margin: 0 0 2px;
+  color: #a0324d;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  line-height: 1.3;
+}
+
+.notification-popup-title {
+  display: block;
+  color: #25334b;
+  font-size: 12.5px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.notification-popup-message {
+  margin: 3px 0 0;
+  color: #5c687a;
+  font-size: 11px;
+  line-height: 1.4;
+  white-space: pre-line;
+}
+
+.notification-popup-summary {
+  margin: 4px 0 0;
+  color: #8d3550;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.notification-popup-pending {
+  margin: 6px 0 0;
+  padding-top: 4px;
+  border-top: 1px solid #e5e9ef;
+  color: #6b7280;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.notification-popup-pending[hidden] {
+  display: none;
+}
+
+.notification-popup-card[data-kind="transient"] {
+  --notice-ink: #285d98;
+  --notice-fill: #eaf2fc;
+  border-left-color: var(--notice-ink);
+}
+
+.notification-popup-card[data-kind="transient"][data-level="success"] {
+  --notice-ink: #237655;
+  --notice-fill: #e5f5ee;
+}
+
+.notification-popup-card[data-kind="transient"][data-level="warning"] {
+  --notice-ink: #996119;
+  --notice-fill: #fff2d9;
+}
+
+.notification-popup-card[data-kind="transient"][data-level="danger"] {
+  --notice-ink: #ae3b45;
+  --notice-fill: #fcecef;
+}
+
+.notification-popup-card[data-kind="transient"] .notification-popup-icon {
+  background: var(--notice-fill);
+  color: var(--notice-ink);
+}
+
+.notification-popup-card[data-kind="transient"] .notification-popup-kicker {
+  color: var(--notice-ink);
+  text-transform: uppercase;
+}
+
+.notification-popup-actions {
+  margin-top: 6px;
+}
+
+.notification-popup-open,
+.notification-popup-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.notification-popup-open {
+  min-height: 24px;
+  padding: 2px 8px;
+  border-color: #eac8d2;
+  background: #fff2f5;
+  color: #972d48;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.notification-popup-close {
+  box-sizing: border-box;
+  flex: none;
+  align-self: start;
+  width: 22px;
+  min-width: 22px;
+  height: 22px;
+  min-height: 22px;
+  padding: 0;
+  background: transparent;
+  color: #7e8795;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.notification-popup-close > svg {
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.notification-popup-open:hover,
+.notification-popup-close:hover {
+  border-color: #c8889b;
+  background: #f9e5ec;
+  color: #89223d;
+}
+
+.notification-popup-open:focus-visible,
+.notification-popup-close:focus-visible {
+  outline: 2px solid #bc617d;
+  outline-offset: 2px;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-card {
+  border-color: #465167;
+  border-left-color: #e08aa3;
+  background: #1d2b40;
+  color: #f0edf2;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-title {
+  color: #f4eff4;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-message,
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-close {
+  color: #c5ccda;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-kicker,
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-summary {
+  color: #f1adc1;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-icon,
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-open {
+  border-color: #70465b;
+  background: #472e40;
+  color: #ffdce7;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-card[data-kind="transient"] {
+  --notice-ink: #9dc9ff;
+  --notice-fill: #243e5e;
+  border-left-color: var(--notice-ink);
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-card[data-level="success"] {
+  --notice-ink: #8fddba;
+  --notice-fill: #23463e;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-card[data-level="warning"] {
+  --notice-ink: #f4ca87;
+  --notice-fill: #4c402b;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-card[data-level="danger"] {
+  --notice-ink: #ffaeb6;
+  --notice-fill: #52313f;
+}
+
+:is(body.theme-dark, [data-theme="dark"]) .notification-popup-pending {
+  border-color: #465167;
+  color: #c5ccda;
+}
+
+@media (max-width: 760px) {
+  .notification-popup-host {
+    top: max(120px, calc(env(safe-area-inset-top, 0px) + 120px));
+    right: max(10px, env(safe-area-inset-right, 0px));
+    width: min(280px, calc(100% - 20px));
+  }
+
+  .notification-popup-card {
+    max-height: calc(100dvh - 140px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-popup-card {
+    transform: none;
+    transition: none;
+  }
+}

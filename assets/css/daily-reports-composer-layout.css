@@ -1,0 +1,217 @@
+/* Editor and live preview layout, restricted to the Daily Reports composer. */
+#dailyReports.bcn-reference .bcn-composer-columns {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  gap: 18px;
+  align-items: start;
+}
+
+#dailyReports.bcn-reference #bcnComposerEditor {
+  min-width: 0;
+  gap: 18px;
+  padding: 0;
+}
+
+#dailyReports.bcn-reference #bcnComposerSources {
+  max-height: none;
+  overflow: visible;
+}
+
+#dailyReports.bcn-reference #bcnComposerRows {
+  max-height: min(64dvh, 760px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  padding-right: 4px;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+  margin-top: 8px;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields label {
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  gap: 4px !important;
+  color: var(--ui-secondary, #94a3b8) !important;
+  margin: 0 !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields input:not([type="checkbox"]),
+#dailyReports.bcn-reference #bcnDocumentFields select {
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 10px !important;
+  font-size: 12px !important;
+  border-radius: 7px !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields textarea {
+  min-height: 44px !important;
+  height: 44px !important;
+  padding: 6px 10px !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  border-radius: 7px !important;
+  resize: vertical !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields > label:has([data-document="audience"]),
+#dailyReports.bcn-reference #bcnDocumentFields > label:has([data-document="recipients"]) {
+  grid-column: auto !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields > label:has([data-document="recipients"]) textarea {
+  min-height: 48px !important;
+  height: 48px !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields > label:has(#bcnSignerSlot) {
+  grid-column: 1 / 2 !important;
+}
+
+#dailyReports.bcn-reference #bcnDocumentFields > div:has(#bcnManageSigners) {
+  grid-column: 2 / 3 !important;
+  align-self: end !important;
+  margin: 0 !important;
+}
+
+#dailyReports.bcn-reference #bcnManageSigners {
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 12px !important;
+  font-size: 11.5px !important;
+  border-radius: 7px !important;
+  width: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#dailyReports.bcn-reference #bcnComposerDocument .bcn-composer-extra {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 8px 12px !important;
+  border-top: 1px dashed var(--ui-line-strong, rgba(255, 255, 255, 0.14)) !important;
+  padding-top: 10px !important;
+  margin-top: 4px !important;
+}
+
+#dailyReports.bcn-reference .bcn-composer-extra > label:has([data-document="conclusion"]) {
+  grid-column: 1 / -1 !important;
+}
+
+#dailyReports.bcn-reference #bcnComposerPreview {
+  position: sticky;
+  top: var(--bcn-composer-top, 82px);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  height: calc(100dvh - var(--bcn-composer-top, 82px) - 16px);
+  min-height: 450px;
+}
+
+#dailyReports.bcn-reference .bcn-composer-preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#dailyReports.bcn-reference .bcn-composer-preview-heading .bcn-toolbar {
+  margin: 0;
+}
+
+#dailyReports.bcn-reference .bcn-preview-live {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-size: 12px;
+  color: #287563;
+}
+
+#dailyReports.bcn-reference .bcn-preview-live::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: #38977d;
+}
+
+#dailyReports.bcn-reference #bcnComposerPreview .bcn-preview-note {
+  margin: 0;
+}
+
+#dailyReports.bcn-reference #bcnPaperViewport {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: none;
+  padding: 16px 12px;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+#dailyReports.bcn-reference #bcnPaperStack {
+  align-items: flex-start;
+  width: max-content;
+  min-width: 100%;
+}
+
+#dailyReports.bcn-reference #bcnPreviewStatus {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+#dailyReports.bcn-reference .bcn-composer-save-actions {
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid #e5eaf1;
+}
+
+#dailyReports.bcn-reference #bcnExportResult:empty {
+  display: none;
+}
+
+/* Stack when the sidebar and two usable work columns no longer fit. */
+@media (max-width: 1099px), (max-height: 600px) {
+  #dailyReports.bcn-reference .bcn-composer-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #dailyReports.bcn-reference #bcnComposerPreview {
+    position: static;
+    height: auto;
+    min-height: 0;
+  }
+
+  #dailyReports.bcn-reference #bcnPaperViewport {
+    flex: none;
+    max-height: 75dvh;
+  }
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference #bcnDocumentFields,
+  #dailyReports.bcn-reference #bcnComposerDocument .bcn-composer-extra {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #dailyReports.bcn-reference #bcnDocumentFields > label:has(#bcnSignerSlot),
+  #dailyReports.bcn-reference #bcnDocumentFields > div:has(#bcnManageSigners) {
+    grid-column: auto !important;
+  }
+
+  #dailyReports.bcn-reference .bcn-preview-live {
+    align-items: flex-start;
+  }
+
+  #dailyReports.bcn-reference .bcn-preview-live::before {
+    margin-top: 5px;
+  }
+}

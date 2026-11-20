@@ -1,0 +1,98 @@
+/* Theme the map controls and data panels; geographic colours stay data-driven. */
+@layer bcn-theme {
+  .bcn-standalone #digitalMap :where(.digital-map-shell, .digital-map-sidebar,
+    .digital-map-stage, .digital-map-stage-head, .digital-map-sidebar-head,
+    .digital-map-legend, .digital-map-detail, .digital-map-chart,
+    .digital-map-summary > div, .digital-map-period-editor,
+    .digital-map-import-review, .digital-map-map-search-results,
+    .digital-map-period-filter, .digital-map-selected,
+    .leaflet-popup-content-wrapper, .leaflet-popup-tip, .leaflet-tooltip,
+    .leaflet-control-zoom, .leaflet-control-layers) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line-strong) !important;
+    color: var(--ui-text) !important;
+    box-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone #digitalMap :where(.digital-map-sidebar, .digital-map-stage-head) {
+    background: var(--ui-side) !important;
+  }
+  .bcn-standalone #digitalMap :where(h2, h3, h4, b, strong) {
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone #digitalMap :where(p, small, label, .digital-map-chart-legend,
+    .digital-map-ranking, .digital-map-map-search-status) {
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone #digitalMap :where(.digital-map-sidebar-head > span,
+    .digital-map-stage-head > div > span, .digital-map-sidebar-head > span svg,
+    .digital-map-period-editor header > span, .digital-map-ranking button em) {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #digitalMap :where(.digital-map-filters, .digital-map-period-editor,
+    .digital-map-summary > div, .digital-map-chart, .digital-map-sidebar-head) {
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-donut > span {
+    background: var(--ui-surface) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-modes {
+    padding: 4px;
+    border-radius: 10px !important;
+    background: var(--ui-field) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-modes button {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--ui-secondary) !important;
+    border-radius: 7px !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-modes button.active {
+    background: var(--ui-hover) !important;
+    color: var(--ui-gold) !important;
+    box-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-map-search > label {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line-strong) !important;
+    box-shadow: var(--ui-pop-shadow) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-map-search > label > svg {
+    color: var(--ui-muted) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-map-search input {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-map-search > label:focus-within {
+    border-color: var(--ui-gold) !important;
+    box-shadow: 0 0 0 3px var(--ui-gold-soft) !important;
+  }
+  .bcn-standalone #digitalMap .digital-map-map-search-results :where(button, [role="option"]):hover {
+    background: var(--ui-raised) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #digitalMap .leaflet-control-zoom a {
+    background: var(--ui-surface) !important;
+    color: var(--ui-text) !important;
+    border-color: var(--ui-line-strong) !important;
+  }
+  .bcn-standalone #digitalMap .leaflet-control-zoom a:hover {
+    background: var(--ui-raised) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #digitalMap .leaflet-popup-close-button {
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone #digitalMap .leaflet-control-attribution {
+    background: var(--ui-side) !important;
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone #digitalMap .leaflet-control-attribution a {
+    color: var(--ui-gold) !important;
+  }
+}

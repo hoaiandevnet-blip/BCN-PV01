@@ -1,0 +1,29 @@
+/* Glass is the product's chosen material. Retain its existing palette,
+   transparency, backdrop artwork, lighting, borders and shadows. */
+@layer bcn-unslop {
+  body:has(#appShell:not([hidden]) #home.active) {
+    & #sidebar .bcn-brand b {
+      font-weight: 600 !important;
+      letter-spacing: 0 !important;
+    }
+
+    & #sidebar .bcn-nav-section-title,
+    & #sidebar .bcn-nav-caption {
+      font-weight: 500 !important;
+      letter-spacing: .02em !important;
+    }
+
+    & #sidebar .nav-item {
+      font-weight: 500 !important;
+    }
+
+    & #sidebar .nav-item svg {
+      stroke-width: 1.5 !important;
+    }
+
+    & #sidebar .bcn-support-person strong,
+    & .bcn-topbar #accountName {
+      font-weight: 500 !important;
+    }
+  }
+}

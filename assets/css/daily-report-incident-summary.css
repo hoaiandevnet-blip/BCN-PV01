@@ -1,0 +1,358 @@
+/* Readable report content is separate from locked entry controls. */
+#bcnSubmittedReportCard {
+  --incident-accent: var(--ui-gold);
+  padding: 24px;
+}
+#bcnSubmittedReportCard .bcn-submitted-header {
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 22px;
+}
+#bcnSubmittedReportCard .bcn-submitted-title-area {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+#bcnSubmittedReportCard .bcn-submitted-actions {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+#bcnSubmittedReportCard .bcn-submitted-section {
+  padding: 0;
+  margin-top: 28px;
+}
+#bcnSubmittedReportCard .bcn-submitted-section-title {
+  gap: 10px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  letter-spacing: .03em;
+}
+.bcn-incident-domain + .bcn-incident-domain {
+  margin-top: 28px;
+}
+.bcn-incident-domain[data-domain="PPHS"] {
+  --incident-accent: #e86b76;
+}
+.bcn-incident-domain[data-domain="TNXH"] {
+  --incident-accent: #dc76aa;
+}
+.bcn-incident-domain[data-domain="MA_TUY"] {
+  --incident-accent: #b78cec;
+}
+.bcn-incident-domain[data-domain="KINH_TE"] {
+  --incident-accent: #d0ac48;
+}
+.bcn-incident-domain[data-domain="MOI_TRUONG"] {
+  --incident-accent: #66b88b;
+}
+.bcn-incident-domain[data-domain="ANQG"] {
+  --incident-accent: #719ded;
+}
+.bcn-incident-domain[data-domain="CONG_NGHE_CAO"] {
+  --incident-accent: #5bb9c8;
+}
+.bcn-incident-domain[data-domain="HOAT_DONG_TU_PHAP"] {
+  --incident-accent: #db9968;
+}
+.bcn-incident-domain[data-domain="TINH_HINH_KHAC"] {
+  --incident-accent: #97a6b9;
+}
+.bcn-incident-domain-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 10px;
+  padding: 2px 0 2px 12px;
+  border-left: 4px solid var(--incident-accent);
+}
+.bcn-incident-domain-heading h5 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+.bcn-incident-domain-heading > span {
+  font-size: 12px;
+  white-space: nowrap;
+}
+.bcn-incident-domain-heading::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: var(--ui-line);
+}
+.bcn-incident-domain-cases {
+  display: grid;
+  gap: 14px;
+}
+.bcn-incident-summary-card {
+  min-width: 0;
+  overflow: hidden;
+}
+.bcn-incident-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px 16px;
+}
+.bcn-incident-heading-copy {
+  min-width: 0;
+}
+.bcn-incident-summary-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 9px;
+}
+.bcn-incident-summary-badges .bcn-category {
+  font-size: 11px;
+  font-weight: 650;
+}
+.bcn-incident-number {
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.bcn-incident-summary-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.bcn-incident-stage {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+#dailyReports .bcn-incident-view {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 7px;
+  min-height: 38px;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bcn-incident-summary-card svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+}
+.bcn-incident-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(0, 1.5fr);
+  margin: 0 22px;
+  padding: 14px 0;
+  border-top: 1px solid var(--ui-line);
+  border-bottom: 1px solid var(--ui-line);
+}
+.bcn-incident-facts > div {
+  min-width: 0;
+  padding: 0 18px;
+  border-left: 1px solid var(--ui-line);
+}
+.bcn-incident-facts > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+.bcn-incident-facts dt {
+  margin-bottom: 5px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+.bcn-incident-facts dd {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.bcn-incident-card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(180px, 1fr);
+  gap: 24px;
+  padding: 18px 22px;
+}
+.bcn-incident-summary-card h5 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 650;
+}
+.bcn-incident-subjects {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bcn-incident-subject {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 9px;
+  align-items: start;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.bcn-incident-person-number {
+  display: grid;
+  place-items: center;
+  min-height: 24px;
+  border: 1px solid var(--ui-line);
+  border-radius: 6px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+.bcn-incident-person-name {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+}
+.bcn-incident-person-name strong {
+  font-size: 13px;
+  font-weight: 650;
+}
+.bcn-incident-person-address {
+  margin: 2px 0 0;
+  line-height: 1.6;
+}
+.bcn-incident-evidence {
+  border-left: 1px solid var(--ui-line);
+  padding-left: 20px;
+}
+.bcn-incident-evidence p,
+.bcn-incident-empty {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.bcn-incident-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 22px;
+  border-top: 1px solid var(--ui-line);
+}
+.bcn-incident-card-footer > span:last-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+.bcn-incident-card-footer .daily-report-state {
+  font-size: 11px;
+}
+@layer bcn-glass {
+  #dailyReports #bcnSubmittedReportCard,
+  #dailyReports .bcn-incident-summary-card {
+    background: var(--ui-surface) !important;
+    box-shadow: none !important;
+  }
+  #dailyReports #bcnSubmittedReportCard .bcn-submitted-section {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  #dailyReports .bcn-incident-summary-card {
+    padding: 0 !important;
+    border-radius: 10px !important;
+    border-color: var(--ui-line-strong) !important;
+  }
+  #dailyReports .bcn-incident-card-footer {
+    background: var(--ui-raised) !important;
+  }
+  #dailyReports .bcn-incident-view {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+    border: 1px solid var(--ui-gold-line) !important;
+    border-radius: 7px !important;
+    box-shadow: none !important;
+  }
+  #dailyReports .bcn-incident-view:hover {
+    background: var(--ui-raised) !important;
+  }
+  #dailyReports :is(.bcn-incident-facts dt, .bcn-incident-person-name span, .bcn-incident-person-address,
+    .bcn-incident-number, .bcn-incident-domain-heading > span, .bcn-incident-card-footer > span:last-child) {
+    color: var(--ui-muted) !important;
+  }
+  #dailyReports :is(.bcn-incident-evidence p, .bcn-incident-empty) {
+    color: var(--ui-secondary) !important;
+  }
+}
+@media (max-width: 760px) {
+  #bcnSubmittedReportCard {
+  padding: 16px;
+}
+  .bcn-incident-card-header {
+  padding: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+  .bcn-incident-summary-title {
+  font-size: 16px;
+}
+  .bcn-incident-facts {
+  margin: 0 16px;
+}
+  .bcn-incident-facts > div {
+  padding: 0 10px;
+}
+  .bcn-incident-facts dd {
+  font-size: 15px;
+}
+  .bcn-incident-card-body {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  padding: 16px;
+}
+  .bcn-incident-evidence {
+  border-left: 0;
+  border-top: 1px solid var(--ui-line);
+  padding: 16px 0 0;
+}
+  .bcn-incident-card-footer {
+  padding: 10px 16px;
+}
+}
+@media (max-width: 480px) {
+  #bcnSubmittedReportCard {
+  padding: 12px;
+}
+  .bcn-incident-facts {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 14px;
+}
+  .bcn-incident-facts [data-incident-fact="damage"] {
+    grid-column: 1 / -1;
+    border-left: 0;
+    padding: 12px 0 0;
+    border-top: 1px solid var(--ui-line);
+  }
+  .bcn-incident-domain-heading {
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+  .bcn-incident-domain-heading h5 {
+  font-size: 14px;
+}
+  .bcn-incident-domain-heading::after {
+  display: none;
+}
+  #bcnSubmittedReportCard .bcn-submitted-badge {
+  font-size: 10px;
+  letter-spacing: 0;
+}
+}

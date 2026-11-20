@@ -1,0 +1,114 @@
+/* Entry and registry headings share the application toolbar. */
+@layer bcn-glass {
+  #dailyReports[data-entry-topbar] .daily-report-heading {
+    display: none !important;
+  }
+
+  .bcn-topbar[data-entry-topbar] .entry-topbar-icon {
+    color: var(--ui-gold) !important;
+    background: var(--ui-gold-soft) !important;
+  }
+}
+
+.bcn-topbar[data-entry-topbar] > div:first-of-type {
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  grid-template-areas: "icon title" "icon meta";
+  align-items: center;
+  gap: 2px 10px;
+  min-width: 0;
+  padding: 9px 0;
+}
+
+.bcn-topbar[data-entry-topbar] #pageTitle {
+  grid-area: title;
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.entry-topbar-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 8px;
+}
+
+.bcn-topbar .entry-topbar-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.entry-topbar-meta {
+  grid-area: meta;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1px 8px;
+  min-width: 0;
+  color: var(--ui-muted);
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.entry-topbar-day {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.bcn-topbar[data-entry-topbar] #accountUnit {
+  max-width: none;
+  min-width: 0;
+  padding-left: 8px;
+  border-left: 1px solid var(--ui-line);
+  font-size: inherit;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.bcn-topbar[data-entry-topbar="registry"] #accountUnit,
+.bcn-topbar[data-entry-topbar="approval"] #accountUnit {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.bcn-topbar[data-entry-topbar] .userbox {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 760px) {
+  .bcn-topbar[data-entry-topbar] {
+    flex-wrap: wrap;
+    gap: 2px 8px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+
+  .bcn-topbar[data-entry-topbar] > div:first-of-type {
+    flex: 1 1 220px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "meta";
+    column-gap: 8px;
+    padding: 3px 0;
+  }
+
+  .bcn-topbar[data-entry-topbar] .entry-topbar-icon {
+    display: none;
+  }
+
+  .bcn-topbar[data-entry-topbar] #pageTitle {
+    font-size: 14px;
+  }
+
+  .bcn-topbar[data-entry-topbar] .userbox {
+    flex: 1 0 100%;
+    justify-content: flex-end;
+    margin: 0;
+  }
+}

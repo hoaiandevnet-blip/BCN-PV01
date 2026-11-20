@@ -1,0 +1,10 @@
+/* Dashboard refinement using Unslop by Damir Sokolovsky, CC BY 4.0.
+   Source: https://github.com/heydamir/unslop
+   Glass is intentional: preserve existing materials and palettes.
+   Refine overview typography and layout; add semantic glass colours to report details. */
+@layer bcn-unslop;
+@import url('./workspace.css?v=2');
+@import url('./dashboard.css?v=3');
+@import url('./charts.css?v=2');
+@import url('./sources.css?v=2');
+@import url('./incidents.css?v=1');

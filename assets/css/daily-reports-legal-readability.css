@@ -1,0 +1,90 @@
+/* Clear article controls and an aligned search toolbar, scoped to the legal catalogue. */
+#dailyReports.bcn-reference #bcnLegalSearch {
+  grid-template-columns: minmax(0, 1.5fr) minmax(120px, .85fr) minmax(160px, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+
+#dailyReports.bcn-reference #bcnLegalSearch > label {
+  min-width: 0;
+}
+
+#dailyReports.bcn-reference #bcnLegalSearch > .bcn-toolbar {
+  align-self: end;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 0;
+}
+
+@layer bcn-glass {
+  .bcn-standalone #dailyReports #bcnLegalSearch :is(input, select, button) {
+    box-sizing: border-box;
+    height: 44px !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    line-height: 1.4;
+  }
+
+  .bcn-standalone #dailyReports #bcnLegalSearch button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    white-space: nowrap;
+  }
+
+  .bcn-standalone #dailyReports #bcnLawResults {
+    --legal-article-fill: #213f65;
+    --legal-article-ink: #d9eaff;
+    --legal-article-edge: #699de0;
+    --legal-article-hover: #2b5283;
+  }
+
+  .bcn-standalone.theme-light #dailyReports #bcnLawResults {
+    --legal-article-fill: #e5efff;
+    --legal-article-ink: #154586;
+    --legal-article-edge: #75a0df;
+    --legal-article-hover: #d3e4ff;
+  }
+
+  .bcn-standalone #dailyReports #bcnLawResults [data-law-detail] {
+    min-width: 96px;
+    min-height: 40px;
+    padding: 9px 15px;
+    border: 1px solid var(--legal-article-edge) !important;
+    border-radius: 9px !important;
+    background: var(--legal-article-fill) !important;
+    color: var(--legal-article-ink) !important;
+    box-shadow: inset 0 1px 0 #ffffff18, 0 2px 5px #00000012 !important;
+    font-size: 14px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .bcn-standalone #dailyReports #bcnLawResults [data-law-detail]:hover {
+    background: var(--legal-article-hover) !important;
+    border-color: var(--legal-article-ink) !important;
+  }
+
+  .bcn-standalone #dailyReports #bcnLawResults [data-law-detail]:focus-visible {
+    outline: 3px solid var(--legal-article-edge);
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 1000px) {
+  #dailyReports.bcn-reference #bcnLegalSearch {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference #bcnLegalSearch {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #dailyReports.bcn-reference #bcnLegalSearch > .bcn-toolbar > button {
+    flex: 1;
+  }
+}

@@ -1,0 +1,46 @@
+#digitalMapCanvas .digital-map-ward-names {
+  z-index: 610;
+  pointer-events: none;
+}
+
+#digitalMapCanvas .digital-map-label-anchor {
+  border: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+#digitalMapCanvas .digital-map-ward-name {
+  display: block;
+  width: max-content;
+  max-width: 120px;
+  color: #193142;
+  font-family: var(--ui-font, system-ui, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
+  text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff,
+    0 0 4px #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+#digitalMapCanvas .digital-map-ward-names.is-overview .digital-map-ward-name {
+  max-width: 100px;
+  font-size: 10px;
+}
+
+#digitalMapCanvas .digital-map-ward-name.is-selected {
+  color: #003b57;
+  text-shadow:
+    -1px -1px 0 #e3f9ff,
+    1px -1px 0 #e3f9ff,
+    -1px 1px 0 #e3f9ff,
+    1px 1px 0 #e3f9ff,
+    0 0 5px #a8eaff;
+}

@@ -1,0 +1,401 @@
+/* Shared visual treatment for all ten report workspaces and their dialogs. */
+@layer bcn-theme {
+  .bcn-standalone #dailyReports {
+    background: transparent !important;
+    color: var(--ui-text) !important;
+    padding: 0 0 24px !important;
+    font-family: inherit !important;
+    --input-heading-surface: var(--ui-surface) !important;
+    --input-heading-border: var(--ui-line) !important;
+    --input-heading-ink: var(--ui-text) !important;
+    --input-heading-muted: var(--ui-muted) !important;
+    --input-heading-accent: var(--ui-gold) !important;
+    --input-heading-soft: var(--ui-gold-soft) !important;
+    --input-heading-icon-border: var(--ui-gold-line) !important;
+    --input-heading-ring: var(--ui-gold-soft) !important;
+  }
+  .bcn-standalone #dailyReports .bcn-entry-ui {
+    --entry-surface: var(--ui-surface) !important;
+    --entry-soft: var(--ui-raised) !important;
+    --entry-field: var(--ui-field) !important;
+    --entry-border: var(--ui-line-strong) !important;
+    --entry-divider: var(--ui-line) !important;
+    --entry-ink: var(--ui-text) !important;
+    --entry-label: var(--ui-secondary) !important;
+    --entry-muted: var(--ui-muted) !important;
+    --entry-placeholder: var(--ui-muted) !important;
+    --entry-disabled: var(--ui-side) !important;
+    --entry-accent: var(--ui-gold) !important;
+    --entry-selected: var(--ui-gold-soft) !important;
+    --entry-ring: var(--ui-gold-soft) !important;
+    --entry-danger: var(--ui-error) !important;
+    --entry-danger-soft: var(--ui-error-soft) !important;
+    --entry-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone #dailyReports :where(h1, h2, h3, h4, strong, b, label, legend, summary, span, div, li) {
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone #dailyReports :where(p, small, time, .daily-report-filter, .bcn-case-code) {
+    color: var(--ui-muted) !important;
+  }
+  .bcn-standalone #dailyReports :where(button, a.ghost, a.primary) :where(*) {
+    color: inherit !important;
+  }
+  .bcn-standalone #dailyReports :where(
+    .card, .daily-report-heading, .bcn-hero, .bcn-kpi, .bcn-panel, .bcn-intake-section,
+    .bcn-source-case-card, .bcn-commune-card, .bcn-empty-card, .bcn-item, .bcn-kpi-tile,
+    .bcn-classifications, .bcn-classification-card, .bcn-persons, .bcn-person-card,
+    .bcn-location fieldset, .bcn-attachment-picker, .bcn-intake-metrics,
+    .bcn-detail-section, .bcn-detail-disclosure, .bcn-detail-meta > div,
+    .bcn-subject-body, .bcn-subject-body fieldset, .bcn-law-meta,
+    .bcn-assignment-row, .bcn-leader-row, .bcn-submitted-report-card,
+    .bcn-normal-situation-card, .bcn-summary-item, .bcn-submitted-section,
+    .bcn-incident-summary-card, .bcn-situation-summary-card,
+    .bcn-management-details, .bcn-guide-metrics li, .bcn-process-steps > li,
+    #bcnLegalForm, #bcnLeaderForm, #bcnRoleForm, #bcnLawResults [data-law-detail]) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+    border-radius: 14px !important;
+    box-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone #dailyReports .card::before,
+  .bcn-standalone #dailyReports .daily-report-heading::before,
+  .bcn-standalone #dailyReports .daily-report-heading::after,
+  .bcn-standalone #dailyReports .bcn-hero::before {
+    content: none !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-heading {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 20px 22px !important;
+    transform: none !important;
+    min-height: 100px;
+  }
+  .bcn-standalone #dailyReports .bcn-heading-lead {
+    display: grid !important;
+    grid-template-columns: 46px minmax(0, 1fr) !important;
+    grid-template-areas: "icon eyebrow" "icon title" "icon description" !important;
+    align-items: start !important;
+    gap: 4px 16px !important;
+  }
+  .bcn-standalone #dailyReports .bcn-heading-icon-wrap {
+    grid-area: icon !important;
+    align-self: center !important;
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 0 !important;
+    transform: none !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-eyebrow {
+    grid-area: eyebrow !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-heading h2 {
+    grid-area: title !important;
+    margin: 0 !important;
+  }
+  .bcn-standalone #dailyReports #bcnPageDescription {
+    grid-area: description !important;
+    margin: 0 !important;
+    max-width: none !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+  .bcn-standalone #dailyReports #dailyReportRefresh {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 9px 14px !important;
+  }
+  .bcn-standalone #dailyReports .bcn-refresh-icon {
+    position: static !important;
+    transform: none !important;
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 18px !important;
+    line-height: 16px !important;
+  }
+  .bcn-standalone #dailyReports :where(.card-head, .bcn-role-layout, .bcn-role-section,
+    .bcn-permission-body, fieldset, legend, details > summary, .bcn-assignment-list) {
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #dailyReports :where(#bcnUnitProfile, #bcnMetricDefinition) {
+    background: var(--ui-side) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #dailyReports #bcnRoleForm legend span {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-reg-tab-btn > span, .bcn-subject-body legend) {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+    border-color: var(--ui-gold-line) !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-heading h2 {
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: -.025em !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-heading:hover {
+    box-shadow: var(--ui-shadow) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-heading-icon-wrap, .bcn-entry-tab-icon,
+    .bcn-permission-symbol, .bcn-guide-symbol, .bcn-process-symbol, .bcn-file-icon,
+    .bcn-audit-symbol, .bcn-audit-icon, .bcn-detail-emblem, .bcn-detail-section-icon,
+    .bcn-subject-header-icon, .bcn-law-symbol, .bcn-kpi-glyph, .bcn-kpi-icon,
+    .bcn-guide-metric-icon, .bcn-guide-step-number, .bcn-process-icon, .bcn-process-marker,
+    .bcn-leader-avatar, .bcn-entry-heading-number, .bcn-incident-toggle-icon-pill) {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+    border-color: var(--ui-gold-line) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-heading-icon-wrap, .bcn-permission-symbol,
+    .bcn-guide-symbol, .bcn-process-symbol, .bcn-audit-symbol) svg {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-eyebrow {
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: var(--ui-gold) !important;
+    box-shadow: none !important;
+    letter-spacing: .08em !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+  }
+  .bcn-standalone #dailyReports .daily-report-eyebrow::before {
+    content: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-entry-tabs-slot, .bcn-incident-toggle-group,
+    .bcn-reg-tabs, .bcn-audit-filters, .bcn-audit-columns, .bcn-detail-nav,
+    .bcn-commune-card-head, .bcn-subject-header, .bcn-subject-footer, .bcn-detail-header,
+    .bcn-detail-footer, .bcn-law-header, .bcn-law-footer, .bcn-composer-group-title,
+    .bcn-person-summary, .bcn-primitive-weapons, .bcn-subject-row-address,
+    .bcn-legal-text, #bcnDocumentFormatting, .bcn-stat-item, .bcn-domain-stat-row,
+    .bcn-situation-content-box, .bcn-normal-custom-input, .bcn-leader-bulk,
+    .bcn-intake-modes label, .bcn-incident-toggle-bar, .bcn-commune-card-body,
+    .bcn-detail-version > summary, .bcn-guide-time-limit, .bcn-process-documents span,
+    .bcn-attachment-queue > li, .bcn-attachment-list > ul > li) {
+    background: var(--ui-side) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-secondary) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-entry-tabs-slot, .bcn-incident-toggle-group) {
+    border-radius: 14px !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-entry-tabs button, .bcn-reg-tab-btn,
+    .bcn-toggle-btn, .bcn-format-buttons button, .bcn-detail-nav button) {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-entry-tabs button, .bcn-reg-tab-btn,
+    .bcn-toggle-btn, .bcn-format-buttons button, .bcn-detail-nav button):hover:not(:disabled) {
+    background: var(--ui-raised) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-entry-tabs button.active, .bcn-reg-tab-btn.active,
+    .bcn-toggle-btn.active, .bcn-format-buttons button[aria-pressed="true"],
+    #bcnAuditPagination [aria-current="page"]) {
+    background: var(--ui-hover) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+    box-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone #dailyReports .bcn-entry-tab-state {
+    background: var(--ui-gold) !important;
+    color: var(--ui-on-gold) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-ind-alert, .bcn-pill-alert) {
+    background: var(--ui-warn-soft) !important;
+    color: var(--ui-warn) !important;
+    border-color: #e3a95c45 !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-ind-normal, .bcn-pill-normal,
+    .bcn-normal-situation-icon-wrap, .bcn-unlocked-icon) {
+    background: var(--ui-ok-soft) !important;
+    color: var(--ui-ok) !important;
+    border-color: #6fcf9f45 !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-ind-alert, .bcn-ind-normal) svg {
+    color: inherit !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-intake-section h2, .bcn-reference-section > h3,
+    .bcn-intake-section > h3, .bcn-intake-section .bcn-entry-heading) {
+    background: transparent !important;
+    border-color: var(--ui-line) !important;
+    border-left-color: var(--ui-gold) !important;
+    box-shadow: none !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-intake-metrics, .bcn-location fieldset,
+    .bcn-attachment-picker, .bcn-person-card, .bcn-subject-body fieldset) > legend {
+    background: var(--ui-surface) !important;
+    color: var(--ui-secondary) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-callout, .bcn-role-banner,
+    .bcn-incident-notice-banner, .bcn-detail-notice, .bcn-law-note, #bcnRoleEligibility) {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    border-left-color: var(--ui-gold) !important;
+    color: var(--ui-secondary) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.daily-report-state) {
+    background: var(--ui-raised) !important;
+    border: 1px solid var(--ui-line-strong) !important;
+    color: var(--ui-text) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.daily-report-state.is-submitted) {
+    background: var(--ui-info-soft) !important;
+    border-color: color-mix(in srgb, var(--ui-info) 40%, transparent) !important;
+    color: var(--ui-info) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-cutoff-lock-banner, .bcn-window.is-closed,
+    .daily-report-state.is-pending_review, .daily-report-state.is-resubmitted) {
+    background: var(--ui-warn-soft) !important;
+    border-color: #e3a95c45 !important;
+    color: var(--ui-warn) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-unlocked-banner, .bcn-window:not(.is-closed),
+    .daily-report-state.is-verified, .bcn-normal-status-badge, .is-success,
+    .bcn-leader-status[data-state="active"], .bcn-submitted-badge) {
+    background: var(--ui-ok-soft) !important;
+    border-color: #6fcf9f45 !important;
+    color: var(--ui-ok) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports :where(.daily-report-state.is-returned, .is-denied,
+    .bcn-detail-return, .bcn-subject-footer [role="alert"]) {
+    background: var(--ui-error-soft) !important;
+    border-color: #ec6f7645 !important;
+    color: var(--ui-error) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-category:not([data-bcn-domain]), .bcn-law-chip, .bcn-weapon-chip,
+    .bcn-assignment-role, .bcn-leader-scope, .bcn-leader-status, .bcn-person-tag,
+    .bcn-meta-pill, .bcn-badge-domain, .bcn-badge-status, .bcn-detail-count,
+    .bcn-person-card legend span, [data-classification-count], .bcn-address-badge,
+    .bcn-subject-count-badge, .inline-meta-item, .person-inline-tag, .bcn-commune-stt,
+    .bcn-tag-case, .bcn-tag-metric, .bcn-tag-situation, .bcn-total-fine-pill) {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone :where(.unit-search-options, .bcn-weapon-options, .bcn-account-panel,
+    .bcn-select-dropdown, .bcn-law-choice) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line-strong) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(.unit-search-option, .bcn-weapon-options button,
+    .bcn-select-item, #bcnRoleAccountOptions [role="option"]) {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: var(--ui-text) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #dailyReports .bcn-account-option-top > span {
+    background: var(--ui-raised) !important;
+    color: var(--ui-secondary) !important;
+    border: 1px solid var(--ui-line-strong) !important;
+    font-size: 11px;
+  }
+  .bcn-standalone #dailyReports #bcnRoleAccountOptions small {
+    color: var(--ui-muted) !important;
+  }
+  .bcn-standalone #dailyReports #bcnRoleAccountStatus {
+    background: var(--ui-side) !important;
+    color: var(--ui-secondary) !important;
+    border-top-color: var(--ui-line-strong) !important;
+  }
+  .bcn-standalone #dailyReports #bcnRoleAccountOptions
+    [role="option"]:is(:hover, [aria-selected="true"]) .bcn-account-option-top > span {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(.unit-search-option, .bcn-weapon-options button,
+    .bcn-select-item, #bcnRoleAccountOptions [role="option"]):is(:hover, .is-active, [aria-selected="true"]),
+  .bcn-standalone #dailyReports .bcn-law-choice:has(input:checked),
+  .bcn-standalone #dailyReports #bcnComposerRows .bcn-item.is-chosen {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-subject-close-btn, .bcn-weapon-toggle,
+    .bcn-law-chip button, .bcn-weapon-chip button, #bcnRoleAccountClear) {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone #dailyReports :where(.bcn-audit-columns, .bcn-audit-row,
+    .bcn-history-item, .bcn-timeline li, .bcn-guide-steps li, .bcn-detail-event) {
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #dailyReports #bcnPaperViewport {
+    background: var(--ui-side) !important;
+    border-color: var(--ui-line) !important;
+  }
+  /* The Word preview remains a real white page with black print content. */
+  .bcn-standalone #dailyReports .bcn-paper {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .bcn-standalone #dailyReports .bcn-paper :where(*) {
+    color: #000 !important;
+  }
+  .bcn-standalone #dailyReports .bcn-paper :where(td, th) {
+    background: transparent !important;
+  }
+}
+@layer bcn-theme {
+  @media (max-width: 760px) {
+    .bcn-standalone #dailyReports .daily-report-heading {
+      grid-template-columns: minmax(0, 1fr) !important;
+      padding: 18px !important;
+      gap: 14px !important;
+    }
+    .bcn-standalone #dailyReports .bcn-heading-lead {
+      grid-template-columns: 40px minmax(0, 1fr) !important;
+      grid-template-areas: "icon eyebrow" "icon title" "description description" !important;
+      gap: 6px 12px !important;
+    }
+    .bcn-standalone #dailyReports .bcn-heading-icon-wrap {
+      width: 40px !important;
+      height: 40px !important;
+    }
+    .bcn-standalone #dailyReports #bcnPageActions {
+      justify-self: end !important;
+    }
+  }
+}
+@media (max-width: 760px) {
+  .bcn-standalone #dailyReports .daily-report-heading {
+    gap: 14px;
+  }
+  .bcn-standalone #dailyReports .bcn-heading-lead {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-areas: "icon eyebrow" "icon title" "description description";
+    gap: 6px 12px;
+    width: 100%;
+  }
+  .bcn-standalone #dailyReports .bcn-heading-icon-wrap {
+    grid-area: icon;
+    width: 40px;
+    height: 40px;
+  }
+}

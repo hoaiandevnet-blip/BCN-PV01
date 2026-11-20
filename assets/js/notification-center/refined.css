@@ -1,0 +1,233 @@
+/* Keep the list prominent; severity is carried by a label, icon and colored edge. */
+#notificationPanel.notification-panel {
+  top: 70px;
+  right: 16px;
+  width: min(480px, calc(100vw - 24px));
+  max-height: calc(100dvh - 86px);
+}
+#notificationPanel .notification-card {
+  height: min(720px, calc(100dvh - 86px));
+  border-radius: 16px;
+}
+#notificationPanel .notification-heading {
+  padding: 16px 16px 12px;
+  align-items: center;
+}
+#notificationPanel .notification-heading h2 {
+  font-size: 18px;
+  margin: 0 0 5px;
+}
+#notificationPanel .notification-heading p {
+  font-size: 12px;
+}
+#notificationPanel .notification-toolbar {
+  padding: 0 16px 10px;
+  gap: 8px;
+}
+#notificationPanel .notification-action {
+  min-height: 32px;
+  font-size: 12px;
+  font-weight: 550;
+}
+#notificationPanel .notification-search {
+  min-height: 38px;
+  margin: 0 16px 10px;
+  padding: 0 10px;
+  border-radius: 8px;
+}
+#notificationPanel .notification-search input {
+  min-width: 0;
+  min-height: 36px;
+  padding: 6px 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+#notificationPanel .notification-filters {
+  flex-wrap: wrap;
+  padding: 0 16px 10px;
+  gap: 6px;
+  overflow: visible;
+}
+#notificationPanel .notification-filters button {
+  min-height: 30px;
+  padding: 0 9px;
+  font-size: 11px;
+  font-weight: 550;
+  border-radius: 7px;
+}
+#notificationPanel .notification-status {
+  padding: 7px 16px;
+  font-size: 11px;
+}
+#notificationPanel .notification-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  min-height: 0;
+  scrollbar-gutter: stable;
+}
+#notificationPanel .notification-item {
+  flex: none;
+  grid-template-columns: 32px minmax(0, 1fr) 6px;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--ui-line);
+  border-left: 3px solid var(--notice-tone);
+  border-radius: 10px;
+}
+#notificationPanel [data-notification-tone="returned"] { --notice-tone: #ff8995; }
+#notificationPanel [data-notification-tone="warning"] { --notice-tone: #f0c06d; }
+#notificationPanel [data-notification-tone="info"] { --notice-tone: #8bbcff; }
+#notificationPanel [data-notification-tone="success"] { --notice-tone: #78dfaf; }
+#notificationPanel [data-notification-tone="system"] { --notice-tone: #c5aff5; }
+body[data-appearance-mode="light"] #notificationPanel [data-notification-tone="returned"] { --notice-tone: #b4233b; }
+body[data-appearance-mode="light"] #notificationPanel [data-notification-tone="warning"] { --notice-tone: #875409; }
+body[data-appearance-mode="light"] #notificationPanel [data-notification-tone="info"] { --notice-tone: #195eaf; }
+body[data-appearance-mode="light"] #notificationPanel [data-notification-tone="success"] { --notice-tone: #087148; }
+body[data-appearance-mode="light"] #notificationPanel [data-notification-tone="system"] { --notice-tone: #7042ab; }
+#notificationPanel .notification-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+}
+#notificationPanel .notification-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px 8px;
+  margin-bottom: 7px;
+}
+#notificationPanel .notification-type {
+  display: inline-flex;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+#notificationPanel .notification-item time {
+  font-size: 10px;
+  line-height: 1.5;
+}
+#notificationPanel .notification-item-copy > strong {
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+#notificationPanel .notification-item-copy > p {
+  font-size: 12px;
+  margin: 5px 0 0;
+  line-height: 1.6;
+}
+#notificationPanel .notification-item-actions {
+  gap: 6px;
+  padding-top: 10px;
+}
+#notificationPanel .notification-item-actions button {
+  min-height: 30px;
+  font-size: 11px;
+  font-weight: 550;
+}
+#notificationPanel .notification-unread-dot {
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+}
+@layer bcn-glass {
+  #notificationPanel .notification-card {
+    background: var(--ui-surface) !important;
+  }
+  #notificationPanel :is(.notification-heading h2, .notification-item-copy > strong) {
+    color: var(--ui-text) !important;
+  }
+  #notificationPanel :is(.notification-heading p, .notification-item-copy > p, .notification-item time) {
+    color: var(--ui-secondary) !important;
+  }
+  #notificationPanel :is(.notification-toolbar, .notification-heading, .notification-filters) {
+    background: transparent !important;
+  }
+  #notificationPanel .notification-item {
+    background: var(--ui-field) !important;
+    border-color: var(--ui-line) !important;
+    border-left-color: var(--notice-tone) !important;
+  }
+  #notificationPanel .notification-item:not(.is-read) {
+    background: color-mix(in srgb, var(--notice-tone) 5%, var(--ui-field)) !important;
+  }
+  #notificationPanel .notification-item.is-read {
+    border-left-color: color-mix(in srgb, var(--notice-tone) 40%, var(--ui-line)) !important;
+  }
+  #notificationPanel :is(.notification-item-icon, .notification-type) {
+    background: color-mix(in srgb, var(--notice-tone) 14%, transparent) !important;
+    color: var(--notice-tone) !important;
+  }
+  #notificationPanel .notification-item-icon svg {
+    color: var(--notice-tone) !important;
+  }
+  #notificationPanel .notification-unread-dot {
+    background: var(--notice-tone) !important;
+  }
+  #notificationPanel [data-notification-open] {
+    background: color-mix(in srgb, var(--notice-tone) 10%, var(--ui-field)) !important;
+    border-color: color-mix(in srgb, var(--notice-tone) 35%, var(--ui-line)) !important;
+    color: var(--notice-tone) !important;
+    box-shadow: none !important;
+  }
+  #notificationPanel :is(.notification-action, .notification-icon-button, .notification-filters button,
+    [data-notification-read]) {
+    background: transparent !important;
+    color: var(--ui-secondary) !important;
+    border-color: var(--ui-line-strong) !important;
+    box-shadow: none !important;
+  }
+  #notificationPanel .notification-filters button[aria-pressed="true"] {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+  }
+  #notificationPanel [data-notification-kind="returned"][aria-pressed="true"] {
+    background: var(--ui-error-soft) !important;
+    color: var(--ui-error) !important;
+    border-color: var(--ui-error) !important;
+  }
+  #notificationPanel .notification-status.is-error {
+    color: var(--ui-error) !important;
+  }
+}
+@media (max-width: 760px) {
+  #notificationPanel.notification-panel {
+    top: 8px;
+    right: 8px;
+    width: calc(100vw - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+  #notificationPanel .notification-card {
+    height: min(720px, calc(100dvh - 16px));
+  }
+  #notificationPanel .notification-heading {
+    padding: 12px;
+  }
+  #notificationPanel .notification-heading h2 {
+    font-size: 17px;
+  }
+  #notificationPanel .notification-toolbar {
+    padding: 0 12px 10px;
+    flex-wrap: wrap;
+  }
+  #notificationPanel .notification-search {
+    margin: 0 12px 10px;
+  }
+  #notificationPanel .notification-filters {
+    padding: 0 12px 10px;
+  }
+  #notificationPanel .notification-item {
+    gap: 8px;
+    padding: 10px;
+    grid-template-columns: 28px minmax(0, 1fr) 6px;
+  }
+  #notificationPanel .notification-item-icon {
+    width: 28px;
+    height: 28px;
+  }
+}

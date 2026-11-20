@@ -1,0 +1,189 @@
+/* Original pixel artwork, isolated from the application's form and theme rules. */
+.bcn-pet-mobile-slot:empty,
+.bcn-topbar .bcn-pet-toggle-label {
+  display: none;
+}
+
+.bcn-pet-mobile-slot .bcn-pet-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+
+.bcn-standalone .bcn-topbar .bcn-pet-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 6px;
+  color: var(--ui-secondary);
+}
+
+.bcn-standalone .bcn-topbar .bcn-pet-toggle[aria-pressed="true"] {
+  color: var(--ui-gold);
+}
+
+#bcnPet {
+  --pet-width: 128px;
+  position: fixed;
+  z-index: 900;
+  display: grid;
+  justify-items: center;
+  width: var(--pet-width);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#bcnPet .bcn-pet-character {
+  all: unset;
+  display: block;
+  width: var(--pet-width);
+  aspect-ratio: 192 / 208;
+  border-radius: 16px;
+  cursor: grab;
+  touch-action: none;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#bcnPet[data-dragging="true"] .bcn-pet-character {
+  cursor: grabbing;
+}
+
+#bcnPet .bcn-pet-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 800% 1100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  pointer-events: none;
+  filter: drop-shadow(0 3px 2px rgb(0 0 0 / 12%));
+}
+
+#bcnPet .bcn-pet-menu-toggle {
+  all: unset;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 34px;
+  height: 26px;
+  border-radius: 10px;
+  color: var(--ui-secondary);
+  font: 700 18px/1 Inter, sans-serif;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#bcnPet .bcn-pet-menu-toggle span {
+  transform: translateY(-4px);
+}
+
+#bcnPet .bcn-pet-menu-toggle:hover,
+#bcnPet .bcn-pet-menu-toggle[aria-expanded="true"] {
+  background: var(--ui-surface, #283242);
+  color: var(--ui-text);
+}
+
+#bcnPet .bcn-pet-menu {
+  position: fixed;
+  box-sizing: border-box;
+  width: 216px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+  padding: 12px;
+  border: 1px solid var(--ui-line-strong);
+  border-radius: 14px;
+  color: var(--ui-text);
+  background: var(--ui-surface, #1c2535);
+  box-shadow: 0 10px 36px rgb(0 0 0 / 22%);
+  pointer-events: auto;
+}
+
+#bcnPet .bcn-pet-menu strong {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+#bcnPet .bcn-pet-menu p {
+  margin: 3px 0 10px;
+  color: var(--ui-secondary);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+#bcnPet .bcn-pet-menu button {
+  all: unset;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+#bcnPet .bcn-pet-menu button:hover {
+  background: var(--ui-gold-soft);
+}
+
+#bcnPet button:focus-visible,
+.bcn-standalone .bcn-topbar .bcn-pet-toggle:focus-visible {
+  outline: 2px solid var(--ui-gold);
+  outline-offset: 3px;
+}
+
+#bcnPet .bcn-pet-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  #bcnPet {
+    --pet-width: 96px;
+  }
+}
+
+@media print {
+  #bcnPet,
+  #bcnPetToggle {
+    display: none !important;
+  }
+}
+
+/* Match the existing glass layer: its important button rules otherwise paint a box around the sprite. */
+@layer bcn-glass {
+  #bcnPet .bcn-pet-character,
+  #bcnPet .bcn-pet-menu-toggle,
+  #bcnPet .bcn-pet-menu button {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  #bcnPet .bcn-pet-menu button:hover,
+  #bcnPet .bcn-pet-menu-toggle:hover,
+  #bcnPet .bcn-pet-menu-toggle[aria-expanded="true"] {
+    background: var(--ui-gold-soft) !important;
+  }
+
+  #bcnPetToggle[aria-pressed="true"] {
+    color: var(--ui-gold) !important;
+  }
+}

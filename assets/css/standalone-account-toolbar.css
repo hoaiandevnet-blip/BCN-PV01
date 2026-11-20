@@ -1,0 +1,126 @@
+/* Compact account actions, isolated from the legacy userbox component. */
+.bcn-topbar .userbox {
+  gap: 6px;
+  min-width: 0;
+}
+
+.bcn-topbar .userbox > button.ghost,
+.bcn-topbar .userbox #notificationToggle,
+.bcn-topbar .userbox #changePassword {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  line-height: 1;
+}
+
+.bcn-topbar .userbox > button.ghost > svg {
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+}
+
+.bcn-topbar .userbox #accountName {
+  max-width: min(24vw, 240px);
+  margin: 0 3px 0 6px;
+  padding: 2px 0 2px 12px;
+  border-left: 1px solid var(--ui-line-strong);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.bcn-topbar .userbox #logout {
+  width: auto;
+  gap: 6px;
+  padding: 0 10px;
+}
+
+.bcn-topbar .userbox #logout span {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.bcn-topbar #notificationToggle [data-notification-badge] {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  top: -4px;
+  right: -4px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border: 2px solid var(--ui-side);
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  pointer-events: none;
+}
+
+.bcn-topbar #notificationToggle [data-notification-badge][hidden] {
+  display: none;
+}
+
+@layer bcn-glass {
+  .bcn-topbar .userbox > button.ghost {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: var(--ui-secondary) !important;
+  }
+
+  .bcn-topbar .userbox > button.ghost:hover:not(:disabled),
+  .bcn-topbar .userbox > button.ghost[aria-expanded="true"] {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    box-shadow: none !important;
+    color: var(--ui-gold) !important;
+  }
+
+  .bcn-topbar .userbox > button.ghost:focus-visible {
+    outline: 2px solid var(--ui-gold) !important;
+    outline-offset: 2px;
+  }
+
+  .bcn-topbar .userbox #logout {
+    border-color: var(--ui-line-strong) !important;
+  }
+
+  .bcn-topbar .userbox #logout:hover {
+    border-color: var(--ui-gold-line) !important;
+  }
+
+  .bcn-topbar #notificationToggle [data-notification-badge] {
+    background: var(--ui-gold) !important;
+    color: var(--ui-on-gold) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .bcn-topbar .userbox {
+    gap: 4px;
+  }
+
+  .bcn-topbar .userbox > button.ghost,
+  .bcn-topbar .userbox #notificationToggle,
+  .bcn-topbar .userbox #changePassword {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+}

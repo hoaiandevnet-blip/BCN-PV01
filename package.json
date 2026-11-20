@@ -1,0 +1,29 @@
+{
+  "name": "bcnpv01",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "migrate": "node scripts/migrate.mjs",
+    "verify": "node tests/verify.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "open": "node scripts/start-local.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.5.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jszip": "^3.10.2",
+    "pg": "^8.13.1"
+  },
+  "overrides": {
+    "body-parser": "^1.20.9",
+    "proxy-addr": "^2.0.8",
+    "qs": "^6.16.2"
+  }
+}

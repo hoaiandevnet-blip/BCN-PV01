@@ -1,0 +1,137 @@
+#dailyReports #bcnPaperViewport {
+  overflow: auto;
+  max-height: 790px;
+  background: #e9edf1;
+  padding: 16px 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+#dailyReports #bcnPaperStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  zoom: .55;
+}
+
+#dailyReports .bcn-paper {
+  width: 210mm;
+  height: 297mm;
+  flex: none;
+  padding: 20mm 20mm 20mm 30mm;
+  background: #fff;
+  box-shadow: 0 3px 15px #18202926;
+  color: #000;
+  font: 14pt / 1.15 'Times New Roman', 'Liberation Serif', serif;
+  position: relative;
+}
+
+#dailyReports .bcn-paper.is-bulletin {
+  padding-left: 20mm;
+}
+
+#dailyReports .bcn-paper-content {
+  height: 257mm;
+}
+
+#dailyReports .bcn-paper-number {
+  position: absolute;
+  top: 9mm;
+  left: 30mm;
+  right: 20mm;
+  text-align: center;
+  font-size: 13pt;
+}
+
+#dailyReports .bcn-paper-block {
+  margin: 0 0 6pt;
+  color: #000;
+  font: inherit;
+  text-align: justify;
+  text-indent: 12.7mm;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports .bcn-paper-heading {
+  font-weight: bold;
+  margin-top: 6pt;
+}
+
+#dailyReports .bcn-paper-title,
+#dailyReports .bcn-paper-subtitle {
+  text-align: center;
+  text-indent: 0;
+  font-weight: bold;
+}
+
+#dailyReports .bcn-paper-title {
+  margin-top: 12pt;
+}
+
+#dailyReports .bcn-paper-subtitle {
+  margin-bottom: 12pt;
+}
+
+#dailyReports .bcn-paper-audience {
+  text-indent: 0;
+  text-align: left;
+  margin-bottom: 12pt;
+}
+
+#dailyReports .bcn-letterhead,
+#dailyReports .bcn-paper-signature {
+  display: grid;
+  grid-template-columns: 43% 57%;
+  gap: 0;
+  text-align: center;
+  font-size: 12pt;
+  line-height: 1.15;
+}
+
+#dailyReports .bcn-letterhead p {
+  font-size: 13pt;
+  margin: 5pt 0;
+  color: #000;
+}
+
+#dailyReports .bcn-letterhead hr {
+  margin: 5pt auto;
+  width: 40%;
+  border: 0;
+  border-top: 1px solid #000;
+}
+
+#dailyReports .bcn-paper-signature {
+  grid-template-columns: 45% 55%;
+  margin-top: 16pt;
+  font-size: 14pt;
+}
+
+#dailyReports .bcn-paper-signature > div:first-child {
+  text-align: left;
+  font-size: 11pt;
+}
+
+#dailyReports .bcn-paper-signature p {
+  white-space: pre-wrap;
+  color: #000;
+  margin-top: 4pt;
+}
+
+#dailyReports .bcn-signature-space {
+  height: 27mm;
+}
+
+#dailyReports .bcn-preview-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  #dailyReports #bcnPaperStack {
+    zoom: .36;
+  }
+}

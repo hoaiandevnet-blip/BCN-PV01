@@ -1,0 +1,262 @@
+/* History keeps each saved event, request and submitted version visibly separate. */
+@layer bcn-unslop {
+  #dailyReports #preview-history .bcn-reader-history-block + .bcn-reader-history-block {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ui-line-strong);
+  }
+
+  #dailyReports #preview-history .bcn-reader-history-heading,
+  #dailyReports #preview-history .bcn-reader-versions > summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    color: var(--ui-gold) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-history-heading > svg,
+  #dailyReports #preview-history .bcn-reader-versions > summary > svg {
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-history-count {
+    padding: 2px 8px;
+    border: 1px solid var(--ui-gold-line);
+    border-radius: 4px;
+    color: var(--ui-gold) !important;
+    background: var(--ui-gold-soft) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports #preview-history :is(.bcn-reader-event-list, .bcn-reader-request-list, .bcn-reader-version-list) {
+    display: grid;
+    gap: 20px;
+  }
+
+  #dailyReports #preview-history .bcn-reader-event {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--ui-gold-line);
+    border-radius: 12px;
+    background: var(--ui-bg);
+  }
+
+  #dailyReports #preview-history .bcn-reader-event > .bcn-event-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--ui-gold-line);
+    background: var(--ui-gold-soft);
+  }
+
+  #dailyReports #preview-history .bcn-event-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  #dailyReports #preview-history :is(.bcn-event-narrative, .bcn-event-damage),
+  #dailyReports #preview-history .bcn-event-content:not(:has(.bcn-event-decision)) .bcn-event-handling {
+    grid-column: 1 / -1;
+  }
+
+  #dailyReports #preview-history :is(.bcn-event-handling, .bcn-event-decision) .bcn-event-facts {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  #dailyReports #preview-history :is(.bcn-event-handling, .bcn-event-decision) .bcn-event-facts > div + div {
+    padding-top: 12px;
+    border-top: 1px solid var(--ui-line);
+  }
+
+  #dailyReports #preview-history .bcn-event-fact-casualty dd {
+    color: var(--reader-red) !important;
+  }
+
+  #dailyReports #preview-history .bcn-event-fact-decision dd {
+    padding: 8px 12px;
+    border-left: 3px solid var(--reader-red);
+    border-radius: 4px;
+    color: var(--reader-red) !important;
+    background: var(--reader-red-surface);
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+
+  #dailyReports #preview-history [data-preview-event-files] {
+    margin: 0 20px 20px !important;
+    padding: 16px !important;
+    border: 1px solid var(--ui-line);
+    border-radius: 8px;
+    background: var(--ui-surface);
+  }
+
+  #dailyReports #preview-history [data-preview-event-files] > h4 {
+    margin: 0 0 12px !important;
+    color: var(--ui-gold) !important;
+    font-size: 14px !important;
+  }
+
+  #dailyReports #preview-history [data-preview-event-files] > h4 > svg {
+    color: var(--ui-ok) !important;
+  }
+
+  #dailyReports #preview-history [data-preview-event-files] > h4 > span {
+    color: var(--ui-gold) !important;
+    background: var(--ui-gold-soft) !important;
+    border: 1px solid var(--ui-gold-line) !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-history-empty {
+    margin: 0;
+    padding: 16px;
+    border: 1px dashed var(--ui-line-strong);
+    border-radius: 8px;
+    color: var(--ui-secondary) !important;
+    font-size: 13px !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--ui-line-strong);
+    border-left: 3px solid var(--ui-warn);
+    border-radius: 8px;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 16px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--ui-line);
+    background: var(--ui-raised);
+  }
+
+  #dailyReports #preview-history .bcn-reader-request strong {
+    color: var(--ui-gold) !important;
+    font-size: 14px !important;
+  }
+
+  #dailyReports #preview-history :is(.bcn-reader-request, .bcn-reader-version) time {
+    color: var(--ui-secondary) !important;
+    font-size: 12px !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request dl {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 16px;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request dt {
+    margin-bottom: 4px;
+    color: var(--ui-secondary) !important;
+    font-size: 12px !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request dd {
+    margin: 0;
+    color: var(--ui-text) !important;
+    font-size: 14px !important;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  #dailyReports #preview-history .bcn-reader-request dl > div + div {
+    padding-top: 12px;
+    border-top: 1px solid var(--ui-line);
+  }
+
+  #dailyReports #preview-history summary {
+    cursor: pointer;
+    list-style: none;
+  }
+
+  #dailyReports #preview-history summary::-webkit-details-marker {
+    display: none;
+  }
+
+  #dailyReports #preview-history summary::before {
+    content: '';
+    flex: 0 0 6px;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    margin-right: 4px;
+  }
+
+  #dailyReports #preview-history details[open] > summary::before {
+    transform: rotate(45deg);
+  }
+
+  #dailyReports #preview-history summary:focus-visible {
+    outline: 2px solid var(--ui-gold);
+    outline-offset: 3px;
+  }
+
+  #dailyReports #preview-history .bcn-reader-version {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--ui-line-strong);
+    border-radius: 8px;
+    background: var(--ui-surface);
+  }
+
+  #dailyReports #preview-history .bcn-reader-version > summary {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 12px 16px;
+    background: var(--ui-raised);
+    color: var(--ui-text) !important;
+  }
+
+  #dailyReports #preview-history .bcn-reader-version-content {
+    padding: 16px;
+    border-top: 1px solid var(--ui-line);
+  }
+
+  #dailyReports #preview-history .bcn-reader-version-content h5 {
+    margin: 0 0 8px;
+    color: var(--ui-gold) !important;
+    font-size: 13px !important;
+  }
+
+  @media (max-width: 720px) {
+    #dailyReports #preview-history .bcn-event-content {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    #dailyReports #preview-history .bcn-reader-event > .bcn-event-heading {
+      padding: 12px;
+    }
+
+    #dailyReports #preview-history [data-preview-event-files] {
+      margin: 0 12px 12px !important;
+      padding: 12px !important;
+    }
+
+    #dailyReports #preview-history .bcn-reader-history-heading {
+      font-size: 14px !important;
+    }
+  }
+}

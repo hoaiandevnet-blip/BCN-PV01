@@ -1,0 +1,231 @@
+/* Keep assignment controls inside their panels without changing other BCN pages. */
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details {
+  padding: 0;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details > summary {
+  padding: 16px 18px;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details[open] > summary {
+  border-bottom: 1px solid #e5eaf1;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details > .card {
+  padding: 18px;
+  border: 0 !important;
+  border-radius: 0 0 10px 10px;
+  box-shadow: none !important;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px;
+  margin: 18px 0;
+  padding: 18px;
+  border: 1px solid var(--ui-line, #e5eaf1);
+  border-radius: 10px;
+  background: var(--ui-raised, #f8fafc);
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form > label {
+  min-width: 0;
+  gap: 8px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form
+  :is(input:not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form input[type="hidden"] {
+  display: none;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form textarea {
+  min-height: 110px;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form :is(input, select, textarea):focus {
+  outline: 2px solid var(--ui-gold, #bd8b47);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form > button {
+  align-self: end;
+  justify-self: start;
+  min-height: 42px;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form > button:only-of-type {
+  grid-column: 1 / -1;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] :is(#bcnRoleRows, #bcnLeaderRows, #bcnDefinitionRows) {
+  margin-top: 16px;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details .card > p,
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] #bcnConfiguration > p {
+  margin: 10px 0 0;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] #bcnConfiguration > summary {
+  color: #82501d;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference[data-bcn-active-view="permissions"] #bcnConfigurationLoad {
+  margin-top: 16px;
+}
+
+#dailyReports .bcn-account-field { display: grid; gap: 8px; min-width: 0; align-content: start; }
+#dailyReports .bcn-account-field > label { font-size: 12px; font-weight: 700; color: #64738d; }
+#dailyReports .bcn-account-field > small { font-size: 11px; line-height: 1.5; color: #718096; }
+#dailyReports .bcn-account-picker { position: relative; min-width: 0; }
+#dailyReports #bcnRoleManagement > .card { overflow: visible; }
+#dailyReports #bcnRoleUser,
+#dailyReports #bcnRoleAccountPanel[hidden],
+#dailyReports #bcnRoleAccountClear[hidden] { display: none !important; }
+#dailyReports #bcnRoleAccountSearch { padding-right: 44px !important; }
+#dailyReports #bcnRoleAccountClear {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: 0 !important;
+  border-radius: 6px;
+  background: transparent !important;
+  color: #64738d !important;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+#dailyReports #bcnRoleAccountClear:hover { background: #f3eadc !important; color: #82501d !important; }
+#dailyReports .bcn-account-panel {
+  position: absolute;
+  z-index: 40;
+  inset: calc(100% + 7px) 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-height: 320px;
+  overflow: hidden;
+  border: 1px solid #d9c3a3;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(39, 51, 72, .16);
+}
+
+#dailyReports .bcn-account-picker.opens-up .bcn-account-panel { inset: auto 0 calc(100% + 7px); }
+#dailyReports #bcnRoleAccountOptions {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+#dailyReports #bcnRoleAccountOptions [role="option"] {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #273348;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports #bcnRoleAccountOptions [role="option"] + [role="option"] { margin-top: 2px; }
+#dailyReports #bcnRoleAccountOptions [role="option"]:hover,
+#dailyReports #bcnRoleAccountOptions [aria-selected="true"] { background: #fff3df; color: #754819; }
+#dailyReports .bcn-account-option-top { display: flex; align-items: flex-start; gap: 10px; }
+#dailyReports .bcn-account-option-top strong { flex: 1; min-width: 0; font-size: 13px; font-weight: 800; }
+#dailyReports .bcn-account-option-top > span {
+  max-width: 50%;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: #edf3fc;
+  color: #45658e;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+#dailyReports #bcnRoleAccountOptions small { display: block; margin-top: 4px; font-size: 12px; color: #66768e; }
+#dailyReports #bcnRoleAccountStatus {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 10px 12px;
+  border-top: 1px solid #edf0f5;
+  background: #f8fafc;
+  color: #64738d;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1000px) {
+  #dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details > summary,
+  #dailyReports.bcn-reference[data-bcn-active-view="permissions"] .bcn-management-details > .card {
+    padding: 14px;
+  }
+
+  #dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form {
+    gap: 16px;
+    padding: 14px;
+  }
+
+  #dailyReports.bcn-reference[data-bcn-active-view="permissions"] .daily-report-form > button {
+    justify-self: stretch;
+  }
+}
+
+#dailyReports #bcnCompilerModules[hidden] {
+  display: none !important;
+}
+
+#dailyReports #bcnCompilerModules > p {
+  grid-column: 1 / -1;
+  margin: 0 0 8px;
+}
+
+#dailyReports .bcn-submodule-choice,
+.bcn-action-dialog .bcn-submodule-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#dailyReports .bcn-submodule-choice input[type="checkbox"],
+.bcn-action-dialog .bcn-submodule-choice input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex: 0 0 18px;
+  margin: 0;
+}

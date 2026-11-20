@@ -1,0 +1,57 @@
+/* Institutional identity: centred seal, single-line name and a restrained divider. */
+@layer bcn-glass {
+  .bcn-standalone #sidebar .bcn-brand {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 !important;
+    margin: 0 0 12px !important;
+    padding: 18px 4px 20px !important;
+    border: 0;
+    border-bottom: 1px solid var(--ui-line-strong);
+    border-radius: 0;
+    background: radial-gradient(ellipse at 50% 18%, var(--ui-gold-soft), transparent 68%);
+    box-shadow: none;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .bcn-standalone #sidebar .bcn-brand img {
+    width: 72px !important;
+    height: 80px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 5px #0000001a);
+  }
+
+  .bcn-standalone #sidebar .bcn-brand b {
+    margin-top: 12px;
+    color: var(--ui-text) !important;
+    font-size: 23px !important;
+    font-weight: 750 !important;
+    line-height: 1.2;
+    letter-spacing: .01em !important;
+    white-space: nowrap !important;
+  }
+
+  .bcn-standalone #sidebar .bcn-brand small {
+    display: block !important;
+    margin: 7px 0 0 !important;
+    color: var(--ui-secondary) !important;
+    font-size: 10.5px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: .06em;
+    white-space: nowrap;
+  }
+
+  .bcn-standalone #sidebar .bcn-brand small span {
+    color: var(--ui-gold);
+    font-weight: 750;
+    letter-spacing: .08em;
+  }
+
+  .bcn-standalone #sidebar .bcn-brand:focus-visible {
+    outline: 2px solid var(--ui-gold);
+    outline-offset: -2px;
+  }
+}

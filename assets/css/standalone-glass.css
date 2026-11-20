@@ -1,0 +1,313 @@
+/* Frosted glass, inspired by github.com/miketromba/css.glass (Editor.vue).
+   Original implementation; no third-party runtime. Keep this layer before
+   bcn-theme so its important appearance rules win over inherited CSS. */
+@layer bcn-glass {
+  body.bcn-glass {
+    --glass-panel: linear-gradient(135deg, #ffffff19, #ffffff05 44%, #d6b8820a), #1c2025b8;
+    --glass-panel-solid: #272b31;
+    --glass-dialog: linear-gradient(135deg, #ffffff16, #ffffff03 48%), #1c2026eb;
+    --glass-inset: linear-gradient(135deg, #ffffff07, #ffffff02), #15181d96;
+    --glass-edge: #ffffff29;
+    --glass-edge-lit: #ffffff47;
+    --glass-shadow: inset 0 1px 0 #ffffff26, inset 0 -1px 0 #ffffff04, 0 12px 32px #00000038;
+    --glass-shadow-raised: inset 0 1px 0 #ffffff35, 0 22px 54px #00000059;
+    --glass-blur: blur(22px) saturate(135%);
+    --ui-muted: #aaaeb6 !important;
+    --ui-secondary: #c4c7cd !important;
+    --ui-line: #ffffff1f !important;
+    --ui-line-strong: #ffffff30 !important;
+    --ui-shadow: inset 0 1px 0 #ffffff16, 0 5px 18px #00000026 !important;
+    --ui-pop-shadow: inset 0 1px 0 #ffffff30, 0 26px 70px #0009 !important;
+  }
+
+  /* Large surfaces receive real backdrop blur. Nested fields only use a
+     translucent finish, keeping long report forms inexpensive to render. */
+  .bcn-glass :where(.bcn-login-form, .bcn-workspace-card, .bcn-home-note,
+    .bcn-table-card, .daily-report-heading, .bcn-kpi, .bcn-kpi-tile,
+    .notification-card, .notification-popup-card),
+  .bcn-glass #dailyReports :where(.card, .bcn-intake-section):not(.card .card),
+  .bcn-glass dialog {
+    background: var(--glass-panel) !important;
+    border-color: var(--glass-edge) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+    box-shadow: var(--glass-shadow) !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  .bcn-glass :where(.bcn-login-form, .bcn-workspace-card) {
+    border-radius: 22px !important;
+  }
+  .bcn-glass .bcn-login-form {
+    background: var(--glass-panel) !important;
+    box-shadow: var(--glass-shadow) !important;
+  }
+  .bcn-glass .bcn-workspace-card.featured {
+    background: var(--glass-featured, var(--glass-panel)) !important;
+    border-color: var(--ui-gold-line) !important;
+    border-top-color: var(--ui-gold-line) !important;
+  }
+  .bcn-glass :where(.bcn-workspace-card > svg, .bcn-login-unit,
+    .bcn-heading-icon-wrap, .bcn-entry-tab-icon, .bcn-permission-symbol,
+    .bcn-guide-symbol, .bcn-process-symbol, .bcn-audit-symbol, .bcn-detail-emblem,
+    .bcn-subject-header-icon, .bcn-law-symbol, .bcn-kpi-glyph) {
+    background: var(--glass-accent, var(--ui-gold-soft)) !important;
+    border: 1px solid var(--ui-gold-line) !important;
+    box-shadow: inset 0 1px 0 #fff3, 0 5px 12px #0003 !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-glass .bcn-login-rule {
+    box-shadow: 0 0 12px var(--ui-gold-line);
+  }
+
+  /* Navigation stays on a plain background; the material itself carries light. */
+  .bcn-glass #appShell .sidebar {
+    background: var(--glass-side, var(--ui-side)) !important;
+    border-right-color: var(--glass-edge) !important;
+    box-shadow: inset -1px 0 0 #ffffff04, 6px 0 28px #0002 !important;
+    -webkit-backdrop-filter: blur(24px) saturate(125%);
+    backdrop-filter: blur(24px) saturate(125%);
+  }
+  .bcn-glass .bcn-topbar {
+    background: var(--glass-topbar, var(--ui-side)) !important;
+    border-bottom-color: var(--glass-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff08, 0 6px 18px #0002 !important;
+    -webkit-backdrop-filter: blur(24px) saturate(125%);
+    backdrop-filter: blur(24px) saturate(125%);
+  }
+  .bcn-glass #appShell .nav-item.active {
+    background: var(--glass-accent, var(--ui-gold-soft)) !important;
+    border-color: var(--ui-gold-line) !important;
+    border-top-color: var(--ui-gold-line) !important;
+    box-shadow: inset 0 1px 0 #ffffff1f, 0 4px 12px #0003 !important;
+  }
+  .bcn-glass #appShell :where(.nav-item, .nav-group-toggle):hover:not(.active) {
+    background: linear-gradient(110deg, #ffffff0e, #ffffff04) !important;
+    border-color: #ffffff24 !important;
+    box-shadow: inset 0 1px 0 #ffffff14 !important;
+  }
+
+  /* Controls catch light without blurring text or changing their hit areas. */
+  .bcn-glass :where(button:not(.nav-item, .nav-group-toggle), a.ghost, a.primary) {
+    background-image: linear-gradient(180deg, #ffffff13, #ffffff00 62%) !important;
+    border-top-color: #ffffff3d !important;
+    box-shadow: inset 0 1px 0 #ffffff1a, 0 3px 8px #0003 !important;
+    transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .12s ease;
+  }
+  .bcn-glass :where(button.ghost, a.ghost, .daily-report-action.is-secondary) {
+    background-color: var(--glass-control, var(--ui-raised)) !important;
+    border-color: var(--glass-edge) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+  }
+  .bcn-glass :where(button.primary, a.primary, .digital-map-commit, .bcn-detail-save) {
+    background: var(--glass-primary, var(--ui-gold)) !important;
+    color: var(--glass-primary-text, var(--ui-on-gold)) !important;
+    border-color: var(--ui-gold-line) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+    box-shadow: inset 0 1px 0 #ffffff80, 0 4px 14px #0005, 0 0 0 1px #d6b8820a !important;
+  }
+  .bcn-glass :where(button.primary, a.primary, .digital-map-commit, .bcn-detail-save):hover:not(:disabled) {
+    background: var(--glass-primary-hover, var(--ui-gold-hover)) !important;
+    box-shadow: inset 0 1px 0 #fff9, 0 6px 20px #0005, 0 0 16px #d6b8821f !important;
+  }
+  .bcn-glass :where(button.ghost, a.ghost, .daily-report-action.is-secondary):hover:not(:disabled) {
+    background-color: var(--glass-control-hover, var(--ui-hover)) !important;
+    border-color: var(--ui-gold-line) !important;
+    box-shadow: inset 0 1px 0 #ffffff3b, 0 5px 14px #0004 !important;
+  }
+  .bcn-glass :where(.danger, [data-domain-remove], .bcn-assignment-revoke,
+    .bcn-leader-delete, .bcn-btn-delete-report, .bcn-subject-remove-btn) {
+    border-color: #ec6f765c !important;
+  }
+  .bcn-glass :where(.bcn-green, [data-approve], [data-verify], .bcn-btn-verify) {
+    border-color: #6fcf9f5c !important;
+  }
+  .bcn-glass button:disabled {
+    background-image: none !important;
+    box-shadow: none !important;
+  }
+  .bcn-glass button.primary:disabled {
+    background: var(--ui-raised) !important;
+    color: var(--ui-secondary) !important;
+    border-color: var(--ui-line-strong) !important;
+    opacity: .65 !important;
+  }
+  .bcn-glass :where(.bcn-entry-tabs button.active, .bcn-reg-tab-btn.active,
+    .bcn-toggle-btn.active, .bcn-format-buttons button[aria-pressed="true"],
+    .digital-map-modes button.active, .notification-filters button[aria-pressed="true"]) {
+    background: var(--glass-accent, var(--ui-gold-soft)) !important;
+    border-color: var(--ui-gold-line) !important;
+    box-shadow: inset 0 1px 0 #ffffff2e, 0 3px 9px #0004 !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-glass :where(input:not([type="checkbox"], [type="radio"], [type="range"]), select, textarea) {
+    background: var(--glass-inset) !important;
+    border-color: var(--glass-edge) !important;
+    border-bottom-color: var(--glass-edge) !important;
+    box-shadow: inset 0 2px 5px #0003, 0 1px 0 #ffffff08 !important;
+    color: var(--ui-text) !important;
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+  .bcn-glass :where(input, select, textarea):hover:not(:disabled):not([readonly]) {
+    border-color: var(--ui-gold-line) !important;
+  }
+  .bcn-glass :where(input, select, textarea):focus {
+    background-color: var(--ui-field) !important;
+    border-color: var(--ui-gold) !important;
+    box-shadow: inset 0 1px 3px #0002, 0 0 0 3px var(--ui-gold-soft) !important;
+  }
+  .bcn-glass :where(input, select, textarea):disabled,
+  .bcn-glass :where(input, textarea)[readonly] {
+    background: var(--ui-side) !important;
+    color: var(--ui-muted) !important;
+    box-shadow: none !important;
+  }
+
+  /* Data-dense areas use an opaque-enough interior inside the glass frame. */
+  .bcn-glass :where(.bcn-table-card, #dailyReports .table-wrap) tbody td {
+    background: var(--glass-row, var(--ui-surface)) !important;
+  }
+  .bcn-glass :where(.bcn-table-card, #dailyReports .table-wrap) tbody tr:nth-child(even) td {
+    background: var(--glass-row-alt, var(--ui-raised)) !important;
+  }
+  .bcn-glass :where(.bcn-table-card, #dailyReports .table-wrap) tbody tr:hover td {
+    background: var(--ui-gold-soft) !important;
+  }
+  .bcn-glass :where(.bcn-table-card, #dailyReports .table-wrap) :where(thead, th) {
+    background: var(--glass-table-head, var(--ui-side)) !important;
+  }
+  .bcn-glass #dailyReports :where(.bcn-intake-metrics, .bcn-location fieldset,
+    .bcn-classification-card, .bcn-person-card, .bcn-detail-section,
+    .bcn-assignment-row, .bcn-leader-row, .bcn-source-case-card, .bcn-commune-card,
+    .bcn-normal-situation-card, .bcn-attachment-picker, .bcn-submitted-section) {
+    background: var(--glass-inset) !important;
+    border-color: var(--glass-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff0d, 0 3px 10px #0002 !important;
+  }
+
+  /* Floating panels are where backdrop blur is most useful over real content. */
+  .bcn-glass :where(dialog, .notification-card, .notification-popup-card,
+    .unit-search-options, .bcn-weapon-options, .bcn-account-panel, .bcn-select-dropdown) {
+    background: var(--glass-dialog) !important;
+    border-color: var(--glass-edge) !important;
+    border-top-color: var(--glass-edge-lit) !important;
+    box-shadow: var(--ui-pop-shadow) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(130%);
+    backdrop-filter: blur(28px) saturate(130%);
+  }
+  .bcn-glass dialog::backdrop {
+    background: #080b1166 !important;
+    -webkit-backdrop-filter: blur(7px) saturate(80%);
+    backdrop-filter: blur(7px) saturate(80%);
+  }
+  .bcn-glass :where(.bcn-subject-header, .bcn-subject-footer, .bcn-detail-header,
+    .bcn-detail-footer, .bcn-law-header, .bcn-law-footer, .notification-heading,
+    .notification-status, .notification-card footer) {
+    background: #ffffff04 !important;
+    border-color: var(--glass-edge) !important;
+  }
+  .bcn-glass :where(.bcn-subject-body, .bcn-law-meta) {
+    background: transparent !important;
+  }
+  .bcn-glass #notificationPanel .notification-search {
+    background: var(--glass-inset) !important;
+  }
+  .bcn-glass #notificationPanel .notification-search input,
+  .bcn-glass #digitalMap .digital-map-map-search input {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  /* Map geometry, choropleth colours, and tiles are never blurred. */
+  .bcn-glass #digitalMap :where(.digital-map-sidebar, .digital-map-stage-head,
+    .digital-map-legend, .digital-map-selected, .digital-map-map-search > label,
+    .digital-map-map-search-results, .leaflet-popup-content-wrapper, .leaflet-tooltip,
+    .leaflet-control-zoom, .leaflet-control-layers) {
+    background: var(--glass-dialog) !important;
+    border-color: var(--glass-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff29, 0 8px 24px #0004 !important;
+    -webkit-backdrop-filter: blur(18px) saturate(130%);
+    backdrop-filter: blur(18px) saturate(130%);
+  }
+  .bcn-glass #digitalMap :where(.digital-map-chart, .digital-map-summary > div,
+    .digital-map-period-editor, .digital-map-period-filter, .digital-map-import-review) {
+    background: var(--glass-inset) !important;
+    border-color: var(--glass-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff14, 0 3px 10px #0002 !important;
+  }
+  .bcn-glass #digitalMap .leaflet-control-zoom a {
+    background: transparent !important;
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .bcn-glass .bcn-workspace-card {
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .bcn-glass .bcn-workspace-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--ui-gold-line) !important;
+      box-shadow: var(--glass-shadow-raised) !important;
+    }
+  }
+  @media (max-width: 760px) {
+    body.bcn-glass {
+      --glass-blur: blur(12px) saturate(120%);
+      --glass-shadow: inset 0 1px 0 #ffffff24, 0 8px 20px #0004;
+    }
+    .bcn-glass #appShell .sidebar {
+      background: var(--glass-side, var(--ui-side)) !important;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bcn-glass *,
+    .bcn-glass *::before,
+    .bcn-glass *::after {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  @media print {
+    .bcn-glass * {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+/* Opaque fallbacks preserve readability when blur/transparency is unavailable. */
+@layer bcn-glass {
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    body.bcn-glass {
+      --glass-panel: linear-gradient(135deg, #ffffff0f, transparent 60%), #252930;
+      --glass-dialog: #262a31;
+      --glass-inset: #191d23;
+    }
+    body.bcn-glass .bcn-login-form {
+      background: var(--glass-panel) !important;
+    }
+    body.bcn-glass #appShell .sidebar,
+    body.bcn-glass .bcn-topbar {
+      background: var(--ui-side) !important;
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    body.bcn-glass {
+      --glass-panel: #252930;
+      --glass-dialog: #262a31;
+      --glass-inset: #191d23;
+    }
+    body.bcn-glass .bcn-login-form,
+    body.bcn-glass .bcn-workspace-card.featured {
+      background: var(--glass-panel) !important;
+    }
+    body.bcn-glass #appShell .sidebar,
+    body.bcn-glass .bcn-topbar {
+      background: var(--ui-side) !important;
+    }
+    .bcn-glass * {
+      -webkit-backdrop-filter: none !important;
+      backdrop-filter: none !important;
+    }
+  }
+}

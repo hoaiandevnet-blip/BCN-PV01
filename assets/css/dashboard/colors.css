@@ -1,0 +1,106 @@
+@layer bcn-glass {
+  #home .dash-controls {
+    background: color-mix(in srgb, var(--ui-surface) 85%, transparent) !important;
+  }
+  #home .dash-kpi {
+    background: linear-gradient(125deg, color-mix(in srgb, var(--dash-tone) 9%, transparent), transparent 70%),
+      var(--ui-surface) !important;
+    border-top-color: var(--dash-tone) !important;
+    box-shadow: 0 5px 18px #00000012;
+  }
+  #home .dash-panel {
+    background: color-mix(in srgb, var(--ui-surface) 96%, transparent) !important;
+    box-shadow: 0 5px 18px #00000012;
+  }
+  #home .bcn-dashboard :where(h1, h2, strong, b, p, time) {
+    color: var(--ui-text) !important;
+  }
+  #home .bcn-dashboard :where(small, .dash-muted, .dash-footnote, .dash-footer,
+    .dash-panel-head p, .dash-header p, .dash-period-label, .dash-updated,
+    .dash-refresh, .dash-chart-legend, .dash-kpi p, .dash-kpi-value span) {
+    color: var(--ui-secondary) !important;
+  }
+  #home .dash-overline { color: var(--ui-gold) !important; }
+  #home .dash-kpi-label > svg { color: var(--dash-tone) !important; }
+  #home .dash-kpi-value { color: var(--ui-text) !important; }
+  #home .dash-progress,
+  #home .dash-track { background: var(--ui-line) !important; }
+  #home .dash-progress > span { background: var(--dash-green) !important; }
+  #home .dash-domain-dot,
+  #home .dash-track > span { background: var(--dash-domain) !important; }
+  #home .dash-change {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: var(--ui-secondary) !important;
+  }
+  #home .dash-change[data-direction="up"],
+  #home .dash-kpi[data-direction="up"] .dash-kpi-value { color: var(--dash-red) !important; }
+  #home .dash-change[data-direction="down"] { color: var(--dash-green) !important; }
+  #home .dash-change b { color: inherit !important; }
+  #home .dash-kpi .dash-text-button {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: var(--dash-amber) !important;
+  }
+  #home .bcn-dashboard button[aria-pressed="true"],
+  #home .dash-page-btn.active {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+  }
+  #home .dash-page-btn {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+  }
+  #home .dash-page-btn:hover:not(:disabled) {
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+  }
+  #home .dash-table th { background: var(--ui-side) !important; color: var(--ui-secondary) !important; }
+  #home .dash-table td { background: transparent !important; color: var(--ui-text) !important; }
+  #home .dash-table tr { background: var(--ui-surface) !important; }
+  #home .dash-table tr:nth-child(even) { background: transparent !important; }
+  #home .dash-table tr:hover { background: color-mix(in srgb, var(--ui-hover) 45%, transparent) !important; }
+  #home .dash-unit-name > svg { color: var(--ui-muted) !important; }
+  #home .dash-status {
+    --status-color: var(--ui-secondary);
+    color: var(--status-color) !important;
+    border-color: color-mix(in srgb, var(--status-color) 25%, transparent) !important;
+    background: color-mix(in srgb, var(--status-color) 9%, transparent) !important;
+  }
+  #home .dash-status[data-status="complete"] { --status-color: var(--dash-green); }
+  #home .dash-status[data-status="partial"] { --status-color: var(--dash-blue); }
+  #home .dash-status[data-status="returned"] { --status-color: var(--dash-red); }
+  #home .dash-status[data-status="missing"] { --status-color: var(--dash-amber); }
+  #home .dash-content-tags > span,
+  #home .dash-content-pill {
+    background: var(--ui-raised) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+  }
+  #home .dash-content-tags > .dash-muted { background: transparent !important; padding: 0; }
+  #home .dash-review-tag.pending {
+    color: var(--dash-amber) !important;
+    background: color-mix(in srgb, var(--dash-amber) 12%, transparent) !important;
+    border-color: color-mix(in srgb, var(--dash-amber) 30%, transparent) !important;
+  }
+  #home .dash-review-tag.verified {
+    color: var(--dash-green) !important;
+    background: color-mix(in srgb, var(--dash-green) 12%, transparent) !important;
+    border-color: color-mix(in srgb, var(--dash-green) 30%, transparent) !important;
+  }
+  #home .dash-review-tag.returned {
+    color: var(--dash-red) !important;
+    background: color-mix(in srgb, var(--dash-red) 12%, transparent) !important;
+    border-color: color-mix(in srgb, var(--dash-red) 30%, transparent) !important;
+  }
+  #home .dash-detail-row,
+  #home .dash-source { background: var(--ui-field) !important; }
+  #home .dash-source-state { background: var(--ui-raised); color: var(--ui-secondary) !important; }
+  #home .dash-source-state[data-state="VERIFIED"] { color: var(--dash-green) !important; }
+  #home .dash-source-state[data-state="PENDING_REVIEW"] { color: var(--dash-amber) !important; }
+  #home .dash-source-state[data-state="RETURNED"] { color: var(--dash-red) !important; }
+}

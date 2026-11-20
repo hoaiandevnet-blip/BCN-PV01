@@ -1,0 +1,90 @@
+/* A consistent category colour for each submitted work metric. */
+@layer bcn-unslop {
+  #bcnSubmittedReportCard [data-metric-group="activity"] {
+    --metric-accent: var(--ui-info);
+  }
+
+  #bcnSubmittedReportCard [data-metric-group="detention"] {
+    --metric-accent: var(--ui-warn);
+  }
+
+  #bcnSubmittedReportCard [data-metric-group="patrol"] {
+    --metric-accent: var(--ui-ok);
+  }
+
+  #bcnSubmittedReportCard [data-metric-group="weapons"] {
+    --metric-accent: var(--ui-error);
+  }
+
+  #bcnSubmittedReportCard [data-metric-group="administrative"] {
+    --metric-accent: var(--ui-gold);
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-metric-legend {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px 24px !important;
+    padding: 0 !important;
+    margin: 0 0 16px !important;
+    list-style: none !important;
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-submitted-grid {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)) !important;
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-metric-legend li {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    color: var(--ui-secondary) !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  #bcnSubmittedReportCard .bcn-metric-legend li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    flex: 0 0 8px;
+    border-radius: 2px;
+    background: var(--metric-accent);
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-summary-item[data-metric-group] {
+    min-width: 0 !important;
+    padding: 12px 16px !important;
+    border: 1px solid color-mix(in srgb, var(--metric-accent) 32%, var(--ui-line)) !important;
+    border-left: 3px solid var(--metric-accent) !important;
+    border-radius: 8px !important;
+    background: color-mix(in srgb, var(--metric-accent) 9%, var(--ui-surface)) !important;
+    box-shadow: none !important;
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-summary-item-label {
+    color: var(--ui-text) !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-summary-item-value {
+    color: var(--metric-accent) !important;
+    font-weight: 600 !important;
+    font-variant-numeric: tabular-nums !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  #dailyReports #bcnSubmittedReportCard .bcn-summary-item-unit {
+    color: var(--ui-secondary) !important;
+  }
+
+  @media (max-width: 600px) {
+    #dailyReports #bcnSubmittedReportCard [data-metric-group="administrative"] {
+      grid-column: 1 / -1 !important;
+    }
+
+    #dailyReports #bcnSubmittedReportCard .bcn-metric-legend {
+      gap: 8px 16px !important;
+    }
+  }
+}

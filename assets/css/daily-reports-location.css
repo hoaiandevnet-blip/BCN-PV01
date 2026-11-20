@@ -1,0 +1,55 @@
+#dailyReports .bcn-location {
+  min-width: 0;
+  grid-column: 1 / -1;
+}
+
+#dailyReports .bcn-location fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 14px 16px 16px;
+  border: 1px solid #dce3ee;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+#dailyReports .bcn-location legend {
+  padding: 0 6px;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+#dailyReports .bcn-location-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: 14px;
+}
+
+#dailyReports .bcn-location-fields label {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+}
+
+#dailyReports .bcn-location-fields :is(input, select) {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#dailyReports .bcn-location-status {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+#dailyReports .bcn-location [data-location-retry] {
+  margin-top: 8px;
+}
+
+@media (max-width: 700px) {
+  #dailyReports .bcn-location-fields { grid-template-columns: minmax(0, 1fr); }
+}

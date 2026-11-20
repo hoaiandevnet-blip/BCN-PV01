@@ -1,0 +1,339 @@
+#seedyAssistant {
+  position: fixed;
+  z-index: 10800;
+  right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: min(440px, calc(100vw - 24px));
+  height: min(690px, calc(100dvh - 90px));
+  overflow: hidden;
+  border: 1px solid var(--ui-line-strong);
+  border-radius: 20px;
+  background: var(--ui-surface);
+  color: var(--ui-text);
+  box-shadow: var(--ui-pop-shadow, 0 18px 64px #0005);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+#seedyAssistant .seedy-ai-header {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--ui-line);
+}
+
+#seedyAssistant .seedy-ai-header > div {
+  flex: 1;
+  min-width: 0;
+}
+
+#seedyAssistant h2 {
+  margin: 0;
+  color: var(--ui-text);
+  font-size: 16px;
+  font-weight: 650;
+}
+
+#seedyAssistant .seedy-ai-header p {
+  margin: 0;
+  font-size: 11px;
+  color: var(--ui-secondary);
+}
+
+#seedyAssistant .seedy-ai-avatar {
+  width: 48px;
+  height: 52px;
+  flex: 0 0 48px;
+  background: url('../pet-seedy/seedy.webp') 0 0 / 800% 1100% no-repeat;
+  image-rendering: pixelated;
+}
+
+#seedyAssistant .seedy-ai-header button {
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0;
+  font-size: 19px;
+}
+
+#seedyAssistant .seedy-ai-runtime {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 14px 0;
+  font-size: 11px;
+  color: var(--ui-secondary);
+}
+
+#seedyAssistant [data-ready="true"] {
+  color: var(--ui-ok);
+}
+
+#seedyAssistant [data-ai-reconnect] {
+  flex: 0 0 auto;
+  padding: 4px 7px;
+  font-size: 10px;
+}
+
+#seedyAssistant .seedy-ai-options {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ui-line);
+}
+
+#seedyAssistant .seedy-ai-options label {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  color: var(--ui-secondary);
+  font-size: 11px;
+}
+
+#seedyAssistant .seedy-ai-options select,
+#seedyAssistant .seedy-ai-options input[type="date"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 210px;
+  min-height: 32px;
+  padding: 5px 7px;
+  font: inherit;
+}
+
+#seedyAssistant .seedy-ai-options .seedy-ai-context {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 6px;
+}
+
+#seedyAssistant input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  min-height: 0;
+  margin: 0;
+  accent-color: var(--ui-gold);
+}
+
+#seedyAssistant .seedy-ai-history {
+  flex: 1 1 auto;
+  min-height: 60px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px 14px;
+  scrollbar-width: thin;
+}
+
+#seedyAssistant .seedy-ai-message {
+  margin-bottom: 14px;
+  padding: 11px 12px;
+  border: 1px solid var(--ui-line);
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+#seedyAssistant .seedy-ai-message-user {
+  margin-left: 28px;
+  background: var(--ui-gold-soft);
+}
+
+#seedyAssistant .seedy-ai-message > strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: var(--ui-gold);
+}
+
+#seedyAssistant .seedy-ai-message-text {
+  white-space: pre-wrap;
+}
+
+#seedyAssistant .seedy-ai-highlight {
+  padding: 1px 3px;
+  border-radius: 4px;
+  font-weight: 750;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+#seedyAssistant .seedy-ai-highlight-number {
+  background: var(--ui-gold-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+#seedyAssistant .seedy-ai-highlight-place {
+  background: var(--ui-info-soft);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--ui-info) 40%, transparent);
+  text-underline-offset: 3px;
+}
+
+@layer bcn-theme {
+  #seedyAssistant .seedy-ai-highlight-number {
+    color: var(--ui-gold) !important;
+  }
+
+  #seedyAssistant .seedy-ai-highlight-place {
+    color: var(--ui-info) !important;
+  }
+}
+
+#seedyAssistant .seedy-ai-pending {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 30px;
+  color: var(--ui-secondary);
+}
+
+#seedyAssistant .seedy-ai-pending-dots {
+  display: inline-flex;
+  gap: 4px;
+}
+
+#seedyAssistant .seedy-ai-pending-dots > span {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ui-gold);
+  animation: seedy-ai-wait 1.2s ease-in-out infinite;
+}
+
+#seedyAssistant .seedy-ai-pending-dots > span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+#seedyAssistant .seedy-ai-pending-dots > span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+#seedyAssistant .seedy-ai-pending[hidden],
+#seedyAssistant .seedy-ai-sources[hidden],
+#seedyAssistant .seedy-ai-actions[hidden],
+#seedyAssistant .seedy-ai-copy[hidden] {
+  display: none !important;
+}
+
+@keyframes seedy-ai-wait {
+  0%, 80%, 100% { opacity: 0.35; }
+  40% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #seedyAssistant .seedy-ai-pending-dots > span {
+    animation: none;
+    opacity: 0.65;
+  }
+}
+
+#seedyAssistant .seedy-ai-sources {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--ui-muted);
+}
+
+#seedyAssistant .seedy-ai-sources:empty {
+  display: none;
+}
+
+#seedyAssistant .seedy-ai-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+#seedyAssistant .seedy-ai-actions button {
+  margin: 0;
+  padding: 4px 10px;
+  font-size: 11px;
+  line-height: 1.4;
+  border-radius: 8px;
+}
+
+#seedyAssistant .seedy-ai-copy {
+  padding: 4px 9px;
+  font-size: 11px;
+}
+
+#seedyAssistant .seedy-ai-form {
+  margin: 0;
+  padding: 10px 14px;
+  border-top: 1px solid var(--ui-line);
+}
+
+#seedyAssistant textarea {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 72px;
+  max-height: 120px;
+  resize: vertical;
+  padding: 10px;
+  font: inherit;
+}
+
+#seedyAssistant .seedy-ai-composer-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 7px;
+}
+
+#seedyAssistant .seedy-ai-composer-foot small {
+  color: var(--ui-muted);
+  font-size: 10px;
+}
+
+#seedyAssistant .seedy-ai-composer-foot button {
+  flex: 0 0 auto;
+  min-width: 56px;
+  padding: 6px 12px;
+}
+
+#seedyAssistant .seedy-ai-footnote {
+  padding: 0 14px 10px;
+  color: var(--ui-muted);
+  font-size: 10px;
+}
+
+#seedyAssistant .seedy-ai-error {
+  margin: 0;
+  padding: 7px 14px;
+  color: var(--ui-error);
+  background: var(--ui-error-soft);
+  font-size: 12px;
+}
+
+#seedyAssistant .seedy-ai-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 600px) {
+  #seedyAssistant {
+    right: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom, 0px));
+    height: calc(100dvh - 90px);
+    border-radius: 16px;
+  }
+}
+
+@media print {
+  #seedyAssistant {
+    display: none !important;
+  }
+}

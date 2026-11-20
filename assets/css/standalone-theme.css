@@ -1,0 +1,362 @@
+/* One palette for every workspace. Layered important declarations intentionally
+   precede legacy unlayered important rules, without escalating selector IDs. */
+@layer bcn-theme {
+  body.bcn-standalone::before,
+  body.bcn-standalone::after {
+    content: none !important;
+  }
+  body.bcn-standalone {
+    --ui-bg: #17181c;
+    --ui-side: #1b1d21;
+    --ui-surface: #22252a;
+    --ui-raised: #2a2d33;
+    --ui-hover: #34383f;
+    --ui-field: #191b1f;
+    --ui-line: #ffffff17;
+    --ui-line-strong: #ffffff26;
+    --ui-text: #ecebe6;
+    --ui-secondary: #bdbcb5;
+    --ui-muted: #9b9a93;
+    --ui-gold: #d6b882;
+    --ui-gold-hover: #e3c895;
+    --ui-gold-soft: #d6b8821c;
+    --ui-gold-line: #d6b88247;
+    --ui-on-gold: #17120a;
+    --ui-ok: #6fcf9f;
+    --ui-ok-soft: #6fcf9f1f;
+    --ui-warn: #e3a95c;
+    --ui-warn-soft: #e3a95c1f;
+    --ui-error: #ec6f76;
+    --ui-error-soft: #ec6f761f;
+    --ui-info: #94afd6;
+    --ui-info-soft: #94afd61f;
+    --ui-shadow: inset 0 1px 0 #ffffff0a, 0 1px 2px #0006;
+    --ui-pop-shadow: inset 0 1px 0 #ffffff0d, 0 18px 44px -14px #000000a6;
+    color-scheme: var(--ui-scheme, dark);
+    background: var(--ui-bg) !important;
+    color: var(--ui-text) !important;
+    scrollbar-color: var(--ui-hover) transparent;
+  }
+  body.bcn-standalone,
+  body.bcn-standalone :where(#dailyReports, #digitalMap, dialog, .bcn-entry-ui) {
+    --ink: var(--ui-text) !important;
+    --text: var(--ui-text) !important;
+    --muted: var(--ui-muted) !important;
+    --line: var(--ui-line) !important;
+    --border: var(--ui-line) !important;
+    --page: var(--ui-bg) !important;
+    --surface: var(--ui-surface) !important;
+    --card: var(--ui-surface) !important;
+    --soft: var(--ui-raised) !important;
+    --primary: var(--ui-gold) !important;
+    --primary-dark: var(--ui-gold-hover) !important;
+    --accent: var(--ui-gold) !important;
+    --shadow: var(--ui-shadow) !important;
+    --green: var(--ui-ok) !important;
+    --green-bg: var(--ui-ok-soft) !important;
+    --red: var(--ui-error) !important;
+    --red-bg: var(--ui-error-soft) !important;
+    --yellow: var(--ui-warn) !important;
+    --yellow-bg: var(--ui-warn-soft) !important;
+  }
+  .bcn-standalone :where(.main, .bcn-login, .bcn-login-brand) {
+    background: var(--ui-bg) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(.sidebar, .bcn-topbar) {
+    background: var(--ui-side) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #appShell .sidebar {
+    width: var(--bcn-sidebar-width) !important;
+    flex-basis: var(--bcn-sidebar-width) !important;
+    height: 100dvh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  @media (max-width: 760px) {
+    .bcn-standalone #appShell .sidebar {
+      height: calc(100dvh - 64px) !important;
+    }
+  }
+  .bcn-standalone #appShell .nav-submenu {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    padding: 4px 0 6px 8px !important;
+  }
+  .bcn-standalone #appShell .nav-group {
+    margin: 0 !important;
+  }
+  .bcn-standalone #appShell .nav-group-toggle {
+    padding: 10px 12px !important;
+    gap: 10px !important;
+    min-height: 44px !important;
+  }
+  .bcn-standalone #appShell :where(.nav-item, .nav-group-toggle) {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+    min-height: 44px !important;
+  }
+  .bcn-standalone #appShell .nav-sub-item {
+    font-size: 14px !important;
+    min-height: 42px !important;
+  }
+  .bcn-standalone #appShell .nav-group-title {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+  .bcn-standalone #appShell :where(.nav-group-title, .nav-group-icon, .nav-group-chevron) {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    box-shadow: none !important;
+    font-weight: 500 !important;
+  }
+  .bcn-standalone #appShell .nav-group-icon {
+    width: 18px !important;
+    min-width: 18px !important;
+  }
+  .bcn-standalone #appShell .nav-group-title {
+    flex: 1 !important;
+    width: auto !important;
+  }
+  .bcn-standalone #appShell .nav-group-chevron {
+    width: 13px !important;
+    color: var(--ui-muted) !important;
+  }
+  .bcn-standalone .bcn-topbar .userbox {
+    width: auto !important;
+    flex: 0 0 auto !important;
+    justify-content: flex-end !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone :where(.main, .sidebar)::before,
+  .bcn-standalone :where(.main, .sidebar)::after {
+    content: none !important;
+  }
+  .bcn-standalone :where(.bcn-brand, h1, h2, h3, h4, h5, strong, b, label, legend, dt, dd, summary) {
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(p, small, .bcn-nav-caption, .bcn-sidebar-foot, .empty-row) {
+    color: var(--ui-muted) !important;
+  }
+  .bcn-standalone :where(.bcn-eyebrow, .bcn-login-authority) {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone :where(.bcn-login-form, .bcn-workspace-card, .bcn-home-note, .bcn-table-card, dialog) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+    box-shadow: var(--ui-shadow) !important;
+  }
+  .bcn-standalone .bcn-workspace-card > svg,
+  .bcn-standalone .bcn-home-note > svg {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone .bcn-workspace-card > svg {
+    background: var(--ui-gold-soft) !important;
+  }
+  .bcn-standalone :where(button, a.ghost, a.primary, .daily-report-action) {
+    background: var(--ui-surface) !important;
+    color: var(--ui-text) !important;
+    border: 1px solid var(--ui-line-strong) !important;
+    border-radius: 10px !important;
+    box-shadow: var(--ui-shadow) !important;
+    font-weight: 500 !important;
+    transition: background-color .15s, border-color .15s, color .15s, transform .08s;
+  }
+  .bcn-standalone :where(button, a.ghost, a.primary) :where(span, small, b, strong, svg, i) {
+    color: inherit !important;
+  }
+  .bcn-standalone :where(button, a.ghost, a.primary):hover:not(:disabled) {
+    background: var(--ui-raised) !important;
+    border-color: var(--ui-gold-line) !important;
+  }
+  .bcn-standalone :where(button, a.ghost, a.primary):active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .bcn-standalone :where(button.primary, a.primary, .digital-map-commit, .bcn-detail-save) {
+    background: var(--ui-gold) !important;
+    border-color: transparent !important;
+    color: var(--ui-on-gold) !important;
+  }
+  .bcn-standalone :where(button.primary, a.primary, .digital-map-commit, .bcn-detail-save):hover:not(:disabled) {
+    background: var(--ui-gold-hover) !important;
+    border-color: var(--ui-gold-hover) !important;
+  }
+  .bcn-standalone :where(.danger, [data-domain-remove], .bcn-assignment-revoke,
+    .bcn-leader-delete, .bcn-btn-delete-report, .bcn-subject-remove-btn) {
+    background: var(--ui-error-soft) !important;
+    border-color: #ec6f7645 !important;
+    color: var(--ui-error) !important;
+  }
+  .bcn-standalone :where(.bcn-green, [data-approve], [data-verify], .bcn-btn-verify) {
+    background: var(--ui-ok-soft) !important;
+    border-color: #6fcf9f45 !important;
+    color: var(--ui-ok) !important;
+  }
+  .bcn-standalone :where(input, select, textarea):not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+    min-height: 36px;
+    padding: 8px 11px;
+    border: 1px solid var(--ui-line-strong) !important;
+    border-radius: 10px !important;
+    background: var(--ui-field) !important;
+    color: var(--ui-text) !important;
+    box-shadow: inset 0 1px 2px #0002 !important;
+    font-family: inherit !important;
+    font-weight: 400;
+    color-scheme: var(--ui-scheme, dark);
+  }
+  .bcn-standalone :where(input, textarea)::placeholder {
+    color: var(--ui-muted) !important;
+    opacity: 1 !important;
+  }
+  .bcn-standalone option {
+    background: var(--ui-surface) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(input, select, textarea):hover:not(:disabled):not([readonly]) {
+    border-color: var(--ui-gold-line) !important;
+  }
+  .bcn-standalone :where(button, a, input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--ui-gold) !important;
+    outline-offset: 3px !important;
+  }
+  .bcn-standalone :where(input, select, textarea):focus {
+    border-color: var(--ui-gold) !important;
+    box-shadow: 0 0 0 3px var(--ui-gold-soft) !important;
+  }
+  .bcn-standalone :where(input, select, textarea):disabled,
+  .bcn-standalone :where(input, textarea)[readonly] {
+    color: var(--ui-muted) !important;
+    background: var(--ui-side) !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone :where(input[type="checkbox"], input[type="radio"]) {
+    accent-color: var(--ui-gold) !important;
+  }
+  .bcn-standalone input::file-selector-button {
+    padding: 6px 10px;
+    margin-right: 10px;
+    border: 1px solid var(--ui-line-strong) !important;
+    border-radius: 7px !important;
+    background: var(--ui-raised) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone button:disabled {
+    opacity: .45 !important;
+    cursor: not-allowed !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone :where(.bcn-layout .nav-item, .bcn-layout .nav-group-toggle) {
+    color: var(--ui-secondary) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone .bcn-layout :where(.nav-item, .nav-group-toggle):hover,
+  .bcn-standalone .bcn-layout .nav-item.active {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone .bcn-layout .nav-item.active::before {
+    content: "" !important;
+    position: absolute;
+    top: 9px;
+    bottom: 9px;
+    left: -8px;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--ui-gold) !important;
+  }
+  .bcn-standalone .bcn-layout .nav-item.active svg {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone :where(th, td, hr) {
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone :where(thead, th) {
+    background: var(--ui-side) !important;
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone tbody tr {
+    background: transparent !important;
+  }
+  .bcn-standalone tbody tr:is(:hover, :focus-within) {
+    background: var(--ui-raised) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone tbody td {
+    background: var(--ui-surface) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone tbody tr:is(:hover, :focus-within) td {
+    background: var(--ui-raised) !important;
+  }
+  .bcn-standalone dialog {
+    border-color: var(--ui-line-strong) !important;
+    box-shadow: var(--ui-pop-shadow) !important;
+  }
+  .bcn-standalone dialog::backdrop {
+    background: #0009 !important;
+    backdrop-filter: blur(3px);
+  }
+  .bcn-standalone :where(.bcn-error, [role="alert"]:not(.notification-popup-host)) {
+    color: var(--ui-error) !important;
+  }
+  .bcn-standalone :where(.notification-card, .notification-popup-card, .notification-item,
+    .notification-filter, .notification-tabs, .notification-toolbar, .notification-footer) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+    color: var(--ui-text) !important;
+  }
+  .bcn-standalone :where(.notification-panel, .notification-popup-card) :where(span, div, time) {
+    color: var(--ui-secondary) !important;
+  }
+  .bcn-standalone :where(.notification-popup-icon, .notification-icon, [data-notification-badge]) {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone .notification-popup-card {
+    border-left-color: var(--ui-gold) !important;
+    box-shadow: var(--ui-pop-shadow) !important;
+  }
+  .bcn-standalone :where(.notification-tab.active, .notification-filter.active) {
+    background: var(--ui-gold-soft) !important;
+    color: var(--ui-gold) !important;
+  }
+  .bcn-standalone #notificationPanel :where(.notification-search, .notification-status,
+    .notification-card footer, .notification-filters, .notification-item) {
+    background: var(--ui-surface) !important;
+    border-color: var(--ui-line) !important;
+  }
+  .bcn-standalone #notificationPanel .notification-search {
+    background: var(--ui-field) !important;
+  }
+  .bcn-standalone #notificationPanel .notification-search input {
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .bcn-standalone #notificationPanel .notification-filters button[aria-pressed="true"] {
+    background: var(--ui-gold-soft) !important;
+    border-color: var(--ui-gold-line) !important;
+    color: var(--ui-gold) !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bcn-standalone *,
+  .bcn-standalone *::before,
+  .bcn-standalone *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

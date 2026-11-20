@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 88" fill="none">
+  <defs>
+    <linearGradient id="paper" x1="13" y1="18" x2="51" y2="65" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffeeb3"/>
+      <stop offset=".28" stop-color="#ffc967"/>
+      <stop offset=".62" stop-color="#ed8232"/>
+      <stop offset="1" stop-color="#b94628"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(32 53) scale(20 34)">
+      <stop stop-color="#fffce0" stop-opacity=".98"/>
+      <stop offset=".35" stop-color="#ffe58c" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffb947" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="halo" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(32 47) scale(32 39)">
+      <stop stop-color="#ffd478" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#ffc35b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="32" cy="47" rx="32" ry="39" fill="url(#halo)"/>
+  <path d="M12 16Q32 7 52 16L47 62Q32 72 17 62Z" fill="url(#paper)" stroke="#ffd988"/>
+  <path d="M12 16Q32 7 52 16L47 62Q32 72 17 62Z" fill="url(#light)"/>
+  <path d="M22 14Q19 36 24 65M42 14Q45 36 40 65" stroke="#fff0b1" stroke-opacity=".48"/>
+  <path d="M32 12V67" stroke="#fff9d3" stroke-opacity=".25"/>
+  <ellipse cx="32" cy="16" rx="20" ry="7" fill="#ffda85" stroke="#ffeeb8"/>
+  <path d="M15 17Q32 22 49 17" stroke="#fff3bf" stroke-opacity=".75"/>
+  <ellipse cx="32" cy="63" rx="14" ry="4" fill="#a55023" stroke="#ffc366"/>
+  <path d="M31 73C21 66 31 61 30 54C36 59 43 68 31 73Z" fill="#fff0af"/>
+  <path d="M32 71C28 67 32 65 33 61C37 66 36 70 32 71Z" fill="#fffde5"/>
+</svg>

@@ -1,0 +1,266 @@
+/* Polish spacing and hierarchy; all glass materials come from the existing theme. */
+@layer bcn-unslop {
+  #home .bcn-dashboard {
+    gap: 20px !important;
+    font-variant-numeric: tabular-nums;
+  }
+
+  #home #dashData {
+    gap: 20px !important;
+  }
+
+  #home .dash-header {
+    padding: 12px 0 4px !important;
+    align-items: center !important;
+  }
+
+  #home .dash-header h1 {
+    margin: 8px 0 !important;
+    font-size: 28px !important;
+    line-height: 1.25 !important;
+    font-weight: 600 !important;
+    letter-spacing: -.02em !important;
+  }
+
+  #home .dash-header p {
+    max-width: 600px;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  #home .dash-overline {
+    display: block;
+    font-size: 11px !important;
+    line-height: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: .02em !important;
+    text-transform: lowercase !important;
+  }
+
+  #home .dash-overline::first-letter {
+    text-transform: uppercase;
+  }
+
+  #home .dash-controls {
+    border-radius: 12px !important;
+  }
+
+  #home [data-audience='command'] .dash-controls {
+    padding: 16px 20px !important;
+    gap: 16px !important;
+  }
+
+  #home .dash-controls label,
+  #home .dash-period > span {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+
+  #home .dash-period > div {
+    padding: 4px !important;
+    gap: 4px !important;
+    border-radius: 10px !important;
+  }
+
+  #home .bcn-dashboard button {
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+  }
+
+  #home .dash-period button {
+    min-height: 32px !important;
+    padding: 4px 12px !important;
+    font-size: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  #home .bcn-dashboard input {
+    border-radius: 8px !important;
+  }
+
+  #home .bcn-dashboard :is(input, button):focus-visible {
+    outline: 2px solid var(--ui-gold) !important;
+    outline-offset: 3px !important;
+  }
+
+  #home .dash-kpis {
+    gap: 12px !important;
+  }
+
+  #home .dash-kpi,
+  #home .dash-panel {
+    border-radius: 12px !important;
+  }
+
+  #home [data-audience='command'] .dash-kpi {
+    padding: 20px !important;
+    min-height: 184px !important;
+  }
+
+  #home .dash-kpi-label {
+    gap: 8px !important;
+  }
+
+  #home .dash-kpi-label > svg {
+    width: 16px !important;
+    height: 16px !important;
+    stroke-width: 1.5 !important;
+  }
+
+  #home .dash-kpi h2 {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+  }
+
+  #home .dash-kpi-value {
+    font-weight: 500 !important;
+    letter-spacing: -.025em !important;
+  }
+
+  #home [data-audience='command'] .dash-kpi-value {
+    margin: 16px 0 12px !important;
+    font-size: 36px !important;
+  }
+
+  #home .dash-kpi p,
+  #home .dash-kpi > small {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  #home .dash-kpi p {
+    margin-top: 4px !important;
+  }
+
+  #home .dash-kpi > small {
+    padding-top: 12px !important;
+    font-size: 11px !important;
+  }
+
+  #home .dash-kpi .dash-text-button {
+    padding: 8px 0 0 !important;
+    font-size: 12px !important;
+    white-space: normal !important;
+    text-align: left;
+  }
+
+  #home .dash-progress {
+    height: 6px !important;
+  }
+
+  #home .dash-panel-head h2,
+  #home .dash-analysis .dash-panel-head h2 {
+    font-size: 19px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+  }
+
+  #home .dash-table th {
+    font-size: 12px !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    font-weight: 500 !important;
+  }
+
+  #home .dash-table td {
+    padding-block: 16px !important;
+    font-size: 13px !important;
+  }
+
+  #home .dash-table small,
+  #home .dash-status {
+    font-size: 11px !important;
+  }
+
+  #home .dash-unit-name strong {
+    display: block;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    color: var(--ui-text) !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #home .dash-unit-name {
+    gap: 12px !important;
+  }
+
+  #home .dash-unit-name > div {
+    min-width: 0;
+  }
+
+  #home .dash-unit-name > svg {
+    color: var(--ui-gold) !important;
+    opacity: .8;
+  }
+
+  #home .dash-unit-name small {
+    margin-top: 4px !important;
+    color: var(--ui-secondary) !important;
+  }
+
+  #home .dash-filters button span {
+    font-weight: 500 !important;
+  }
+
+  #home .dash-footer {
+    font-size: 11px !important;
+    line-height: 1.6 !important;
+  }
+
+  @media (min-width: 1180px) {
+    #home .dash-kpis {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #home .bcn-dashboard,
+    #home #dashData {
+      gap: 16px !important;
+    }
+
+    #home .dash-header h1 {
+      font-size: 24px !important;
+    }
+
+    #home [data-audience='command'] .dash-controls {
+      padding: 16px !important;
+    }
+
+    #home .dash-period {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    #home .dash-period button {
+      padding-inline: 8px !important;
+    }
+
+    #home .dash-kpis {
+      gap: 8px !important;
+    }
+
+    #home [data-audience='command'] .dash-kpi {
+      padding: 16px 12px !important;
+      min-height: 208px !important;
+    }
+
+    #home .dash-kpi h2 {
+      font-size: 12px !important;
+    }
+
+    #home .dash-kpi-label > svg {
+      display: none !important;
+    }
+
+    #home [data-audience='command'] .dash-kpi-value {
+      font-size: 30px !important;
+    }
+
+    #home .dash-table td {
+      padding-block: 6px !important;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@layer bcn-unslop {
+  #dailyReports.bcn-reference .bcn-reference-form [data-reference-edit="subjects"] {
+    gap: 10px;
+    min-height: 42px !important;
+    height: auto !important;
+    padding: 10px 16px !important;
+    border: 1px solid var(--ui-gold) !important;
+    background: var(--ui-gold) !important;
+    color: var(--ui-on-gold, #211b12) !important;
+    box-shadow: inset 0 1px 0 #ffffff40, 0 2px 5px #00000020 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 1.4 !important;
+  }
+
+  #dailyReports.bcn-reference .bcn-reference-form [data-reference-edit="subjects"]:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--ui-gold) 88%, white) !important;
+    border-color: color-mix(in srgb, var(--ui-gold) 75%, white) !important;
+  }
+
+  #dailyReports.bcn-reference .bcn-reference-form [data-reference-edit="subjects"]:focus-visible {
+    outline: 3px solid var(--ui-gold) !important;
+    outline-offset: 3px;
+  }
+
+  #dailyReports.bcn-reference .bcn-reference-form [data-reference-edit="subjects"]:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    box-shadow: none !important;
+  }
+}

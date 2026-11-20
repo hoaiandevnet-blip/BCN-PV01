@@ -1,0 +1,291 @@
+@layer bcn-glass {
+  #settings {
+    padding-bottom: 28px;
+  }
+  .bcn-settings-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 16px 0 28px;
+  }
+  .bcn-settings-head h1 {
+    margin: 10px 0;
+    font-size: 28px;
+    letter-spacing: -.03em;
+  }
+  .bcn-settings-head p,
+  .bcn-settings-heading p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .bcn-settings-access {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid var(--ui-gold-line);
+    border-radius: 30px;
+    color: var(--ui-gold);
+    background: var(--ui-gold-soft);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .bcn-settings-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 290px;
+    align-items: start;
+    gap: 20px;
+  }
+  .bcn-settings-options {
+    display: grid;
+    gap: 20px;
+  }
+  .bcn-settings-panel {
+    padding: 24px;
+    border: 1px solid var(--glass-edge);
+    border-top-color: var(--glass-edge-lit);
+    border-radius: 18px;
+    background: var(--glass-panel);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  .bcn-settings-heading {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .bcn-settings-heading > svg {
+    margin-top: 3px;
+    color: var(--ui-gold);
+  }
+  .bcn-settings-heading h2,
+  .bcn-appearance-preview h2 {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .bcn-mode-picker {
+    display: flex;
+    gap: 10px;
+  }
+  #settings .bcn-mode-picker button {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 46px;
+  }
+  .bcn-palette-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #settings .bcn-palette-option {
+    position: relative;
+    padding: 14px;
+    text-align: left;
+    background: var(--glass-inset) !important;
+  }
+  #settings :where(.bcn-palette-option, [data-mode])[aria-pressed="true"] {
+    border-color: var(--ui-gold) !important;
+    background: var(--glass-accent) !important;
+    box-shadow: inset 0 0 0 1px var(--ui-gold-line), var(--ui-shadow) !important;
+  }
+  .bcn-palette-swatch {
+    display: flex;
+    height: 48px;
+    margin-bottom: 13px;
+    overflow: hidden;
+    border: 1px solid #ffffff24;
+    border-radius: 8px;
+  }
+  .bcn-palette-swatch span:nth-child(1) {
+    flex: 1;
+    background: var(--swatch-nav);
+  }
+  .bcn-palette-swatch span:nth-child(2) {
+    flex: 2;
+    background: linear-gradient(135deg, #ffffff30, transparent), var(--swatch-accent);
+  }
+  .bcn-palette-swatch span:nth-child(3) {
+    flex: 1;
+    background: var(--swatch-paper);
+  }
+  .bcn-palette-label {
+    display: grid;
+    gap: 5px;
+    padding-right: 20px;
+  }
+  #settings .bcn-palette-label strong {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  #settings .bcn-palette-label > span {
+    color: var(--ui-muted) !important;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  #settings .bcn-palette-check {
+    display: none;
+    position: absolute;
+    right: 12px;
+    bottom: 16px;
+    width: 17px;
+    color: var(--ui-gold) !important;
+  }
+  #settings [aria-pressed="true"] .bcn-palette-check {
+    display: block;
+  }
+  .bcn-appearance-preview {
+    position: sticky;
+    top: 85px;
+  }
+  .bcn-appearance-preview > p {
+    margin: 6px 0 20px;
+    font-size: 12px;
+  }
+  .bcn-preview-window {
+    margin: 22px 0;
+    border: 1px solid var(--glass-edge);
+    border-radius: 12px;
+    background: var(--ui-bg);
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+  }
+  .bcn-preview-bar {
+    display: flex;
+    gap: 4px;
+    padding: 9px;
+    border-bottom: 1px solid var(--ui-line);
+    background: var(--glass-topbar);
+  }
+  .bcn-preview-bar span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--ui-muted);
+  }
+  .bcn-preview-body {
+    display: flex;
+    min-height: 155px;
+  }
+  .bcn-preview-nav {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    width: 42px;
+    padding: 18px 10px;
+    background: var(--glass-side);
+    border-right: 1px solid var(--ui-line);
+  }
+  .bcn-preview-nav i {
+    height: 6px;
+    border-radius: 4px;
+    background: var(--ui-gold-line);
+  }
+  .bcn-preview-nav i:first-child {
+    background: var(--ui-gold);
+  }
+  .bcn-preview-content {
+    flex: 1;
+    padding: 16px 12px;
+    font-size: 11px;
+  }
+  .bcn-preview-card {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 13px 0;
+    padding: 12px 8px;
+    border: 1px solid var(--glass-edge);
+    border-radius: 8px;
+    background: var(--glass-featured);
+    font-size: 9px;
+  }
+  .bcn-preview-card svg {
+    color: var(--ui-gold);
+  }
+  .bcn-preview-button {
+    display: inline-block;
+    padding: 7px 10px;
+    border-radius: 6px;
+    color: var(--glass-primary-text);
+    background: var(--glass-primary);
+    font-size: 9px;
+  }
+  .bcn-settings-scope {
+    display: flex;
+    gap: 10px;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid var(--ui-line);
+    color: var(--ui-muted);
+  }
+  .bcn-settings-scope p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+  .bcn-settings-savebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 0 0;
+  }
+  .bcn-settings-savebar p {
+    margin: 0 0 5px;
+    color: var(--ui-text) !important;
+    font-size: 13px;
+  }
+  .bcn-settings-savebar small {
+    font-size: 11px;
+  }
+  .bcn-settings-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .bcn-settings-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 42px;
+    font-size: 12px;
+  }
+  @media (max-width: 1250px) {
+    .bcn-settings-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .bcn-appearance-preview {
+      position: static;
+    }
+    .bcn-preview-window {
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 760px) {
+    .bcn-settings-head,
+    .bcn-settings-savebar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .bcn-settings-access {
+      align-self: flex-start;
+    }
+    .bcn-settings-panel {
+      padding: 18px;
+    }
+    .bcn-palette-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .bcn-settings-actions button {
+      flex: 1 1 auto;
+    }
+  }
+}

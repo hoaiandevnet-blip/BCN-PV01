@@ -1,0 +1,1 @@
+Các bộ kiểm chứng lịch sử của hệ thống tích hợp cũ. Được giữ làm tài liệu tham chiếu; đường dẫn và khung ứng dụng gốc không còn là môi trường vận hành. Dùng npm test và npm run verify trong BCNPV01 cho bộ kiểm chứng hiện hành.

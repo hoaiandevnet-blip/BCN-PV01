@@ -1,0 +1,157 @@
+/* Keep glass chart fills, reflections and semantic colours; refine only geometry and type. */
+@layer bcn-unslop {
+  #home .dash-analysis {
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+
+  #home .dash-trend-symbol {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 8px !important;
+  }
+
+  #home .dash-trend-symbol svg {
+    width: 18px !important;
+    height: 18px !important;
+    stroke-width: 1.5 !important;
+  }
+
+  #home .dash-comparison {
+    margin: 0 20px 8px !important;
+    gap: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  #home .dash-compare-period,
+  #home .dash-compare-result {
+    padding: 16px !important;
+    gap: 8px !important;
+    border-radius: 0 !important;
+  }
+
+  #home .dash-compare-label,
+  #home .dash-compare-period time {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
+
+  #home .dash-compare-label svg {
+    width: 16px !important;
+    height: 16px !important;
+    stroke-width: 1.5 !important;
+  }
+
+  #home .dash-compare-number strong {
+    font-size: 32px !important;
+    font-weight: 500 !important;
+    letter-spacing: -.02em !important;
+  }
+
+  #home .dash-compare-delta strong {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+  }
+
+  #home .dash-compare-percent {
+    font-size: 13px !important;
+    font-weight: 700 !important;
+  }
+
+  #home .dash-compare-result p {
+    font-size: 12px !important;
+  }
+
+  #home .dash-compare-track {
+    height: 6px !important;
+  }
+
+  #home .dash-trend-value,
+  #home .dash-trend-axis.is-selected {
+    font-weight: 500 !important;
+  }
+
+  #home .dash-trend-levels,
+  #home .dash-trend-toolbar {
+    font-size: 11px !important;
+  }
+
+  #home .dash-trend-insights strong {
+    font-weight: 500 !important;
+  }
+
+  #home .dash-domain-list {
+    gap: 20px !important;
+  }
+
+  #home .dash-domain-label {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    gap: 8px !important;
+  }
+
+  #home .dash-domain-label strong {
+    font-size: 21px !important;
+    font-weight: 750 !important;
+  }
+
+  #home .dash-domain-dot {
+    width: 8px !important;
+    height: 8px !important;
+    flex-basis: 8px !important;
+  }
+
+  #home .dash-domain-bottom .dash-track {
+    height: 6px !important;
+  }
+
+  #home .dash-domains .dash-footnote {
+    font-size: 11px !important;
+    line-height: 1.7 !important;
+  }
+
+  #home .unit-work-values article {
+    border-radius: 8px !important;
+  }
+
+  #home .unit-work-values :is(strong, svg) {
+    font-weight: 500 !important;
+  }
+
+  @media (min-width: 1280px) {
+    #home .dash-analysis {
+      grid-template-columns: minmax(0, 1.8fr) minmax(300px, 1fr) !important;
+    }
+  }
+
+  @container trend-panel (max-width: 650px) {
+    #home .dash-compare-result {
+      display: grid !important;
+      grid-template-columns: auto 1fr !important;
+      align-items: center !important;
+    }
+
+    #home .dash-compare-result p {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @container trend-panel (max-width: 400px) {
+    #home .dash-comparison {
+      margin-inline: 16px !important;
+    }
+
+    #home .dash-compare-period,
+    #home .dash-compare-result {
+      padding: 12px !important;
+    }
+
+    #home .dash-compare-number strong {
+      font-size: 28px !important;
+    }
+
+    #home .dash-trend-range {
+      padding-left: 0 !important;
+    }
+  }
+}

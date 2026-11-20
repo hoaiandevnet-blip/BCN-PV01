@@ -1,0 +1,168 @@
+/* Quiet, tinted glass: shared surface colours, thin edges and restrained light. */
+.bcn-glass #home .dash-analysis .dash-panel-head h2 {
+  font-size: 21px;
+  font-weight: 680;
+  margin-top: 3px;
+}
+
+.bcn-glass #home .dash-analysis .dash-panel-head {
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.bcn-glass #home .dash-domains .dash-overline {
+  font-size: 10px;
+}
+
+.bcn-glass #home .dash-comparison {
+  gap: 0;
+}
+
+.bcn-glass #home .dash-compare-period,
+.bcn-glass #home .dash-compare-result {
+  border-radius: 0;
+}
+
+.bcn-glass #home .dash-domain-bottom .dash-track,
+.bcn-glass #home .dash-compare-track {
+  height: 8px;
+  border-radius: 3px;
+}
+
+@media (max-width: 600px) {
+  .bcn-glass #home .dash-analysis .dash-panel-head h2 {
+    font-size: 19px;
+  }
+}
+
+@layer bcn-glass {
+  .bcn-glass #home .dash-analysis {
+    --chart-surface: color-mix(in srgb, var(--ui-surface) 92%, transparent);
+    --chart-wash: linear-gradient(125deg, #ffffff06, transparent 60%);
+    --chart-edge: var(--ui-line-strong);
+  }
+
+  .bcn-glass #home .dash-analysis > .dash-panel {
+    background: var(--chart-wash), var(--chart-surface) !important;
+    border-color: var(--chart-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff09, 0 5px 18px #00000012 !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  .bcn-glass #home .dash-analysis .dash-panel-head {
+    background: transparent !important;
+  }
+
+  .bcn-glass #home .dash-analysis .dash-trend-symbol {
+    background: var(--glass-accent, var(--ui-gold-soft)) !important;
+    box-shadow: inset 0 1px 0 #ffffff14;
+  }
+
+  .bcn-glass #home .dash-comparison {
+    border: 1px solid var(--ui-line);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff03, transparent),
+      color-mix(in srgb, var(--ui-field) 48%, transparent);
+    overflow: hidden;
+  }
+
+  .bcn-glass #home .dash-compare-period,
+  .bcn-glass #home .dash-compare-period.is-current,
+  .bcn-glass #home .dash-compare-result {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .bcn-glass #home .dash-compare-period.is-previous,
+  .bcn-glass #home .dash-compare-result {
+    border-left: 1px solid var(--ui-line) !important;
+  }
+
+  .bcn-glass #home .dash-domain-bottom .dash-track,
+  .bcn-glass #home .dash-compare-track {
+    background: color-mix(in srgb, var(--ui-text) 7%, transparent) !important;
+    box-shadow: none !important;
+  }
+
+  .bcn-glass #home .dash-domain-bottom .dash-track > span {
+    --chart-fill: var(--dash-domain);
+  }
+
+  .bcn-glass #home .dash-compare-track > span {
+    --chart-fill: var(--compare-current);
+  }
+
+  .bcn-glass #home .is-previous .dash-compare-track > span {
+    --chart-fill: var(--ui-muted);
+  }
+
+  .bcn-glass #home .dash-domain-bottom .dash-track > span,
+  .bcn-glass #home .dash-compare-track > span {
+    background: linear-gradient(100deg,
+      color-mix(in srgb, var(--chart-fill) 30%, transparent),
+      color-mix(in srgb, var(--chart-fill) 68%, transparent)) !important;
+    box-shadow: inset 0 1px 0 color-mix(in srgb, var(--chart-fill) 65%, transparent),
+      inset -2px 0 0 var(--chart-fill) !important;
+  }
+
+  .bcn-glass #home .dash-trend-glass-top,
+  .bcn-glass #home .dash-trend-glass-base {
+    stop-color: var(--trend-color);
+  }
+
+  .bcn-glass #home .dash-trend-reference {
+    stroke-width: 1.5;
+  }
+
+  .bcn-glass #home .dash-trend-reflection {
+    opacity: .45;
+  }
+
+  .bcn-glass #home .dash-trend-tooltip {
+    background: linear-gradient(135deg, #ffffff08, transparent 65%),
+      color-mix(in srgb, var(--ui-surface) 96%, transparent) !important;
+    border-color: var(--chart-edge) !important;
+    box-shadow: inset 0 1px 0 #ffffff0c, 0 12px 30px #00000033 !important;
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+
+  .bcn-glass #home .dash-trend-tooltip footer {
+    background: transparent !important;
+  }
+
+  .bcn-glass[data-appearance-mode="light"] #home .dash-trend-reflection {
+    opacity: .2;
+  }
+}
+
+@container trend-panel (max-width: 650px) {
+  @layer bcn-glass {
+    .bcn-glass #home .dash-compare-result {
+      border-left: 0 !important;
+      border-top: 1px solid var(--ui-line) !important;
+    }
+  }
+}
+
+@container trend-panel (max-width: 270px) {
+  @layer bcn-glass {
+    .bcn-glass #home .dash-compare-period.is-previous {
+      border-left: 0 !important;
+      border-top: 1px solid var(--ui-line) !important;
+    }
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  @layer bcn-glass {
+    .bcn-glass #home .dash-analysis > .dash-panel,
+    .bcn-glass #home .dash-trend-tooltip {
+      background: var(--ui-surface) !important;
+      -webkit-backdrop-filter: none;
+      backdrop-filter: none;
+    }
+  }
+}

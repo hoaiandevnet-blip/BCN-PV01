@@ -1,0 +1,195 @@
+/* Stable business-domain colors shared by legal lookup and case tables. */
+#dailyReports.bcn-reference .bcn-category-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain] {
+  --domain-ink: #334155;
+  --domain-fill: #f1f5f9;
+  --domain-border: #cbd5e1;
+  --domain-accent: #64748b;
+  display: inline-flex;
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid var(--domain-border);
+  border-left: 3px solid var(--domain-accent);
+  border-radius: 6px;
+  background: var(--domain-fill);
+  color: var(--domain-ink);
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="PPHS"] {
+  --domain-ink: #991b1b;
+  --domain-fill: #fef2f2;
+  --domain-border: #fecaca;
+  --domain-accent: #dc2626;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="TNXH"] {
+  --domain-ink: #9d174d;
+  --domain-fill: #fdf2f8;
+  --domain-border: #fbcfe8;
+  --domain-accent: #db2777;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="MA_TUY"] {
+  --domain-ink: #6b21a8;
+  --domain-fill: #faf5ff;
+  --domain-border: #e9d5ff;
+  --domain-accent: #9333ea;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="KINH_TE"] {
+  --domain-ink: #854d0e;
+  --domain-fill: #fefce8;
+  --domain-border: #fde68a;
+  --domain-accent: #ca8a04;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="MOI_TRUONG"] {
+  --domain-ink: #166534;
+  --domain-fill: #f0fdf4;
+  --domain-border: #bbf7d0;
+  --domain-accent: #16a34a;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="PCCC_CNCH"] {
+  --domain-ink: #9a3412;
+  --domain-fill: #fff7ed;
+  --domain-border: #fed7aa;
+  --domain-accent: #ea580c;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="TNGT"] {
+  --domain-ink: #075985;
+  --domain-fill: #f0f9ff;
+  --domain-border: #bae6fd;
+  --domain-accent: #0284c7;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="ANQG"] {
+  --domain-ink: #1e40af;
+  --domain-fill: #eff6ff;
+  --domain-border: #bfdbfe;
+  --domain-accent: #2563eb;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="CONG_NGHE_CAO"] {
+  --domain-ink: #155e75;
+  --domain-fill: #ecfeff;
+  --domain-border: #a5f3fc;
+  --domain-accent: #0891b2;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="THAM_NHUNG"] {
+  --domain-ink: #78350f;
+  --domain-fill: #ffedd5;
+  --domain-border: #fdba74;
+  --domain-accent: #b45309;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="HOAT_DONG_TU_PHAP"] {
+  --domain-ink: #9a3412;
+  --domain-fill: #fff7ed;
+  --domain-border: #fed7aa;
+  --domain-accent: #ea580c;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="TTXH"] {
+  --domain-ink: #115e59;
+  --domain-fill: #f0fdfa;
+  --domain-border: #99f6e4;
+  --domain-accent: #0d9488;
+}
+
+#dailyReports.bcn-reference .bcn-category[data-bcn-domain="TINH_HINH_KHAC"] {
+  --domain-ink: #334155;
+  --domain-fill: #f1f5f9;
+  --domain-border: #cbd5e1;
+  --domain-accent: #64748b;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain] {
+  --domain-ink: #d2d9e3;
+  --domain-fill: #28313e;
+  --domain-border: #566477;
+  --domain-accent: #94a3b8;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="PPHS"] {
+  --domain-ink: #fecaca;
+  --domain-fill: #4a2025;
+  --domain-border: #a64a53;
+  --domain-accent: #f87171;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="TNXH"] {
+  --domain-ink: #fbcfe8;
+  --domain-fill: #48253a;
+  --domain-border: #a54b83;
+  --domain-accent: #f472b6;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="MA_TUY"] {
+  --domain-ink: #e9d5ff;
+  --domain-fill: #352449;
+  --domain-border: #8251ab;
+  --domain-accent: #c084fc;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="KINH_TE"] {
+  --domain-ink: #fde68a;
+  --domain-fill: #423419;
+  --domain-border: #94742d;
+  --domain-accent: #facc15;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="MOI_TRUONG"] {
+  --domain-ink: #bbf7d0;
+  --domain-fill: #193d2a;
+  --domain-border: #3c895e;
+  --domain-accent: #4ade80;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="ANQG"] {
+  --domain-ink: #bfdbfe;
+  --domain-fill: #1e3151;
+  --domain-border: #4773ad;
+  --domain-accent: #60a5fa;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="CONG_NGHE_CAO"] {
+  --domain-ink: #a5f3fc;
+  --domain-fill: #173d46;
+  --domain-border: #337e8c;
+  --domain-accent: #22d3ee;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="HOAT_DONG_TU_PHAP"] {
+  --domain-ink: #fed7aa;
+  --domain-fill: #452c1d;
+  --domain-border: #a56539;
+  --domain-accent: #fb923c;
+}
+
+body.theme-dark #dailyReports.bcn-reference .bcn-category[data-bcn-domain="TINH_HINH_KHAC"] {
+  --domain-ink: #d2d9e3;
+  --domain-fill: #28313e;
+  --domain-border: #566477;
+  --domain-accent: #94a3b8;
+}
+
+@layer bcn-theme {
+  .bcn-standalone #dailyReports .bcn-category[data-bcn-domain] {
+    background: var(--domain-fill) !important;
+    color: var(--domain-ink) !important;
+    border-color: var(--domain-border) !important;
+    border-left-color: var(--domain-accent) !important;
+  }
+}

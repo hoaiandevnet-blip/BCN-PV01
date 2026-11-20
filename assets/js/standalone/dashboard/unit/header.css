@@ -1,0 +1,104 @@
+/* The reporter identity shares the existing toolbar instead of using a second hero. */
+.bcn-topbar[data-unit-dashboard] > div:first-of-type {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  grid-template-areas: "icon title status" "icon unit status";
+  align-items: center;
+  gap: 1px 10px;
+  min-width: 0;
+  padding: 8px 0;
+}
+.bcn-topbar[data-unit-dashboard] #pageTitle {
+  grid-area: title;
+  font-size: 11px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.bcn-topbar[data-unit-dashboard] #accountUnit {
+  grid-area: unit;
+  max-width: none;
+  min-width: 0;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.bcn-topbar .unit-topbar-icon {
+  grid-area: icon;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 9px;
+}
+.bcn-topbar .unit-topbar-icon svg {
+  width: 21px;
+  height: 21px;
+}
+.bcn-topbar .unit-topbar-status {
+  grid-area: status;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 6px;
+  padding: 5px 7px;
+  border-radius: 6px;
+  font-size: 10px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.bcn-topbar .unit-topbar-status svg {
+  width: 14px;
+  height: 14px;
+}
+@layer bcn-glass {
+  .bcn-topbar[data-unit-dashboard] #accountUnit,
+  .bcn-topbar .unit-topbar-icon {
+    color: var(--ui-gold) !important;
+  }
+  .bcn-topbar .unit-topbar-icon {
+    background: var(--ui-gold-soft) !important;
+  }
+  .bcn-topbar .unit-topbar-status {
+    color: var(--ui-ok) !important;
+    background: var(--ui-ok-soft) !important;
+  }
+}
+@media (max-width: 1180px) {
+  .bcn-topbar[data-unit-dashboard] > div:first-of-type {
+    grid-template-columns: 32px minmax(0, 1fr);
+    grid-template-areas: "icon title" "icon unit" "icon status";
+    column-gap: 8px;
+  }
+  .bcn-topbar .unit-topbar-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .bcn-topbar .unit-topbar-status {
+    justify-self: start;
+    padding: 0;
+    margin: 2px 0 0;
+  }
+  .bcn-topbar[data-unit-dashboard] #accountUnit {
+    font-size: 16px;
+  }
+}
+@media (max-width: 760px) {
+  .bcn-topbar[data-unit-dashboard] {
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  .bcn-topbar[data-unit-dashboard] > div:first-of-type {
+    flex: 1 1 180px;
+    padding: 0;
+  }
+  .bcn-topbar[data-unit-dashboard] .userbox {
+    flex: 1 0 100%;
+    justify-content: flex-end;
+    margin: 0;
+  }
+}

@@ -1,0 +1,125 @@
+/* Keep the legal import form separate from the compact overview panels. */
+#dailyReports.bcn-reference #bcnLawImportDetails {
+  container: bcn-law-import / inline-size;
+  min-width: 0;
+  padding: 0;
+}
+
+#dailyReports.bcn-reference #bcnLawImportDetails > summary {
+  padding: 16px 20px;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference #bcnLawImportDetails[open] > summary {
+  border-bottom: 1px solid #e5eaf1;
+}
+
+#dailyReports.bcn-reference #bcnLawImportDetails > .card {
+  padding: 20px;
+  border: 0 !important;
+  border-radius: 0 0 10px 10px;
+  box-shadow: none !important;
+}
+
+#dailyReports.bcn-reference #bcnLawImportDetails > .card > p {
+  margin: 10px 0 0;
+  color: #718096;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 20px;
+  margin: 18px 0;
+  padding: 20px;
+  border: 1px solid #e5eaf1;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm > label {
+  min-width: 0;
+  gap: 8px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm input:focus {
+  outline: 2px solid #bd8b47;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm input[type="file"] {
+  padding: 8px;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm input::file-selector-button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  border: 1px solid #dec7a5;
+  border-radius: 6px;
+  background: #fff8ed;
+  color: #82501d;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+#dailyReports.bcn-reference #bcnLegalFileHint {
+  color: #718096;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference #bcnLegalForm > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+  max-width: 100%;
+  min-height: 44px;
+}
+
+#dailyReports.bcn-reference #bcnLegalDiff {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference #bcnLegalDiff:empty {
+  display: none;
+}
+
+#dailyReports.bcn-reference #bcnLegalRows,
+#dailyReports.bcn-reference #bcnLegalArticles {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference #bcnLegalRows {
+  margin-top: 14px;
+}
+
+@container bcn-law-import (max-width: 640px) {
+  #dailyReports.bcn-reference #bcnLawImportDetails > .card {
+    padding: 16px;
+  }
+
+  #dailyReports.bcn-reference #bcnLegalForm {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px;
+  }
+}

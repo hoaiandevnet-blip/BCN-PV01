@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#17181c"/>
+  <meta name="color-scheme" content="dark"/>
+  <title>BÁO CÁO NGÀY · PHÒNG THAM MƯU PV01</title>
+  <link rel="icon" href="assets/img/huy-hieu-cand.png"/>
+  <link rel="stylesheet" href="assets/css/unslop-20261117/index.css?v=5"/>
+  <link rel="stylesheet" href="assets/css/local-fonts.css"/>
+  <link rel="stylesheet" href="assets/css/leaflet.css"/>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/digital-map.css"/>
+  <link rel="stylesheet" href="assets/css/digital-map-labels.css"/>
+  <link rel="stylesheet" href="assets/css/permissions-access.css"/>
+  <link rel="stylesheet" href="assets/css/room-nv/style.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-intake.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-submitted-metrics.css?v=20261117-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-reference-case.css?v=20261110-2"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-location.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-navigation.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-preview.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-formatting.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-v8.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-reference.css?v=20261110-5"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-composer-layout.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-entry-tabs.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-domain-colors.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-legal-detail.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-legal-import.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-permissions.css?v=20261117-theme-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-permission-guides.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-attachments.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-process.css?v=20261119-hide-code"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-history.css?v=20261119-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-permission-workspace.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-leaders.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-classifications.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-persons.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-detail.css?v=20261111-update-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-dossier.css?v=20261118-compact-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-events.css?v=20261118-red-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-handling.css?v=20261118-match-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-information.css?v=20261118-classification-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-duplicates.css?v=20261118-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-preview.css?v=20261111-reader-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-reader-information.css?v=20261118-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-reader-polish.css?v=20261118-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-case-reader-history.css?v=20261118-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-action-menu.css?v=20261119-center-returned"/>
+  <link rel="stylesheet" href="assets/js/notification-center/style.css"/>
+  <link rel="stylesheet" href="assets/js/notification-center/popup/sound.css"/>
+  <link rel="stylesheet" href="assets/js/notification-center/popup/style.css?v=20261112-approve-1"/>
+  <link rel="stylesheet" href="assets/js/staff-chat/style.css"/>
+  <link rel="stylesheet" href="assets/css/searchable-unit-select.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-entry-compact.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-entry-theme.css"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-dialog-position.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-subject-dialog.css"/>
+  <link rel="stylesheet" href="assets/css/daily-report-subject-trigger.css?v=20261117-1"/>
+  <link rel="stylesheet" href="assets/css/daily-report-heading-refine-20261109-heading.css"/>
+  <link rel="stylesheet" href="assets/css/standalone.css?v=20261110-11"/>
+  <link rel="stylesheet" href="assets/css/standalone-background.css?v=20261110-6"/>
+  <link rel="stylesheet" href="assets/css/standalone-glass.css?v=20261110-4"/>
+  <link rel="stylesheet" href="assets/css/standalone-login.css?v=20261110-13"/>
+  <link rel="stylesheet" href="assets/css/standalone-settings.css?v=20261110-4"/>
+  <link rel="stylesheet" href="assets/css/standalone-theme.css?v=20261110-4"/>
+  <link rel="stylesheet" href="assets/css/standalone-reports.css?v=20261118-state-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-composer-tools.css?v=20261118-metrics-3"/>
+  <link rel="stylesheet" href="assets/css/standalone-map.css?v=20261109-2"/>
+  <link rel="stylesheet" href="assets/css/digital-map-reports.css?v=20261119-dual-map"/>
+  <link rel="stylesheet" href="assets/css/standalone-accounts.css?v=20261110-1"/>
+  <link rel="stylesheet" href="assets/css/standalone-navigation.css?v=20261110-2"/>
+  <link rel="stylesheet" href="assets/js/notification-center/returned-attention.css?v=20261111-2"/>
+  <link rel="stylesheet" href="assets/css/standalone-sidebar-background.css?v=20261110-1"/>
+  <link rel="stylesheet" href="assets/css/standalone-loading.css?v=20261110-2"/>
+  <link rel="stylesheet" href="assets/css/standalone-brand.css?v=20261110-2"/>
+  <link rel="stylesheet" href="assets/css/standalone-legal-metrics.css?v=20261110-1"/>
+  <link rel="stylesheet" href="assets/css/standalone-work-icons.css?v=20261110-1"/>
+  <link rel="stylesheet" href="assets/css/standalone-lock-banner.css?v=20261111-2"/>
+  <link rel="stylesheet" href="assets/css/dashboard/dashboard.css?v=20261119-3"/>
+  <link rel="stylesheet" href="assets/css/dashboard/colors.css?v=20261119-3"/>
+  <link rel="stylesheet" href="assets/css/dashboard/trend.css?v=20261117-3"/>
+  <link rel="stylesheet" href="assets/css/dashboard/trend-motion.css?v=20261118"/>
+  <link rel="stylesheet" href="assets/css/dashboard/entrance.css"/>
+  <link rel="stylesheet" href="assets/css/dashboard/trend-summary.css?v=20261119-1"/>
+  <link rel="stylesheet" href="assets/css/dashboard/chart-glass.css?v=20261110-2"/>
+  <link rel="stylesheet" href="assets/css/dashboard/domain-selection.css?v=20261117-3"/>
+  <link rel="stylesheet" href="assets/js/standalone/dashboard/unit/style.css?v=20261117-1"/>
+  <link rel="stylesheet" href="assets/js/standalone/dashboard/unit/header.css?v=20261111-3"/>
+  <link rel="stylesheet" href="assets/js/standalone/dashboard/unit/work-metrics.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-source-preview.css?v=20261111-2"/>
+  <link rel="stylesheet" href="assets/js/daily-reports-duplicates/style.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/pet-seedy/style.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/seedy-assistant/style.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/js/notification-center/refined.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/css/compact-screen/shell.css?v=20261111-2"/>
+  <link rel="stylesheet" href="assets/css/compact-screen/dashboard.css?v=20261111-3"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-entry-topbar.css?v=20261111-2"/>
+  <link rel="stylesheet" href="assets/css/standalone-account-toolbar.css?v=20261111-1"/>
+  <link rel="stylesheet" href="assets/css/daily-report-incident-summary.css?v=20261111-reader-1"/>
+  <link rel="stylesheet" href="assets/js/daily-reports-unlock/style.css?v=20261117-11"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-unlock-context.css?v=20261117-1"/>
+  <link rel="stylesheet" href="assets/css/daily-reports-legal-readability.css?v=20261117-1"/>
+</head>
+<body class="bcn-standalone theme-dark bcn-glass">
+  <div class="bcn-backdrop" aria-hidden="true">
+    <div class="bcn-backdrop-light"></div>
+    <div class="bcn-backdrop-grid"></div>
+    <div class="bcn-backdrop-contours"></div>
+  </div>
+  <section id="appLoading" class="bcn-app-loading" role="status" aria-live="polite" aria-label="Đang tải phần mềm">
+    <div class="bcn-loading-content">
+      <img src="assets/img/huy-hieu-cand.png" alt="" width="96" height="108"/>
+      <h1 class="bcn-loading-title">BÁO CÁO NGÀY</h1>
+      <div class="bcn-loading-status">
+        <span class="bcn-loading-spinner" aria-hidden="true"></span>
+        <span>Đang tải không gian làm việc…</span>
+      </div>
+    </div>
+  </section>
+  <section id="loginScreen" class="bcn-login" hidden>
+    <div class="bcn-login-brand">
+      <div class="bcn-login-identity">
+        <img src="assets/img/huy-hieu-cand.png" alt="Huy hiệu Công an nhân dân"/>
+        <div><span class="bcn-login-authority">PHÒNG THAM MƯU</span><span class="bcn-login-unit">PV01</span></div>
+      </div>
+      <h1>BÁO CÁO NGÀY</h1>
+      <div class="bcn-login-rule" aria-hidden="true"></div>
+      <ul class="bcn-login-functions" aria-label="Chức năng hệ thống">
+        <li><i data-lucide="file-input" aria-hidden="true"></i><span>Tiếp nhận</span></li>
+        <li><i data-lucide="files" aria-hidden="true"></i><span>Tổng hợp</span></li>
+        <li><i data-lucide="map-pinned" aria-hidden="true"></i><span>Theo dõi địa bàn</span></li>
+      </ul>
+    </div>
+    <form id="loginForm" class="bcn-login-form">
+      <header class="bcn-login-heading">
+        <span class="bcn-login-shield" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+        <div><span class="bcn-eyebrow">XÁC THỰC TRUY CẬP</span><h2>Đăng nhập</h2></div>
+      </header>
+      <label>Tên đăng nhập<input id="loginAccount" name="username" autocomplete="username" required/></label>
+      <label class="bcn-password-label" for="loginPassword">Mật khẩu</label>
+      <div class="bcn-password-field">
+        <input id="loginPassword" name="password" type="password" autocomplete="current-password" required/>
+        <button id="togglePassword" class="bcn-password-toggle ghost" type="button"
+          aria-controls="loginPassword" aria-label="Hiện mật khẩu" aria-pressed="false">
+          <i data-lucide="eye" aria-hidden="true"></i><span>Hiện</span>
+        </button>
+      </div>
+      <p id="loginError" class="bcn-error" role="alert"></p>
+      <button class="primary" type="submit">Đăng nhập <span aria-hidden="true">→</span></button>
+      <small>Quyền truy cập được áp dụng theo tài khoản và đơn vị công tác.</small>
+      <footer class="bcn-login-support" aria-label="Liên hệ hỗ trợ và phiên bản">
+        <div class="bcn-support-label">
+          <i data-lucide="headset" aria-hidden="true"></i><span>LIÊN HỆ HỖ TRỢ</span>
+        </div>
+        <div class="bcn-support-person">
+          <span>Trung úy</span>
+          <strong>Vũ Thành Công Duy <span class="bcn-support-unit">- PV01</span></strong>
+        </div>
+        <div class="bcn-support-meta">
+          <a class="bcn-support-phone" href="tel:0886057738" aria-label="Gọi hỗ trợ: 0886.057.738">
+            <i data-lucide="phone" aria-hidden="true"></i><span>0886.057.738</span>
+          </a>
+          <div class="bcn-support-version" aria-label="Phiên bản BCN.V.0.1">
+            <span class="bcn-support-version-label">PHIÊN BẢN</span>
+            <span class="bcn-version-badge">BCN.V.0.1</span>
+          </div>
+        </div>
+      </footer>
+    </form>
+  </section>
+  <div id="appShell" class="bcn-layout" hidden>
+    <aside class="sidebar" id="sidebar">
+      <div class="bcn-sidebar-art" aria-hidden="true">
+        <span class="bcn-sidebar-lines"></span>
+        <span class="bcn-sidebar-grid"></span>
+        <span class="bcn-sidebar-edge"></span>
+      </div>
+      <a class="bcn-brand" href="#home" aria-label="Báo cáo ngày · Phòng Tham mưu PV01">
+        <img src="assets/img/huy-hieu-cand.png" alt="" width="72" height="80"/>
+        <b>BÁO CÁO NGÀY</b>
+        <small>PHÒNG THAM MƯU · <span>PV01</span></small>
+      </a>
+      <nav class="nav" aria-label="Điều hướng chính">
+        <button class="nav-item" data-page="home"><i data-lucide="layout-dashboard"></i>Tổng quan</button>
+        <div class="nav-group user-module open" id="dailyReportNavGroup" data-module-key="dailyReports">
+          <div class="nav-submenu" id="dailyReportNavSubmenu" role="group" aria-label="Chức năng Báo cáo ngày">
+            <div class="bcn-nav-section" role="group" aria-labelledby="bcnNavIntakeTitle">
+              <div class="bcn-nav-section-title" id="bcnNavIntakeTitle">Tiếp nhận & tra cứu</div>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportInput" data-page="dailyReports"
+                data-bcn-view="input"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="file-plus-2"></i></span>
+                <span class="nav-text">Nhập báo cáo ngày</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportRegistry" data-page="dailyReports"
+                data-bcn-view="registry"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="search"></i></span>
+                <span class="nav-text">Tra cứu vụ việc</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportLegal" data-page="dailyReports"
+                data-bcn-view="legal"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="scale"></i></span>
+                <span class="nav-text">Danh mục pháp luật</span></button>
+            </div>
+            <div class="bcn-nav-section" role="group" aria-labelledby="bcnNavProcessingTitle">
+              <div class="bcn-nav-section-title" id="bcnNavProcessingTitle">Xử lý báo cáo</div>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportApproval" data-page="dailyReports" data-bcn-view="approval"
+                type="button" hidden><span class="nav-icon" aria-hidden="true">
+                  <i data-lucide="badge-check"></i></span>
+                <span class="nav-text">Phê duyệt vụ việc</span>
+                <b data-approval-badge aria-hidden="true" hidden></b></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportReturned" data-page="dailyReports"
+                data-bcn-view="returned"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="corner-up-left"></i></span>
+                <span class="nav-text">Báo cáo bị trả lại</span>
+                <b data-returned-badge aria-hidden="true" hidden></b></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportUpdates" data-page="dailyReports"
+                data-bcn-view="updates"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="file-pen-line"></i></span>
+                <span class="nav-text">Cập nhật / Bổ sung</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportUnlock" data-page="dailyReports"
+                data-bcn-view="unlock"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="history"></i></span>
+                <span class="nav-text">Lịch sử đề nghị</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportDuplicates" data-page="dailyReports"
+                data-bcn-view="duplicates"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="copy-check"></i></span>
+                <span class="nav-text">Kiểm tra trùng</span></button>
+            </div>
+            <div class="bcn-nav-section" role="group" aria-labelledby="bcnNavManagementTitle">
+              <div class="bcn-nav-section-title" id="bcnNavManagementTitle">Tổng hợp & quản lý</div>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportComposer" data-page="dailyReports"
+                data-bcn-view="composer"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="files"></i></span>
+                <span class="nav-text">Tổng hợp báo cáo</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportPermissions" data-page="dailyReports"
+                data-bcn-view="permissions"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="shield-check"></i></span>
+                <span class="nav-text">Phân quyền</span></button>
+              <button class="nav-item nav-sub-item"
+                data-module-key="dailyReportHistory" data-page="dailyReports"
+                data-bcn-view="history"
+                type="button" hidden><span class="nav-icon" aria-hidden="true"><i data-lucide="history"></i></span>
+                <span class="nav-text">Lịch sử xử lý</span></button>
+            </div>
+          </div>
+        </div>
+        <button class="nav-item" data-page="digitalMap" data-admin><i data-lucide="map-pinned"></i>Bản đồ số</button>
+        <span class="bcn-nav-caption" data-admin>QUẢN TRỊ</span>
+        <button class="nav-item" data-page="accounts" data-admin><i data-lucide="users"></i>Tài khoản & quyền</button>
+        <button class="nav-item" data-page="directory" data-admin><i data-lucide="building-2"></i>Danh mục đơn vị</button>
+        <button class="nav-item" data-page="settings" data-admin hidden><i data-lucide="settings"></i>Cài đặt</button>
+      </nav>
+      <footer class="bcn-sidebar-foot" aria-label="Liên hệ hỗ trợ và phiên bản">
+        <div class="bcn-support-label"><i data-lucide="headset" aria-hidden="true"></i>LIÊN HỆ HỖ TRỢ</div>
+        <div class="bcn-support-person">
+          <span>Trung úy</span>
+          <strong>Vũ Thành Công Duy - PV01</strong>
+        </div>
+        <a class="bcn-support-phone" href="tel:0886057738" aria-label="Gọi hỗ trợ: 0886.057.738">
+          <i data-lucide="phone" aria-hidden="true"></i><span>SĐT: 0886.057.738</span>
+        </a>
+        <div class="bcn-sidebar-version"><span>Phiên bản</span>
+          <span class="bcn-version-badge"><span class="bcn-status-dot" aria-hidden="true"></span>BCN.V.0.1</span>
+        </div>
+      </footer>
+    </aside>
+    <main class="main">
+      <header class="bcn-topbar">
+        <button id="menuToggle" class="ghost" aria-label="Mở menu"><i data-lucide="menu"></i></button>
+        <div><span id="pageTitle">Tổng quan</span><small id="accountUnit"></small></div>
+        <div class="userbox">
+          <button id="notificationToggle" class="ghost" aria-label="Thông báo" aria-expanded="false">
+            <i data-lucide="bell"></i><b data-notification-badge hidden></b></button>
+          <span id="accountName"></span>
+          <button id="changePassword" class="ghost" title="Đổi mật khẩu" aria-label="Đổi mật khẩu">
+            <i data-lucide="key-round" aria-hidden="true"></i></button>
+          <button id="logout" class="ghost" title="Đăng xuất">
+            <i data-lucide="log-out" aria-hidden="true"></i><span>Đăng xuất</span></button>
+        </div>
+      </header>
+      <section id="home" class="page active"></section>
+      <section id="dailyReports" class="page" data-module-key="dailyReports">
+        <div class="daily-report-workspace">
+          <header class="daily-report-heading">
+            <div>
+              <span class="daily-report-eyebrow">NGHIỆP VỤ BÁO CÁO</span>
+              <h2>Báo cáo ngày</h2>
+              <p id="dailyReportScope">Đang xác định đơn vị và thời gian báo cáo…</p>
+            </div>
+            <button class="ghost icon-button" id="dailyReportRefresh" type="button">
+              <i data-lucide="refresh-cw"></i>Làm mới
+            </button>
+          </header>
+          <div class="daily-report-grid">
+            <section class="card daily-report-entry">
+              <header class="card-head"><div><h3>Ghi nhận vụ việc</h3>
+                <p>Thông tin tình hình được lưu riêng với kết quả công tác.</p></div></header>
+              <form id="dailyReportCaseForm" class="daily-report-form">
+                <label>Hệ nghiệp vụ<input name="business_code" maxlength="40" required placeholder="Ví dụ: PPHS, TNXH"/></label>
+                <label>Loại vụ việc<input name="category_code" maxlength="60" required placeholder="Mã loại nghiệp vụ"/></label>
+                <label>Ngày giờ xảy ra<input name="occurred_at" type="datetime-local"/></label>
+                <label>Địa điểm chung<input name="location_general" maxlength="500"/></label>
+                <label class="daily-report-wide">Nội dung<textarea name="summary" rows="4" maxlength="8000" required></textarea></label>
+                <button class="primary icon-button" type="submit"><i data-lucide="send"></i>Lưu hồ sơ</button>
+              </form>
+            </section>
+          </div>
+          <section class="card daily-report-list-card">
+            <div class="card-head"><div><h3>Hồ sơ trong ngày</h3>
+              <p id="dailyReportCaseCount">Chỉ hiển thị dữ liệu thuộc phạm vi tài khoản.</p></div>
+              <label class="daily-report-filter">Trạng thái<select id="dailyReportStateFilter">
+                <option value="">Tất cả</option><option>DRAFT</option><option>SUBMITTED</option>
+                <option>PENDING_REVIEW</option><option>RETURNED</option><option>VERIFIED</option>
+              </select></label>
+            </div>
+            <div class="table-wrap"><table class="data-table">
+              <thead><tr><th>Mã hồ sơ</th><th>Hệ / loại</th><th>Nội dung</th><th>Trạng thái</th><th>Phiên bản</th><th>Thao tác</th></tr></thead>
+              <tbody id="dailyReportCaseRows"><tr><td colspan="6" class="empty-row">Đang tải…</td></tr></tbody>
+            </table></div>
+          </section>
+          <section class="card daily-report-list-card">
+            <div class="card-head"><div><h3>Yêu cầu mở khóa</h3>
+              <p>Quyền tạm thời được tính từ thời điểm PV01 chấp thuận và hết hạn sau đúng 30 phút.</p></div></div>
+            <div id="dailyReportUnlockRows" class="daily-report-unlocks"></div>
+          </section>
+          <p class="daily-report-notice">Không nhập thông tin định danh nhạy cảm vào phần mô tả chung.</p>
+        </div>
+      </section>
+
+      <section id="digitalMap" class="page admin-only" data-module-key="digitalMap">
+        <div class="digital-map-shell">
+          <header class="digital-map-stage-head">
+            <div><h2>Vụ việc theo địa bàn Đồng Nai</h2>
+              <p id="digitalMapUpdated" role="status">Đang tải số liệu báo cáo…</p></div>
+            <div class="map-layer-tools">
+              <div class="digital-map-modes" role="group" aria-label="Chế độ bản đồ">
+                <button class="active" type="button" data-digital-map-mode="heat" aria-pressed="true">Số vụ</button>
+                <button type="button" data-digital-map-mode="change" aria-pressed="false">Biến động</button>
+              </div>
+              <div class="digital-map-modes digital-map-styles" role="group" aria-label="Giao diện bản đồ">
+                <button class="active" type="button" data-digital-map-style="dark" aria-pressed="true"
+                  title="Màn tối như cũ (dễ nhìn)">🌙 Nền tối</button>
+                <button type="button" data-digital-map-style="light" aria-pressed="false"
+                  title="Bản đồ địa hình sáng rõ nét">🗺️ Bản đồ sáng</button>
+              </div>
+              <label class="map-boundaries"><input id="mapBoundaries" type="checkbox" checked/>Ranh giới</label>
+            </div>
+          </header>
+          <div id="digitalMapSummary" class="digital-map-summary" aria-live="polite"></div>
+          <aside class="digital-map-sidebar" aria-label="Lọc và tra cứu">
+            <details class="map-filter-box" open>
+              <summary>
+                <i data-lucide="sliders-horizontal" aria-hidden="true"></i>
+                <span>Bộ lọc báo cáo</span>
+              </summary>
+              <div class="digital-map-filters">
+                <label>Từ ngày<input id="digitalMapFrom" type="date"/></label>
+                <label>Đến ngày<input id="digitalMapTo" type="date"/></label>
+                <label>Hệ nghiệp vụ chính
+                  <select id="digitalMapCategory"><option value="">Tất cả hệ</option></select>
+                </label>
+                <label>Trạng thái
+                  <select id="digitalMapSeverity"><option value="">Tất cả trạng thái</option></select>
+                </label>
+                <button id="digitalMapRefresh" class="primary map-btn-refresh" type="button">
+                  <i data-lucide="refresh-cw" aria-hidden="true"></i>
+                  <span>Làm mới số liệu</span>
+                </button>
+                <button id="digitalMapClearFilters" class="ghost map-btn-clear" type="button">
+                  <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+                  <span>Đặt lại bộ lọc</span>
+                </button>
+              </div>
+            </details>
+            <div class="map-browse">
+              <div class="map-list-switch" role="group" aria-label="Danh sách thống kê">
+                <button type="button" data-map-list="digitalMapRanking" aria-controls="digitalMapRanking"
+                  aria-pressed="true">Địa bàn</button>
+                <button type="button" data-map-list="digitalMapCharts" aria-controls="digitalMapCharts"
+                  aria-pressed="false">Hệ nghiệp vụ</button>
+              </div>
+              <div id="digitalMapRanking" class="digital-map-ranking"></div>
+              <div id="digitalMapCharts" class="digital-map-charts" hidden></div>
+            </div>
+          </aside>
+          <div class="digital-map-stage">
+            <div class="digital-map-canvas-wrap">
+              <div class="digital-map-map-search" id="digitalMapMapSearch" role="search">
+                <label for="digitalMapWardSearch">
+                  <i data-lucide="search" aria-hidden="true"></i>
+                  <span class="sr-only">Tìm phường hoặc xã</span>
+                  <input id="digitalMapWardSearch" type="search" placeholder="Tìm tên phường, xã..." autocomplete="off" spellcheck="false" aria-controls="digitalMapWardResults" aria-expanded="false"/>
+                  <button id="digitalMapWardSearchClear" type="button" aria-label="Xóa tìm kiếm" hidden><i data-lucide="x" aria-hidden="true"></i></button>
+                </label>
+                <div id="digitalMapWardResults" class="digital-map-map-search-results" role="listbox" hidden></div>
+                <p id="digitalMapWardSearchStatus" class="digital-map-map-search-status" role="status" aria-live="polite"></p>
+              </div>
+              <div id="digitalMapCanvas" aria-label="Bản đồ số vụ việc theo phường xã Đồng Nai"></div>
+              <div id="digitalMapLegend" class="digital-map-legend"></div>
+              <section id="digitalMapSelected" class="map-inspector" aria-labelledby="mapWardName" hidden>
+                <button id="mapCloseWard" type="button" aria-label="Đóng chi tiết địa bàn">×</button>
+                <div id="mapWardContent"></div>
+              </section>
+            </div>
+            <div class="map-timeline">
+              <div class="map-time-switch" role="group" aria-label="Phạm vi thời gian">
+                <button id="mapTimelineAll" type="button" aria-pressed="true">Cả kỳ</button>
+                <button id="mapTimelineDaily" type="button" aria-pressed="false" disabled>Theo ngày</button>
+              </div>
+              <div id="mapDailyControls" hidden>
+                <button id="mapTimelinePlay" type="button" aria-pressed="false">Phát</button>
+                <output id="mapTimelineLabel" for="mapTimelineDay"></output>
+                <input id="mapTimelineDay" type="range" min="0" max="0" value="0" aria-label="Ngày hiển thị"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="accounts" class="page"></section>
+      <section id="directory" class="page"></section>
+      <section id="settings" class="page"></section>
+    </main>
+  </div>
+  <div id="notificationPanel" class="notification-panel" role="dialog"
+    aria-labelledby="notificationTitle" hidden></div>
+  <script src="assets/js/lucide.min.js"></script>
+  <script src="assets/js/browser-ids.js?v=20261111-lan-1"></script>
+  <script src="assets/js/xlsx.full.min.js?v=0.20.3"></script>
+  <script src="assets/js/leaflet.js"></script>
+  <script src="assets/js/local-map.js"></script>
+  <script src="assets/js/map-label-position.js"></script>
+  <script src="assets/js/digital-map-labels.js?v=20261119-pro-labels"></script>
+  <script src="assets/js/digital-map-statistics.js?v=20261118-atlas"></script>
+  <script src="assets/js/digital-map.js?v=20261119-dual-map"></script>
+  <script src="assets/js/standalone/session-binding.js?v=20261110-1"></script>
+  <script src="assets/js/notification-center/navigation.js"></script>
+  <script src="assets/js/notification-center/model.js"></script>
+  <script src="assets/js/notification-center/returned-attention.js?v=20261111-4"></script>
+  <script src="assets/js/notification-center/appearance.js?v=20261112-approve-1"></script>
+  <script src="assets/js/notification-center/view.js?v=20261111-4"></script>
+  <script src="assets/js/notification-center/popup/sound.js"></script>
+  <script src="assets/js/notification-center/popup/sound-controls.js"></script>
+  <script src="assets/js/notification-center/popup/view.js?v=20261112-approve-1"></script>
+  <script src="assets/js/form-required-feedback.js"></script>
+  <script src="assets/js/notification-center/controller.js?v=20261111-5"></script>
+  <script src="assets/js/daily-reports-ui.js?v=20261112-approve-1"></script>
+  <script src="assets/js/daily-reports-attachments.js?v=20261111-reader-1"></script>
+  <script src="assets/js/daily-reports-duplicates/model.js"></script>
+  <script src="assets/js/daily-reports-duplicates/view.js"></script>
+  <script src="assets/js/daily-reports-duplicates/comparison.js"></script>
+  <script src="assets/js/daily-reports-duplicates/controller.js"></script>
+  <script src="assets/js/daily-reports-v8-view.js?v=20261111-removed-banners"></script>
+  <script src="assets/js/daily-reports-classifications-view.js"></script>
+  <script src="assets/js/daily-reports-classifications.js"></script>
+  <script src="assets/js/daily-reports-legal-entry.js"></script>
+  <script src="assets/js/daily-reports-presentation.js?v=20261111-removed-banners"></script>
+  <script src="assets/js/daily-reports-composer-view.js?v=20261118-metrics-3"></script>
+  <script src="assets/js/daily-reports-composer.js?v=20261118-metrics-2"></script>
+  <script src="assets/js/daily-reports-preview.js"></script>
+  <script src="assets/js/daily-reports-entry-topbar.js?v=20261111-2"></script>
+  <script src="assets/js/daily-reports-review.js?v=20261117-approval-1"></script>
+  <script src="assets/js/daily-reports-navigation.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports-workspace-view.js?v=20261118-composer-1"></script>
+  <script src="assets/js/daily-reports-account-picker.js"></script>
+  <script src="assets/js/daily-reports-role-picker.js"></script>
+  <script src="assets/js/daily-reports-entry-units.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports-configuration.js"></script>
+  <script src="assets/js/daily-reports-reference-panels.js?v=20261118-composer-1"></script>
+  <script src="assets/js/daily-reports-reference-view.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports-history-view.js"></script>
+  <script src="assets/js/daily-reports-history.js"></script>
+  <script src="assets/js/daily-reports-permission-workspace.js"></script>
+  <script src="assets/js/daily-reports-leaders.js"></script>
+  <script src="assets/js/daily-reports-persons.js"></script>
+  <script src="assets/js/daily-reports-case-title.js"></script>
+  <script src="assets/js/daily-reports-location.js"></script>
+  <script src="assets/js/daily-reports-case-dossier.js?v=20261118-classification-1"></script>
+  <script src="assets/js/daily-reports-case-event-content.js?v=20261118-history-1"></script>
+  <script src="assets/js/daily-reports-case-detail-view.js?v=20261118-compact-1"></script>
+  <script src="assets/js/daily-reports-case-duplicates.js?v=20261118-1"></script>
+  <script src="assets/js/daily-report-intake/schema.js"></script>
+  <script src="assets/js/daily-report-intake/weapon-picker.js?v=20261111-reader-1"></script>
+  <script src="assets/js/daily-report-intake/domain-entries.js?v=20261111-reader-1"></script>
+  <script src="assets/js/daily-report-intake/incident-summary.js?v=20261117-glass-2"></script>
+  <script src="assets/js/daily-reports-case-preview-history.js?v=20261118-1"></script>
+  <script src="assets/js/daily-reports-case-preview-view.js?v=20261118-history-1"></script>
+  <script src="assets/js/daily-reports-case-preview.js?v=20261118-polish-1"></script>
+  <script src="assets/js/daily-report-intake/unlock-request.js?v=20261117-1"></script>
+  <script src="assets/js/daily-report-intake/view.js?v=20261117-metric-colors-1"></script>
+  <script src="assets/js/daily-report-intake/entry-lock.js?v=20261111-reader-1"></script>
+  <script src="assets/js/daily-reports-reference-case/view.js"></script>
+  <script src="assets/js/daily-reports-reference-case/legal.js"></script>
+  <script src="assets/js/daily-reports-reference-case/subject-fields.js"></script>
+  <script src="assets/js/daily-reports-reference-case/lists.js"></script>
+  <script src="assets/js/daily-reports-reference-case/media.js"></script>
+  <script src="assets/js/daily-reports-reference-case/numbers.js"></script>
+  <script src="assets/js/daily-reports-reference-case/handling-result.js"></script>
+  <script src="assets/js/daily-reports-reference-case/controller.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports-source-preview.js?v=20261112-reader-1"></script>
+  <script src="assets/js/daily-reports-workspace.js?v=20261118-composer-1"></script>
+  <script src="assets/js/daily-reports-action-menu.js?v=20261112-1"></script>
+  <script src="assets/js/daily-reports-unlock/view.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports-unlock/workspace.js?v=20261117-history-1"></script>
+  <script src="assets/js/daily-reports.js?v=20261117-history-1"></script>
+  <script src="assets/js/searchable-unit-select.js"></script>
+  <script type="module" src="assets/js/standalone/app.js?v=20261111-5"></script>
+  <script type="module" src="assets/pet-seedy/main.js?v=20261111-1"></script>
+</body>
+</html>

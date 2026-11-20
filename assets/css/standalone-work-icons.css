@@ -1,0 +1,39 @@
+@layer bcn-glass {
+  .bcn-standalone #dailyReports [data-work-icon="weapons"] { --work-icon: #8bbcff; }
+  .bcn-standalone #dailyReports [data-work-icon="persons"] { --work-icon: #c4a7fa; }
+  .bcn-standalone #dailyReports [data-work-icon="patrol"] { --work-icon: #77dbc5; }
+  .bcn-standalone #dailyReports [data-work-icon="administrative"] { --work-icon: #eac47c; }
+
+  .bcn-standalone.theme-light #dailyReports [data-work-icon="weapons"] { --work-icon: #2563eb; }
+  .bcn-standalone.theme-light #dailyReports [data-work-icon="persons"] { --work-icon: #7c3aed; }
+  .bcn-standalone.theme-light #dailyReports [data-work-icon="patrol"] { --work-icon: #087f69; }
+  .bcn-standalone.theme-light #dailyReports [data-work-icon="administrative"] { --work-icon: #996515; }
+
+  .bcn-standalone #dailyReports .bcn-panel-head {
+    align-items: center;
+    gap: 10px !important;
+  }
+
+  .bcn-standalone #dailyReports .bcn-panel-icon[data-work-icon] {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border: 1px solid color-mix(in srgb, var(--work-icon) 30%, transparent);
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--work-icon) 10%, transparent) !important;
+    color: var(--work-icon) !important;
+    line-height: 1;
+    font-size: 0;
+  }
+
+  .bcn-standalone #dailyReports .bcn-panel-icon[data-work-icon] svg {
+    display: block;
+    flex: none;
+    width: 20px !important;
+    height: 20px !important;
+    stroke-width: 1.8 !important;
+    color: inherit !important;
+  }
+}

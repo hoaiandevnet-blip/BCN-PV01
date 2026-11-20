@@ -1,0 +1,370 @@
+/* The signer directory is shared by Permissions and Report compilation. */
+#dailyReports.bcn-reference #bcnLeaderManagement {
+  padding: 0;
+  overflow: hidden;
+}
+
+#dailyReports.bcn-reference #bcnLeaderManagement > summary {
+  padding: 18px 20px;
+}
+
+#dailyReports.bcn-reference #bcnLeaderManagement[open] > summary {
+  border-bottom: 1px solid #e4eaf2;
+}
+
+#dailyReports.bcn-reference #bcnLeaderManagement > .bcn-leader-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  padding: 22px;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+
+#dailyReports #bcnLeaderManagement :is(.bcn-leader-editor, .bcn-leader-directory) {
+  min-width: 0;
+}
+
+#dailyReports #bcnLeaderManagement h3 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-hint {
+  margin: 5px 0 0;
+  color: #74839a;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference #bcnLeaderForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 18px 16px;
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px solid #e1e8f1;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+#dailyReports #bcnLeaderForm > label {
+  min-width: 0;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+#dailyReports #bcnLeaderForm :is(input, select) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0;
+}
+
+#dailyReports #bcnLeaderForm input[type="hidden"] {
+  display: none;
+}
+
+#dailyReports #bcnLeaderManagement :is(input, select, button):focus-visible {
+  outline: 2px solid #bd8b47;
+  outline-offset: 2px;
+}
+
+#dailyReports #bcnLeaderForm .bcn-leader-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column: 1 / -1;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #e1e8f1;
+}
+
+#dailyReports #bcnLeaderManagement button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+#dailyReports #bcnLeaderManagement button svg,
+#dailyReports #bcnLeaderManagement .bcn-leader-period svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-directory {
+  border-left: 1px solid #e4eaf2;
+  padding-left: 24px;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-list-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#dailyReports.bcn-reference #bcnLeaderRows {
+  display: grid;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-row {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+  margin: 0;
+  border: 1px solid #dfe7ef;
+  border-radius: 10px;
+  background: #fff;
+  min-width: 0;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-identity {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-identity > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-avatar {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  height: 38px;
+  border-radius: 10px;
+  color: #287d66;
+  background: #edf8f2;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-avatar svg {
+  width: 20px;
+  height: 20px;
+}
+
+#dailyReports #bcnLeaderRows :is(.bcn-leader-identity p, .bcn-leader-period) {
+  margin: 4px 0 0;
+  color: #718198;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports #bcnLeaderRows :is(.bcn-leader-tags, .bcn-leader-row-actions, .bcn-leader-period) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#dailyReports #bcnLeaderRows :is(.bcn-leader-scope, .bcn-leader-status) {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.5;
+  background: #eef4fc;
+  color: #3c669e;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-status[data-state="active"] {
+  color: #23765d;
+  background: #eaf7ef;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-status[data-state="upcoming"] {
+  color: #94651d;
+  background: #fff5df;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-status:is([data-state="archived"], [data-state="expired"]) {
+  color: #69758a;
+  background: #f0f2f6;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-row-actions {
+  padding-top: 12px;
+  border-top: 1px solid #edf0f5;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-empty {
+  margin: 0;
+  padding: 24px 18px;
+  border: 1px dashed #dbe3ed;
+  border-radius: 10px;
+  color: #75839a;
+  line-height: 1.7;
+  text-align: center;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-editor:has(#bcnLeaderForm[hidden]) {
+  display: none;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-workspace:has(#bcnLeaderForm[hidden]) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-workspace:has(#bcnLeaderForm[hidden]) .bcn-leader-directory {
+  padding-left: 0;
+  border-left: 0;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-bulk {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  padding: 12px;
+  margin-top: 16px;
+  border: 1px solid #e1e8f1;
+  border-radius: 10px;
+  background: #f8fafc;
+  font-size: 12px;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-bulk[hidden] {
+  display: none;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-leader-bulk label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  cursor: pointer;
+}
+
+#dailyReports #bcnLeaderManagement input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex: 0 0 18px;
+  margin: 0;
+  accent-color: #a96b23;
+  cursor: pointer;
+}
+
+#dailyReports #bcnLeaderRows .bcn-leader-identity > input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+#dailyReports #bcnLeaderSelectedCount {
+  flex: 1 1 auto;
+  color: #66758c;
+}
+
+#dailyReports #bcnLeaderManagement button.bcn-leader-delete {
+  color: #b42336 !important;
+  border-color: #efc6ce !important;
+  background: #fff5f6 !important;
+}
+
+#dailyReports #bcnLeaderManagement button.bcn-leader-delete:hover:not(:disabled) {
+  background: #ffe8ec !important;
+  border-color: #d98f9d !important;
+}
+
+#dailyReports #bcnLeaderManagement button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+#dailyReports.bcn-reference dialog.bcn-leader-delete-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(520px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  box-sizing: border-box;
+  padding: 24px;
+  border: 1px solid #e1e8f1;
+  border-radius: 16px;
+  box-shadow: 0 24px 72px #17203333;
+  background: #fff;
+  color: #334155;
+  overflow: auto;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog h3 {
+  margin: 0 0 12px;
+  font-size: 19px;
+  color: #9f2334;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog p {
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog ul {
+  max-height: 220px;
+  overflow: auto;
+  padding: 14px 16px 14px 32px;
+  background: #f8fafc;
+  border: 1px solid #e1e8f1;
+  border-radius: 10px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog form {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog button.primary {
+  background: #b42336 !important;
+  border-color: #b42336 !important;
+  color: #fff !important;
+}
+
+#dailyReports.bcn-reference .bcn-leader-delete-dialog [data-delete-error] {
+  color: #b42336;
+}
+
+@media (max-width: 1100px) {
+  #dailyReports.bcn-reference #bcnLeaderManagement > .bcn-leader-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #dailyReports #bcnLeaderManagement .bcn-leader-directory {
+    padding: 22px 0 0;
+    border-top: 1px solid #e4eaf2;
+    border-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference #bcnLeaderManagement > :is(summary, .bcn-leader-workspace) {
+    padding: 16px;
+  }
+
+  #dailyReports.bcn-reference #bcnLeaderForm {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  #dailyReports #bcnLeaderForm .bcn-leader-form-actions button {
+    flex: 1 1 auto;
+  }
+}

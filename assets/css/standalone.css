@@ -1,0 +1,712 @@
+/* Independent application shell. Component colours live in standalone-theme.css. */
+.bcn-standalone [hidden] {
+  display: none !important;
+}
+.bcn-standalone {
+  --bcn-sidebar-width: 296px;
+  font-family: Inter, "Segoe UI", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.bcn-login {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(360px, 560px) minmax(320px, 430px);
+  align-content: safe center;
+  justify-content: center;
+  gap: clamp(48px, 6vw, 96px);
+  padding: 48px clamp(24px, 4vw, 72px);
+}
+.bcn-login-brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 0;
+}
+.bcn-login-identity {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.bcn-login-identity img {
+  width: 108px;
+  height: 120px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.bcn-login-identity > div {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+.bcn-login-authority,
+.bcn-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.bcn-login-authority {
+  font-size: 16px;
+  font-weight: 700;
+}
+.bcn-login-unit {
+  display: inline-flex;
+  padding: 6px 13px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 8px;
+  color: var(--ui-gold);
+  background: var(--ui-gold-soft);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.bcn-login-brand h1 {
+  margin: 36px 0 28px;
+  font-size: clamp(44px, 4.5vw, 64px);
+  font-weight: 750;
+  letter-spacing: -.04em;
+  line-height: 1.15;
+  text-shadow: 0 3px 24px var(--ui-gold-soft);
+}
+.bcn-login-rule {
+  width: 96px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--ui-gold);
+}
+.bcn-login-functions {
+  display: grid;
+  gap: 16px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.bcn-login-functions li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ui-text);
+  font-size: 18px;
+  font-weight: 500;
+}
+.bcn-login-functions svg {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 11px;
+  background: var(--ui-gold-soft);
+  color: var(--ui-gold);
+  stroke-width: 1.6;
+}
+.bcn-login-form {
+  width: 100%;
+  padding: 32px;
+  border: 1px solid var(--ui-line);
+  border-radius: 18px;
+}
+.bcn-login-form h2 {
+  margin: 12px 0 8px;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
+.bcn-login-form > p {
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.bcn-login-form label {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.bcn-login-form input,
+.bcn-login-form button {
+  width: 100%;
+  min-height: 42px;
+}
+.bcn-login-form button {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+.bcn-login-form .bcn-error:empty {
+  display: none;
+}
+.bcn-login-form small {
+  display: block;
+  font-size: 11px;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+.bcn-error {
+  min-height: 1em;
+}
+.bcn-standalone #appShell.bcn-layout {
+  display: flex;
+  min-height: 100dvh;
+}
+.bcn-layout .sidebar {
+  width: var(--bcn-sidebar-width);
+  flex: 0 0 var(--bcn-sidebar-width);
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 14px;
+  border-right: 1px solid var(--ui-line);
+  overflow-y: auto;
+}
+.bcn-brand {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 12px;
+  align-items: center;
+  padding: 24px 10px 28px;
+  text-decoration: none;
+}
+.bcn-brand img {
+  width: 44px;
+  height: 50px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+.bcn-brand b {
+  display: block;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.bcn-brand small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .035em;
+  margin-top: 4px;
+}
+.bcn-layout .nav {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  gap: 4px;
+}
+.bcn-layout .nav-item,
+.bcn-layout .nav-group-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-align: left;
+  font-weight: 500;
+}
+.bcn-layout .nav svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke-width: 1.65;
+}
+.bcn-layout .nav-group-icon {
+  display: inline-flex;
+}
+.bcn-layout .nav-group-chevron {
+  margin-left: auto;
+}
+.bcn-layout .nav-sub-item {
+  min-height: 42px;
+  padding-left: 18px;
+  font-size: 14px;
+}
+.bcn-layout .nav-sub-item > span {
+  display: inline-flex;
+}
+body.bcn-standalone #appShell .nav-submenu {
+  display: flex !important;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px 0 6px 8px;
+  margin-left: 16px;
+  border-left: 1px solid var(--ui-line);
+}
+.bcn-nav-caption {
+  margin: 24px 10px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
+.bcn-sidebar-foot {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 16px 10px;
+  border-top: 1px solid var(--ui-line);
+  font-size: 14px;
+}
+.bcn-support-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ui-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.bcn-support-label svg,
+.bcn-support-phone svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 1.7;
+}
+.bcn-support-person {
+  display: grid;
+  gap: 3px;
+  margin: 12px 0 8px;
+  line-height: 1.6;
+}
+.bcn-support-person strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.bcn-support-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  color: var(--ui-gold);
+  text-decoration: none;
+}
+.bcn-support-phone:hover {
+  color: var(--ui-gold-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.bcn-sidebar-version {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  padding-top: 10px;
+  border-top: 1px solid var(--ui-line);
+  font-size: 10px;
+}
+.bcn-version-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 7px;
+  border: 1px solid var(--ui-line);
+  border-radius: 6px;
+  background: #ffffff06;
+  color: var(--ui-secondary);
+  font-size: 10px;
+  letter-spacing: .035em;
+}
+.bcn-version-badge .bcn-status-dot {
+  margin-right: 2px;
+  width: 5px;
+  height: 5px;
+}
+.bcn-status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: var(--ui-ok);
+  box-shadow: 0 0 0 3px var(--ui-ok-soft);
+}
+.bcn-layout .main {
+  width: calc(100% - var(--bcn-sidebar-width));
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  padding: 0 32px 32px;
+}
+/* Each page supplies its own bottom gutter; the legacy chat dock is not mounted. */
+.bcn-standalone #appShell > .main {
+  padding-bottom: 0;
+  scroll-padding-bottom: 24px;
+}
+.bcn-topbar {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--ui-line);
+  margin: 0 -32px 28px;
+  padding: 0 32px;
+}
+.bcn-topbar > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.bcn-topbar small {
+  font-size: 11px;
+  font-weight: 400;
+}
+.bcn-topbar .userbox {
+  margin-left: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+}
+.bcn-topbar svg {
+  width: 16px;
+  height: 16px;
+}
+.bcn-topbar #notificationToggle,
+.bcn-topbar #changePassword,
+.bcn-topbar #menuToggle {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+#menuToggle {
+  display: none;
+}
+.bcn-topbar #notificationToggle {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 34px;
+  line-height: 1;
+}
+.bcn-topbar #notificationToggle > svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+#notificationToggle [data-notification-badge] {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 0 4px;
+  border-radius: 20px;
+  font-size: 10px;
+}
+.bcn-home-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 8px 0 24px;
+}
+.bcn-home-head h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 8px 0;
+  letter-spacing: -.03em;
+}
+.bcn-home-head p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+.bcn-workspaces {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+}
+.bcn-workspace-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid var(--ui-line);
+}
+.bcn-workspace-card > svg {
+  box-sizing: content-box;
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+  border: 1px solid var(--ui-gold-line);
+  border-radius: 14px;
+  margin-bottom: 22px;
+  stroke-width: 1.5;
+}
+.bcn-workspace-card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+.bcn-workspace-card p {
+  font-size: 13px;
+  line-height: 1.8;
+  max-width: 430px;
+  margin: 0 0 26px;
+}
+.bcn-workspace-card button {
+  margin-top: auto;
+}
+.bcn-home-note {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  margin-top: 16px;
+  border: 1px solid var(--ui-line);
+  border-radius: 14px;
+}
+.bcn-home-note svg {
+  width: 20px;
+  flex-shrink: 0;
+}
+.bcn-home-note strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.bcn-home-note p {
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 6px 0 0;
+}
+.bcn-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.bcn-toolbar h2 {
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: 600;
+}
+.bcn-table-card {
+  border: 1px solid var(--ui-line);
+  border-radius: 14px;
+  overflow: auto;
+}
+.bcn-table-card table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.bcn-table-card th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.bcn-table-card th,
+.bcn-table-card td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--ui-line);
+}
+.bcn-table-card small {
+  display: block;
+  margin-top: 4px;
+}
+.bcn-dialog {
+  width: min(740px, 94vw);
+  max-height: 90dvh;
+  overflow: auto;
+  border: 1px solid var(--ui-line-strong);
+  border-radius: 18px;
+  padding: 28px;
+}
+.bcn-dialog h2 {
+  margin: 0 0 24px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.bcn-dialog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.bcn-dialog label {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+}
+.bcn-dialog input,
+.bcn-dialog select {
+  width: 100%;
+}
+.bcn-dialog input[type="checkbox"] {
+  min-height: auto;
+  width: 16px;
+}
+.bcn-dialog .bcn-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+.bcn-permission-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 16px 0;
+}
+.bcn-dialog footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+.bcn-layout .digital-map-shell {
+  min-height: calc(100dvh - 125px);
+}
+@media (max-width: 1100px) {
+  .bcn-standalone {
+    --bcn-sidebar-width: 272px;
+  }
+  .bcn-layout .main {
+    width: calc(100% - var(--bcn-sidebar-width));
+    padding: 0 20px 24px;
+  }
+  .bcn-topbar {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 0 20px;
+  }
+  .bcn-topbar #accountName {
+    display: none;
+  }
+}
+@media (max-width: 980px) {
+  .bcn-login {
+    grid-template-columns: minmax(0, 560px);
+    gap: 36px;
+  }
+  .bcn-login-brand {
+    align-items: center;
+  }
+  .bcn-login-brand h1 {
+    text-align: center;
+  }
+  .bcn-login-form {
+    max-width: 430px;
+    justify-self: center;
+  }
+  .bcn-login-functions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 760px) {
+  .bcn-standalone {
+    --bcn-sidebar-width: min(304px, calc(100vw - 24px));
+  }
+  .bcn-login {
+    grid-template-columns: minmax(0, 430px);
+    gap: 24px;
+    padding: 28px 20px;
+  }
+  .bcn-login-brand {
+    align-items: center;
+    padding: 0;
+  }
+  .bcn-login-identity {
+    gap: 16px;
+  }
+  .bcn-login-identity img {
+    width: 80px;
+    height: 88px;
+  }
+  .bcn-login-authority {
+    font-size: 14px;
+  }
+  .bcn-login-unit {
+    font-size: 14px;
+  }
+  .bcn-login-brand h1 {
+    font-size: clamp(32px, 10vw, 44px);
+    margin: 26px 0 20px;
+    text-align: center;
+  }
+  .bcn-login-functions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 20px;
+  }
+  .bcn-login-functions li {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .bcn-login-functions svg {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 9px;
+  }
+  .bcn-login-form {
+    padding: 24px;
+  }
+  .bcn-layout .sidebar {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 64px;
+    height: calc(100dvh - 64px);
+    z-index: 1000;
+  }
+  .bcn-layout.menu-open .sidebar {
+    display: flex;
+    box-shadow: 8px 0 30px #0008;
+  }
+  .bcn-layout .main {
+    width: 100%;
+    padding: 0 14px 24px;
+  }
+  .bcn-topbar {
+    margin: 0 -14px 20px;
+    padding: 0 14px;
+    gap: 8px;
+  }
+  .bcn-topbar > div:first-of-type {
+    display: grid;
+    gap: 2px;
+    font-size: 12px;
+  }
+  .bcn-topbar small {
+    max-width: 125px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 10px;
+  }
+  .bcn-topbar .userbox {
+    gap: 5px;
+  }
+  #menuToggle {
+    display: inline-flex;
+  }
+  .bcn-workspaces,
+  .bcn-dialog-grid,
+  .bcn-permission-list {
+    grid-template-columns: 1fr;
+  }
+  .bcn-home-head h1 {
+    font-size: 24px;
+  }
+  .bcn-workspace-card {
+    padding: 24px;
+  }
+  .bcn-dialog {
+    padding: 20px;
+  }
+}

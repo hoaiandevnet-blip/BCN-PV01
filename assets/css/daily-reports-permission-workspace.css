@@ -1,0 +1,363 @@
+/* Arrangement and assignment list within Daily Reports only. */
+#dailyReports.bcn-reference .bcn-permission-section > summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+}
+
+#dailyReports.bcn-reference .bcn-permission-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+#dailyReports.bcn-reference .bcn-permission-section > summary::marker {
+  content: '';
+}
+
+#dailyReports.bcn-reference .bcn-permission-symbol {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border: 1px solid #ead8b9;
+  border-radius: 10px;
+  background: #fff7e8;
+  color: #a46921;
+}
+
+#dailyReports.bcn-reference .bcn-permission-symbol svg {
+  width: 21px;
+  height: 21px;
+}
+
+#dailyReports.bcn-reference .bcn-permission-summary {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  gap: 4px;
+}
+
+#dailyReports.bcn-reference .bcn-permission-summary strong {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#dailyReports.bcn-reference .bcn-permission-summary small {
+  color: #76849a;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+#dailyReports.bcn-reference .bcn-permission-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: #8d785a;
+  transition: transform 150ms ease;
+}
+
+#dailyReports.bcn-reference .bcn-permission-section[open] > summary .bcn-permission-chevron {
+  transform: rotate(180deg);
+}
+
+#dailyReports.bcn-reference #bcnRoleManagement {
+  border-top: 3px solid #b97c28;
+}
+
+#dailyReports.bcn-reference #bcnRoleManagement > .bcn-assignment-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-editor,
+#dailyReports #bcnRoleManagement .bcn-assignment-list {
+  min-width: 0;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-editor > h3,
+#dailyReports #bcnRoleManagement .bcn-assignment-list-heading h3 {
+  margin: 0;
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-note {
+  margin: 8px 0 0;
+  color: #728198;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports.bcn-reference #bcnRoleForm {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  margin: 16px 0 0;
+  padding: 18px;
+}
+
+#dailyReports #bcnRoleForm .bcn-assignment-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+#dailyReports #bcnRoleForm legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0 0 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+#dailyReports #bcnRoleForm .bcn-assignment-fields:has(.bcn-account-field) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+#dailyReports #bcnRoleForm legend span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: #f1e4cd;
+  color: #92601f;
+}
+
+#dailyReports #bcnRoleForm #bcnRoleEligibility {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid #dce8f5;
+  border-radius: 8px;
+  background: #eef5fc;
+  color: #526c89;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+#dailyReports #bcnRoleForm .bcn-assignment-date-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-column: 1 / -1;
+  gap: 16px;
+}
+
+#dailyReports #bcnRoleForm .bcn-assignment-fields:has([name="metric_code"]:disabled) label:has(#bcnRoleUnit) {
+  grid-column: 1 / -1;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-list {
+  padding-left: 24px;
+  border-left: 1px solid #e7ecf3;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+#dailyReports #bcnRoleManagement #bcnRoleListCount {
+  margin: 5px 0 0;
+  color: #75839a;
+  font-size: 11px;
+}
+
+#dailyReports #bcnRolesLoad svg {
+  width: 16px;
+  height: 16px;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-search {
+  display: grid;
+  gap: 8px;
+}
+
+#dailyReports #bcnRoleListSearch {
+  margin: 0;
+  min-height: 42px;
+  width: 100%;
+}
+
+#dailyReports.bcn-reference #bcnRoleRows {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  margin-top: 14px;
+  max-height: 520px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #d9c5a6 #f7f9fc;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 9px 12px;
+  padding: 14px;
+  border: 1px solid #e4eaf3;
+  border-radius: 9px;
+  background: #fff;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-account {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-account strong {
+  display: block;
+  font-size: 12px;
+  color: #334155;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-account small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #78879a;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-role {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  grid-column: 1 / -1;
+  color: #31679d;
+  background: #edf4fe;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#dailyReports #bcnRoleRows [data-role="PV01_COMPILER"] {
+  color: #8d5b1d;
+  background: #fff4df;
+}
+
+#dailyReports #bcnRoleRows [data-role="LEGAL_REVIEWER"] {
+  color: #7351a7;
+  background: #f3edfc;
+}
+
+#dailyReports #bcnRoleRows [data-role="AUDITOR"] {
+  color: #1d7c67;
+  background: #eaf8f2;
+}
+
+#dailyReports #bcnRoleRows :is(.bcn-assignment-scope, .bcn-assignment-dates) {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  grid-column: 1 / -1;
+  color: #718198;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+#dailyReports #bcnRoleRows svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+#dailyReports #bcnRoleRows .bcn-assignment-revoke {
+  padding: 6px 9px;
+  min-height: 30px;
+  color: #a64553 !important;
+  border-color: #eed3d8 !important;
+  background: #fff8f9 !important;
+  font-size: 11px;
+}
+
+#dailyReports #bcnRoleManagement .bcn-assignment-empty {
+  margin: 14px 0 0;
+  padding: 24px 14px;
+  border: 1px dashed #d8e0eb;
+  border-radius: 9px;
+  color: #7a879b;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+#dailyReports.bcn-reference #bcnPermissionReference #bcnPermissionGuides {
+  padding: 0 18px 18px;
+}
+
+#dailyReports #bcnPermissionReference .bcn-permission-symbol {
+  color: #7455a5;
+  background: #f5f0fc;
+  border-color: #e4d9f3;
+}
+
+#dailyReports #bcnConfiguration .bcn-permission-symbol {
+  color: #356a9f;
+  background: #edf5ff;
+  border-color: #d2e3f6;
+}
+
+#dailyReports #bcnLeaderManagement .bcn-permission-symbol {
+  color: #267c64;
+  background: #edf9f2;
+  border-color: #d1e9db;
+}
+
+@media (max-width: 1100px) {
+  #dailyReports.bcn-reference #bcnRoleManagement > .bcn-assignment-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #dailyReports #bcnRoleManagement .bcn-assignment-list {
+    border-left: 0;
+    border-top: 1px solid #e7ecf3;
+    padding-left: 0;
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  #dailyReports.bcn-reference #bcnRoleManagement > .bcn-assignment-workspace {
+    padding: 14px;
+  }
+  #dailyReports.bcn-reference #bcnRoleForm {
+    padding: 14px;
+  }
+  #dailyReports #bcnRoleForm .bcn-assignment-fields,
+  #dailyReports #bcnRoleForm .bcn-assignment-date-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #dailyReports #bcnRoleManagement .bcn-assignment-list-heading {
+    flex-wrap: wrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dailyReports.bcn-reference .bcn-permission-chevron {
+    transition: none;
+  }
+}

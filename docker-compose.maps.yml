@@ -1,0 +1,41 @@
+# Imported OSM data is required; this service never downloads map data.
+# For npm start on the host: docker compose -f docker-compose.maps.yml up -d
+services:
+  maps:
+    image: overv/openstreetmap-tile-server:2.0.0
+    container_name: bcnpv01-map-server
+    pull_policy: never
+    restart: unless-stopped
+    command: run
+    environment:
+      UPDATES: disabled
+      THREADS: "2"
+    shm_size: 256m
+    stop_grace_period: 1m
+    ports:
+      - "127.0.0.1:8082:80"
+    volumes:
+      - type: bind
+        source: ${MAP_DATA_DIR:-./assets/map-data}/database
+        target: /data/database
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${MAP_DATA_DIR:-./assets/map-data}/tiles
+        target: /data/tiles
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${MAP_DATA_DIR:-./assets/map-data}/style
+        target: /data/style
+        bind:
+          create_host_path: false
+    networks:
+      - maps-local
+
+networks:
+  maps-local:
+    # An internal-only network suppresses published ports in Docker Desktop.
+    # Host npm start reaches the renderer through the loopback binding above.
+    # Map data stays local; UPDATES is disabled and image pulls are forbidden.
+    driver: bridge

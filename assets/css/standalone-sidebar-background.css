@@ -1,0 +1,96 @@
+/* Static decoration stays behind the menu and does not intercept scrolling or clicks. */
+@layer bcn-background {
+  .bcn-standalone #appShell #sidebar {
+    --sidebar-glow: color-mix(in srgb, var(--ui-gold) 21%, transparent);
+    --sidebar-reflection: color-mix(in srgb, var(--ui-info) 7%, transparent);
+    --sidebar-grid: color-mix(in srgb, var(--ui-gold) 7%, transparent);
+    --sidebar-pattern-opacity: .25;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse 140% 36% at 0% 0%, var(--sidebar-glow), transparent 76%),
+      radial-gradient(ellipse 110% 43% at 110% 83%, var(--sidebar-reflection), transparent 76%),
+      linear-gradient(165deg, color-mix(in srgb, var(--ui-side) 94%, var(--ui-gold)),
+        var(--ui-side) 42%, color-mix(in srgb, var(--ui-side) 92%, var(--ui-bg))) !important;
+    border-right-color: color-mix(in srgb, var(--ui-gold) 22%, var(--ui-line)) !important;
+    box-shadow: inset -1px 0 0 color-mix(in srgb, var(--ui-gold) 7%, transparent),
+      8px 0 26px #00000020 !important;
+  }
+
+  .bcn-standalone #sidebar > .bcn-sidebar-art {
+    /* Override the legacy `.sidebar > *` layout without changing menu content. */
+    position: absolute !important;
+    inset: 0;
+    z-index: 0 !important;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    contain: strict;
+  }
+
+  .bcn-standalone #sidebar .bcn-sidebar-lines,
+  .bcn-standalone #sidebar .bcn-sidebar-grid,
+  .bcn-standalone #sidebar .bcn-sidebar-edge {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .bcn-standalone #sidebar .bcn-sidebar-lines {
+    background: var(--ui-gold);
+    opacity: var(--sidebar-pattern-opacity);
+    -webkit-mask: url('../img/bcn-sidebar-lines.svg') center / 100% 100% no-repeat;
+    mask: url('../img/bcn-sidebar-lines.svg') center / 100% 100% no-repeat;
+  }
+
+  .bcn-standalone #sidebar .bcn-sidebar-grid {
+    background-image:
+      linear-gradient(var(--sidebar-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--sidebar-grid) 1px, transparent 1px);
+    background-size: 36px 36px;
+    -webkit-mask-image: radial-gradient(ellipse at 100% 43%, #000, transparent 64%);
+    mask-image: radial-gradient(ellipse at 100% 43%, #000, transparent 64%);
+  }
+
+  .bcn-standalone #sidebar .bcn-sidebar-edge {
+    left: auto;
+    width: 1px;
+    background: linear-gradient(180deg, transparent 2%, var(--ui-gold-line) 12%,
+      transparent 35%, var(--ui-gold-line) 72%, transparent 97%);
+  }
+
+  .bcn-standalone #sidebar > .bcn-brand,
+  .bcn-standalone #sidebar > .nav,
+  .bcn-standalone #sidebar > .bcn-sidebar-foot {
+    position: relative;
+    z-index: 1;
+  }
+
+  .bcn-standalone #sidebar > .bcn-brand {
+    background: transparent !important;
+    border-bottom-color: color-mix(in srgb, var(--ui-gold) 27%, var(--ui-line)) !important;
+  }
+
+  .bcn-standalone #sidebar > .nav {
+    background: transparent !important;
+  }
+
+  .bcn-standalone #sidebar > .bcn-sidebar-foot {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--ui-side) 66%, transparent),
+      color-mix(in srgb, var(--ui-side) 90%, transparent));
+    border-top-color: color-mix(in srgb, var(--ui-gold) 27%, var(--ui-line)) !important;
+  }
+
+  .bcn-standalone[data-appearance-mode="light"] #appShell #sidebar {
+    --sidebar-glow: color-mix(in srgb, var(--ui-gold) 10%, transparent);
+    --sidebar-reflection: color-mix(in srgb, var(--ui-info) 5%, transparent);
+    --sidebar-grid: color-mix(in srgb, var(--ui-gold) 6%, transparent);
+    --sidebar-pattern-opacity: .16;
+    box-shadow: inset -1px 0 0 #ffffffb3, 8px 0 26px #26334d0a !important;
+  }
+
+  @media print {
+    .bcn-sidebar-art {
+      display: none !important;
+    }
+  }
+}

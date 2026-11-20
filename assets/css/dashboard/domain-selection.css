@@ -1,0 +1,95 @@
+@layer bcn-unslop {
+  #home .dash-domains .dash-domain-list {
+    padding-bottom: 24px !important;
+  }
+
+  #home .bcn-dashboard button.dash-domain {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 8px !important;
+    margin: -8px 0;
+    text-align: left !important;
+    white-space: normal !important;
+    font: inherit !important;
+    cursor: pointer;
+    border: 1px solid transparent !important;
+    border-radius: 8px;
+    color: var(--ui-text) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  #home .bcn-dashboard button.dash-domain:hover,
+  #home .bcn-dashboard button.dash-domain[aria-pressed="true"] {
+    background: color-mix(in srgb, var(--dash-domain) 9%, transparent) !important;
+    border-color: color-mix(in srgb, var(--dash-domain) 45%, transparent) !important;
+  }
+
+  #home .bcn-dashboard button.dash-domain[aria-pressed="true"] {
+    box-shadow: inset 3px 0 var(--dash-domain) !important;
+  }
+
+  #home .bcn-dashboard button.dash-domain:focus-visible {
+    outline: 2px solid var(--dash-domain);
+    outline-offset: 3px;
+  }
+
+  #home .dash-trend-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+    margin: 0 20px 16px;
+    font-size: 13px;
+    color: var(--ui-text);
+  }
+
+  #home .dash-trend-filter-hint {
+    font-size: 11px;
+    color: var(--ui-secondary);
+  }
+
+  #home .dash-trend-filter [data-trend-domain] {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  @container trend-panel (max-width: 400px) {
+    #home .dash-comparison .dash-compare-result {
+      display: flex !important;
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+
+    #home .dash-trend-filter {
+      margin-inline: 16px;
+    }
+  }
+}
+
+@layer bcn-glass {
+  #home .dash-chart-panel[data-domain] .dash-trend-column[data-level],
+  #home .dash-chart-panel[data-domain] .dash-domain-color-key {
+    --trend-color: var(--dash-domain);
+  }
+
+  #home .dash-chart-panel[data-domain] .dash-trend-column[data-direction="down"],
+  #home .dash-chart-panel[data-domain] .dash-domain-decrease-key {
+    --trend-color: var(--dash-green);
+  }
+
+  #home .dash-chart-panel[data-domain] .dash-trend-key-bars {
+    background: var(--dash-domain) !important;
+  }
+
+  #home .dash-chart-panel[data-domain] .dash-comparison {
+    --compare-current: var(--dash-domain) !important;
+  }
+
+  #home .dash-chart-panel[data-domain] .dash-comparison[data-direction="down"] {
+    --compare-current: var(--dash-green) !important;
+  }
+}
